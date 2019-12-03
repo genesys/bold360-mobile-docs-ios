@@ -1,3 +1,25 @@
+### Version 3.4.8
+
+This release contains the following bold360ai iOS SDK Features/ Fixes:
+
+```diff
+! Breaking Changes
+
+`HistoryProvider` was deprecated and should not be used. 
+Use full implementation of `ChatElementDelegate` instead.
+```
+> **Bot Chat related**
+- Welcome message customization support by integrating app.
+
+> **Live Chat related:**
+- Chat availability check support.
+
+### Version 3.4.7
+
+This release contains the following bold360ai iOS SDK Features/ Fixes:
+
+* Support File Upload - Live Chat.
+
 ### Version 3.4.0
 
 Release date: April 28, 2019

@@ -1,9 +1,9 @@
-This section describes the different operations you can perform with the history service.
+>This section describes the different operations you can perform with the history service.
 
 ## Supported History Features
 
 * **Fetch** - fetches history from DB.
-* **Store** - stores history item.
+* **Receive** - stores history item.
 * **Remove** - removes history item. 
 * **Update** - updates history item 
   > For Example: on failure history item can be updated to success.
@@ -32,10 +32,10 @@ ChatController --> APP: chatController
 == Conform to protocol ==
 
 note over APP, ChatController #aqua
-	conform to HistoryProvider
+	conform to ChatElementDelegate
 end note
 
-APP -> ChatController: setHistoryProvider(self)
+APP -> ChatController: setChatElementDelegate(self)
 
 == Load History ==
 
@@ -45,7 +45,7 @@ ChatController -> ChatController: Loading History Elements
 
 == Manage History ==
 
-ChatController -> APP: store
+ChatController -> APP: receive
 APP -> APP: Add item to DB
 ChatController -> APP: update
 APP -> APP: Update item on DB
@@ -60,35 +60,35 @@ APP -> APP: Update item on DB
 
 The following classes/interfaces are the public API for history managment:
 
-* **`ChatController`** - Use this class to set `HistoryProvider`.
+* **`ChatController`** - Use this class to set `ChatElementDelegate`.
 *  Implement **`StorableChatElement`** to have your own storable chat element. (**optional**) 
 
 ### Basic Implementation
 
 1. Create conversation view (via `ChatController`)
 
-2. Conform to & Set `HistoryProvider`
+2. Conform to & Set `ChatElementDelegate`
  
 ```swift
-controller.historyProvider = self
+controller.chatElementDelegate = self
 ```
 
-3. Implement `HistoryProvider` Functions
+3. Implement `ChatElementDelegate` Functions
 
 ```swift
 func fetch(_ from: Int, handler: (([Any]?) -> Void)!) {
     print("fetch")
 }
 
-func store(_ item: StorableChatElement) {
-    print("store")
+func didReceive(_ item: StorableChatElement!) {
+    print("receive")
 }
 
-func remove(_ timestampId: TimeInterval) {
+func didRemoveChatElement(_ timestampId: TimeInterval) {
     print("remove")
 }
 
-func update(_ timestampId: TimeInterval, newTimestamp: TimeInterval, status: StatementStatus) {
+func didUpdateChatElement(_ timestampId: TimeInterval, newTimestamp: TimeInterval, status: StatementStatus) {
     print("update")
 }
 ``` 

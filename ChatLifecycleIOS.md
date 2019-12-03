@@ -1,5 +1,55 @@
 > This article will help you to manage the lifecycle of chat controller.
 
+## Chat Departments Fetch
+
+The departments list can be fetched any time, without creating `ChatController` instance.
+
+## Fetch Departments
+
+1. Create `Account`.
+
+```swift
+// for example create live account.
+let liveAccount = LiveAccount()
+```
+
+2. Call `fetchDepartments` under `ChatController`.
+```swift
+ChatController.fetchDepartments(self.createAccount()) { result in
+    if let departments = result?.departments {
+        self.departments = departments
+    }
+}
+```
+
+## Chat Availability
+
+The availability of the chat can be checked any time, without creating `ChatController` instance.
+
+## Check chat availability
+
+1. Create `Account`.
+
+```swift
+// for example create live account.
+let liveAccount = LiveAccount()
+```
+
+>Note: To check availability for specific **department id** do as below on `LiveAccount`:
+ 
+```swift
+liveAccount.extraData?.departmentId = "{DEPARTMENT_ID}"
+```
+
+2. Call `checkAvailability` under `ChatController`.
+```swift
+ChatController.checkAvailability(self.createAccount()) { (isAvailable, reason, error) in
+   // Validate no error
+   // Check isAvailable
+   // If not available check reason
+}
+```
+
 ## Lifecycle Events
 
 | Name            | Description                                                                                                                        |

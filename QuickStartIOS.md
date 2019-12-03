@@ -45,7 +45,8 @@ import Bold360AI
 extension ViewController {
     @IBAction func setupBoldChat(_ sender: Any) {
         // 1. create account & set
-        let account = LiveAccount(accessKey: "YOUR_KEY")
+        let account = LiveAccount()
+        account.apiKey = {API_KEY}
         self.chatController = ChatController(account: account)
         // 2.  set controller delegate
         self.chatController.delegate = self
@@ -89,6 +90,20 @@ Context is a key-value parameter, so when you create the `BotAccount` object you
 ``` swift
 // Using the context:
 botAccount.context = ["someKey": "someValue"]
+```
+
+#### Configure Welcome Message Id
+
+When you create the `BotAccount` object you can set welcome message id.
+
+```swift
+botAccount.welcomeMessageId = "{WELCOME_MESSAGE_ID}"
+```
+
+>To Disable Welcome Message 
+
+```swift
+botAccount.welcomeMessageId = WelcomeMsgIdNone
 ```
 
 ### Add Chat View Controller by Implementing Delegate Methods  

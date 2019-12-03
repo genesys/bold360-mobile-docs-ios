@@ -31,13 +31,13 @@ self.chatController.viewConfiguration.chatViewConfig.dateStampColor = UIColor.bl
 To set custom font first make sure to add the relevant file to project, then:
 
 ```swift
-// For example our custom font is: `waltographUI.ttf`
+// For example our custom font is: `{CUSTOM_FONT_NAME}.ttf`
 let font = CustomFont()
-font.fontFileName = "waltographUI.ttf"
-font.font = UIFont(name: "WaltographUI-Bold", size: 15)
+font.fontFileName = "{CUSTOM_FONT_NAME}.ttf"
+font.font = UIFont(name: "{CUSTOM_FONT_NAME}", size: 15)
 let font1 = CustomFont()
-font1.fontFileName = "Monotype Sabon Italic.otf"
-font1.font = UIFont(name: "MonotypeSabonW04-Italic", size: 20)
+font1.fontFileName = "{CUSTOM_FONT_NAME}.otf"
+font1.font = UIFont(name: "{CUSTOM_FONT_NAME}", size: 20)
 self.chatController.viewConfiguration.outgoingConfig.customFont = font
 self.chatController.viewConfiguration.incomingBotConfig.customFont = font1
 self.chatController.viewConfiguration.incomingLiveConfig.customFont = font
