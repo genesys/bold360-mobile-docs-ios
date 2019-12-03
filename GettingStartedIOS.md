@@ -1,6 +1,8 @@
-> This article will help you get started with the development of bold360ai's SDK for iOS.
+# Getting Started with iOS Devices
 
 ## System Requirements  
+
+This article will help you get started with the development of bold360ai's SDK for iOS.
 
 * [iOS 9 and above](https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-SW1)
 * Automatic Reference Counting (ARC) is required in your project.
@@ -10,7 +12,12 @@
 ## Setup
 
 >Note: Using CocoaPods on an existing Xcode project will modify the project file, so you may want to make a backup before doing this.
-1. Create a file named `Podfile` in the root directory of your project
+1. Create a Podfile in the root directory of your project.
+
+```sh
+$ pod init
+```
+
 2. Add Official CocoaPods PodSpecs repository to your Podfile:
 
 ```ruby

@@ -1,6 +1,6 @@
-## Chat Events
+# Chat Events
 
-### Chat Element Event 
+## Chat Element Event 
 
 To be triggered by `didReceiveChatElement` follow below steps:
 

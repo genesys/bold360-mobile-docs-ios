@@ -1,22 +1,18 @@
-> This article will help you to support file upload.
+# Enable file upload.
 
-### Enable file upload.
+This article will help you to support file upload.
 
-File transfer should be enabled on admin console.
+## 1. Enable file transfer in the admin console.
 
-### Checking Upload feature availability
+1. Open [https://admin.bold360.com/](https://admin.bold360.com/) and log in.
+2. Go to CHANNELS -> Chat -> Chat Windows -> Choose relevant window -> File Transfer section.
+3. Check `Enable` and choose: `Agent to customer` , `Customer to agent`.
 
-To check if file upload enabled on admin console do as below.
+## 2. Add File Upload Button
 
-```swift
-self.chatController.isFileTransferEnabled
-```
+### 2.1. Use Default File Upload Button
 
->This indicator can be used when attaching custom upload button.
-
-### File Upload Implementation
-
-#### 1. Implement `didClickUploadFile` optional `ChatControllerDelegate` function.
+Implement `didClickUploadFile` optional `ChatControllerDelegate` method.
 
 ```swift
 extension FileUploadDemoViewController: ChatControllerDelegate {
@@ -26,47 +22,65 @@ extension FileUploadDemoViewController: ChatControllerDelegate {
 }
 ```
 
-#### 2. Once file was picked start upload file process.
+### 2.2.  Add Custom File Upload Button
 
-  >2.1. SDK **default upload**.
+a. Listen to relevant chat state by implementing `didUpdateState` optional `ChatControllerDelegate` method.
+b. Validate file transfer enabled on bold admin console.
+>Note: If not valid upload will fail.
+c. Add custom button.
 
 ```swift
-let request = UploadRequest()
-request.fileName = _{file_name}_
-request.fileType = _{file_type}_ // choose relevant file data from `UploadFileType`.
-request.fileData = _{file_data}_ // Send file data as byte array.
-                
-self.chatController.uploadFile(request, progress: { (progress) in
-    print("application file upload progress -> %.5f", progress)
-}) { (info: FileUploadInfo!) in
-    // Go to step 3.
+func didUpdateState(_ event: ChatStateEvent!) {
+    switch event.state {
+    ///a. Listen to relevant chat state
+    case .pending:
+        /// b. Validate file transfer enabled on bold admin console.
+        if(self.chatController.isFileTransferEnabled) {
+            /// c. Add custom button.
+            DispatchQueue.main.async {
+                self.uploadBtn.backgroundColor = .blue
+                self.uploadBtn.setTitle("Upload File", for: .normal)
+                self.uploadBtn.frame.size = CGSize(width: 150, height: 70)
+                self.uploadBtn.center = (self.navigationController?.visibleViewController?.view.center)!
+                self.uploadBtn.addTarget(self, action: #selector(self.uploadFile), for: .touchUpInside)
+                self.navigationController?.visibleViewController?.view.addSubview(self.uploadBtn)
+            }
+        }
+        break
+    default:
+        break
+    }
 }
 ```
 
-   >2.2. **custom upload**.
+## 3. Handle File Upload Button Tap
+
+Once button tapped, add file selection view.
+
+## 4. Once file was picked create upload request.
 
 ```swift
-// 1. Add you own upload process implementation.
-...
-
-// 2. Once file upload process ended create `FileUploadInfo` object with upload result.
-
-let infoFile = FileUploadInfo()
-
-//if file upload was successful
-infoFile.fileDescription = "file was uploaded, http://link.to.file"
-
-//else if you had a failure 
-let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey:"file failed to upload"])
-infoFile.error = error
-
+let request = UploadRequest()
+request.fileName = (resources.first!).originalFilename
+request.fileType = .picture
+request.fileData = data
 ```
 
-#### 3. Call `handle` function on `ChatController` with upload file info.
+## 5. Once upload request created start upload file process.
+
+### 5.1. Call handle function on ChatController with upload file information.
+### 5.2. You can get progress values, to show upload progress bar.
 
 ```swift
-// send the info file result.
-self.chatController.handle(BoldEvent.fileUploaded(infoFile))
+/// 5. Once upload request created start upload file process.
+self.chatController.uploadFile(request, progress: { (progress) in
+    /// 5.1. You can get progress values, to show upload progress bar.
+    print("application file upload progress -> %.5f", progress)
+}) { (info: FileUploadInfo!) in
+    /// 5.2. Call handle function on ChatController with upload file information.
+    self.uploadBtn.removeFromSuperview()
+    self.chatController.handle(BoldEvent.fileUploaded(info))
+}
 ```
 
 ### Limitation

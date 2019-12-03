@@ -1,6 +1,5 @@
-> This article will help you to handle errors of chat controller.
-
-## Error Event
+# Error Event
+This article will help you to handle errors of chat controller.
 
 To get error event firstly register to `ChatControllerDelegate` then implement `didFailWithError` method.
 
@@ -25,6 +24,6 @@ func didFailWithError(_ error: BLDError!) {
 
 >Note: `BLDError` contains `NSError` object that reflects the relevant error data.
 
-### Code Sample
+**Code Sample**
 
 [bold360ai samples](https://github.com/bold360ai/bold360ai-mobile-samples)

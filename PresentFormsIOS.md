@@ -1,10 +1,8 @@
-> This article will help you to present your own implementations to chat forms.
-
-## Forms
-
+# Forms for iOS
+This article will help you to present your own implementations to chat forms.
 > Supported forms are: `preChat`, `postChat`, `unavailable`.
 
-### Custom Form Implementation
+## Custom Form Implementation
 
 1. Implement `ChatControllerDelegate`.
 
@@ -92,11 +90,17 @@ account.shouldDisablePreChat = skipPrechat.isOn
 When skipping prechat is used, you can provide some details regarding the account by using the accounts `extraData`
 
 ```swift
-account.info = ["department":"{DEPARTMENT_ID}","name": "{NAME}"]
+account.extraData.name = "{NAME}"
+account.extraData.department = "{DEPARTMENT_ID}"
 
+or
+
+account.extraData.setExtraParams(["department":"{DEPARTMENT_ID}","name": "{NAME}", "address": "{ADDRESS}"])
 ```
+
+
 [see available fields here](https://developer.bold360.com/help/EN/Bold360API/Bold360API/c_bc_sdk_ios_core_integration_chat_session.html)
  
 ### Code Sample
 
-[bold360ai forms samples](https://github.com/bold360ai/bold360ai-mobile-samples/tree/master/iOS/FormsBasicSample)
+[bold360ai forms samples](https://github.com/bold360ai/bold360-mobile-samples-ios/tree/master/iOS/FormsBasicSample)

@@ -1,6 +1,6 @@
-> This article will help you to manage the lifecycle of chat controller.
 
-## Chat Departments Fetch
+# Chat Departments Fetch
+ This article will help you to manage the lifecycle of a chat controller.
 
 The departments list can be fetched any time, without creating `ChatController` instance.
 
