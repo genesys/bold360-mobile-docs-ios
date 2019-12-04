@@ -71,6 +71,12 @@ self.chatController.viewConfiguration.incomingLiveConfig.customFont = font
 
 ```
 
+### Limit Chat Element Length
+
+```swift
+self.chatController.viewConfiguration.chatViewConfig.maxLength = {YOUR_VALUE}
+```
+
 ## Avatar Positioning 
 
 `ChatElementConfiguration` has a property `avatarPosition` of type `AvatarPosition` the default value for outgoing element is `AvatarPositionBottomLeft` and for incoming element is `AvatarPositionBottomRight` for changing the position:
@@ -88,10 +94,4 @@ typedef NS_ENUM(NSInteger, AvatarPosition) {
     AvatarPositionTopRight,
     AvatarPositionBottomRight
 };
-```
-
-### Limit Chat Element Length
-
-```swift
-self.chatController.viewConfiguration.chatViewConfig.maxLength = {YOUR_VALUE}
 ```
