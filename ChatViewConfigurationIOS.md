@@ -89,3 +89,9 @@ typedef NS_ENUM(NSInteger, AvatarPosition) {
     AvatarPositionBottomRight
 };
 ```
+
+### Limit Chat Element Length
+
+```swift
+self.chatController.viewConfiguration.chatViewConfig.maxLength = {YOUR_VALUE}
+```
