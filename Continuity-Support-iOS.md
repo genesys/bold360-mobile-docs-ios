@@ -1,6 +1,6 @@
->This section describes the different operations you can perform with the continuity service.
+# Supported Continuity Features
 
-## Supported Continuity Features
+This section describes the different operations you can perform with the continuity service.
 
 * **Update** - updates continuity item 
 * **Fetch** - fetches parameters stored in update method.

@@ -1,6 +1,6 @@
-> This article will help you to set language from mobile SDK.
+# How to enable multiple languages
 
-## How to enable multiple languages
+This article will help you to set language from mobile SDK.
 
 Please follow :[Provide a chat window in multiple languages](https://help.bold360.com/help/EN/Bold360/Bold360/t_window_mulitlingual.html).
 

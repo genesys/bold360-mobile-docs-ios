@@ -1,6 +1,6 @@
->This section describes the different operations you can perform with the history service.
+# Supported History Features
 
-## Supported History Features
+This section describes the different operations you can perform with the history service.
 
 * **Fetch** - fetches history from DB.
 * **Receive** - stores history item.
@@ -10,7 +10,7 @@
 
 ## Known Limitations
 
-* History management is currently not provided by the SDK, <br />
+* History management is currently not provided by the SDK,
   it should be done by the using app. 
 
 ## Overview

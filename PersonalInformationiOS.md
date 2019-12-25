@@ -1,4 +1,4 @@
-## Personal Information
+# Personal Information
 
 ![](https://raw.githubusercontent.com/wiki/bold360ai/bold360ai_ios_sdk/Extra%20Data.png)
 
