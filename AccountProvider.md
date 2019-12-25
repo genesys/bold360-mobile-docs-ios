@@ -10,7 +10,7 @@ This article will help you to pass account data when escalating from bot chat to
 class ClassName: AccountProvider
 ```
 
-2. Set AccountProvider:
+2. Set `AccountProvider`:
 
 ```swift
 chatController.accountProvider = self
