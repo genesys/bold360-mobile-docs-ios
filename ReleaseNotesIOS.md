@@ -2,8 +2,8 @@
 
 > **New**
 - Chat bar attachment (Agent information & End chat button).
-- Event tracker attachment.
-- Search view place holder attachment.
+- Amplitude event tracking enabled.
+- Added Placeholder hint for input field.
 - Minor file upload bug fixes.
 
 # Version 3.5.4
