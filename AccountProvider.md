@@ -59,4 +59,14 @@ extension ClassName: AccountProvider {
 **Tip**
 
 _For the `setExtraParams()` method:
-Existing keys values are being overrided and new keys are created with the custom_ prefix. The default keys are listed in https://developer.bold360.com/help/EN/Bold360API/Bold360API/c_bc_sdk_ios_core_integration_chat_session.html_
+Existing keys values are being overrided and new keys are created with the custom_ prefix. The default keys are listed in https://developer.bold360.com/help/EN/Bold360API/Bold360API/c_bc_sdk_ios_core_integration_chat_session.html
+```swift
+extension ClassName: AccountProvider {
+    var accountExtraData: AccountExtraData {
+        
+        let liveAccount = LiveAccountExtraData()
+        liveAccount.setExtraParams(["first_name":"{FIRST_NAME}","lastName":"{Last_Name}"])        
+        return liveAccount
+    }
+}
+```
