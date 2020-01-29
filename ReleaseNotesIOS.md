@@ -1,3 +1,13 @@
+# Version 3.6.0
+
+> **New**
+- HandOver improvment and base implementation.
+- Supporting default forms (Prechat, Postchat, Unavailable).
+- Support end chat enable property.
+- Fixed continuity provider.
+- Fixed a bug with context when using support center on search sdk.
+
+
 # Version 3.5.5
 
 > **New**
