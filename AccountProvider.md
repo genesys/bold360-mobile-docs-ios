@@ -65,7 +65,7 @@ extension ClassName: AccountProvider {
     var accountExtraData: AccountExtraData {
         
         let liveAccount = LiveAccountExtraData()
-        liveAccount.setExtraParams(["first_name":"{FIRST_NAME}","lastName":"{Last_Name}"])        
+        liveAccount.setExtraParams(["first_name":"{FIRST_NAME}","last_name":"{Last_Name}"])        
         return liveAccount
     }
 }
