@@ -21,7 +21,7 @@ OutgoingElement, IncomingBotElement, IncomingLiveElement, SystemMessageElement
 Under `ProactiveChatElement` set boolean
 
 ```swift
-element.withPost = {SHOULD-BE_POSTED}
+element.withPost = {SHOULD-BE-POSTED}
 ```
 
 >withPost, 
