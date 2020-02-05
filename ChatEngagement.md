@@ -50,7 +50,7 @@ extension BotDemoViewController: ChatControllerDelegate {
         case .accepted:
             print("ChatAccepted")
              let element = ProactiveChatElement(text:"{YOUR-Text}", type: ChatElementType.{TYPE}) 
-             element.withPost = {SHOULD-BE_POSTED}          
+             element.withPost = {SHOULD-BE-POSTED}          
              self.chatController.proactiveChatElementHandler.post(element)
             break
         case .ending:
