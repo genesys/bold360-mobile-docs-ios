@@ -18,7 +18,7 @@ OutgoingElement, IncomingBotElement, IncomingLiveElement, SystemMessageElement
 
 4. Decide if should be posted.
 
-Under `ProactiveChatElement` det boolean
+Under `ProactiveChatElement` set boolean
 
 ```swift
 element.withPost = {SHOULD-BE_POSTED}
