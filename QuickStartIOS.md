@@ -106,7 +106,7 @@ botAccount.welcomeMessageId = "{WELCOME_MESSAGE_ID}"
 botAccount.welcomeMessageId = WelcomeMsgIdNone
 ```
 
-#### Create Initization Entities
+#### Create Initialization Entities
 
 Entities is a feature of Bold360 that enables querying data from external sources in a conversational format.
 If a piece of info is missing from a bot query - the bot asks for the missing data to be able to answer.
