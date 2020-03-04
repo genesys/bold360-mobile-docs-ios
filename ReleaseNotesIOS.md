@@ -1,3 +1,10 @@
+# Version 3.6.1
+
+> **New**
+- Support Chat Engagement (Chat element injection).
+- Support Create Initialization Entities.
+- Fixed a bug with multi line fields on forms.
+
 # Version 3.6.0
 
 > **New**
