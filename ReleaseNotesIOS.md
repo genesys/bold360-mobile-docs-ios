@@ -1,3 +1,8 @@
+# Version 3.6.2
+
+> **New**
+- Fixed JSON parsing with special characters.
+
 # Version 3.6.1
 
 > **New**
