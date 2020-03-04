@@ -1,3 +1,8 @@
+# Version 3.6.3
+
+> **New**
+- Fixed Overriding BrandedForm.
+
 # Version 3.6.2
 
 > **New**
