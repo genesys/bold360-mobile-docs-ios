@@ -1,6 +1,8 @@
 - # Voice Support
+    This article will help you manage voice configurations for Speech-To-Text and Text-To-Speech.
+
     - # SpeechToText  (collapsable)
-    This article will help you to manage Speech-To-Text configurations.<br/>
+    The following section will help you manage Speech-To-Text configurations.<br/>
     If Speech-To-Text is enabled (**Default value is enabled**) - voice dictation will be enabled.
 
     ## To Dissable Speech To Text
@@ -20,7 +22,7 @@
     ```
 
     - # TextToSpeech  (collapsable)
-    This article will help you to manage Text-To-Speech configurations.<br/>
+    The following section will help you manage Text-To-Speech configurations.<br/>
     If TextToSpeech is enabled (**Default value is enabled**) - messages that were initiated by a voice dictation will be read up.
 
     ## To Dissable Text To Speech
@@ -63,7 +65,7 @@
     The rate at which the utterance will be spoken.<br/>
     Range between AVSpeechUtteranceMinimumSpeechRate and AVSpeechUtteranceMaximumSpeechRate.<br/>
     Lower values correspond to slower speech, and vice versa.<br/>
-    *The default value is AVSpeechUtteranceDefaultSpeechRate.<br/>
+    *The default value is AVSpeechUtteranceDefaultSpeechRate.*<br/>
     ```swift
     chatController.viewConfiguration.synthesizerConfiguration.rate = AVSpeechUtteranceMaximumSpeechRate
     ```
