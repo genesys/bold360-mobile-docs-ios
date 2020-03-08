@@ -1,7 +1,7 @@
 # Version 3.6.4
 
 > **New**
-- Fixed Overriding BrandedForm.
+- Fixed an issue that prevented presenting custom made pre-and post-chat forms. This was caused by the inability to override the BrandedForm type variables. You can find more information on how to override the default pre- and post chat forms look and feel in https://developer.bold360.com/help/EN/Bold360API/Bold360API/PresentFormsIOS.html
 
 # Version 3.6.2
 
