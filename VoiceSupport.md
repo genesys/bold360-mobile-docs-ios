@@ -14,8 +14,7 @@
     ## To configure fine adjustments
     ### languageCode
     Specifies the BCP-47 language tag that represents the user's language.<br/>
-    Examples: en-US (U.S. English), fr-CA (French Canadian)<br/>
-    Lower values correspond to slower speech, and vice versa.<br/>
+    *Examples: en-US (U.S. English), fr-CA (French Canadian)*<br/>
     *The default language is en-US.*<br/>
     ```swift
     chatController.viewConfiguration.searchViewConfig.languageCode = "fr-CA"
@@ -35,7 +34,7 @@
 
     ### currentLanguageCode
     Specifies the BCP-47 language tag that represents the voice.<br/>
-    Examples: en-US (U.S. English), fr-CA (French Canadian)<br/>
+    *Examples: en-US (U.S. English), fr-CA (French Canadian)*<br/>
     *The default language is the kbLanguage or en-US incase kbLanguage is not set.* <br/>
     ```swift
     chatController.viewConfiguration.synthesizerConfiguration.currentLanguageCode = "fr-CA"
