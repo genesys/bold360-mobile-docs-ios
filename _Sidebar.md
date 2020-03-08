@@ -31,6 +31,7 @@
   - [History Support](HistorySupportiOS)
   - [Continuity Support](Continuity-Support-iOS)
   - [Chat Engagement](ChatEngagement)
+  - [Voice Support](VoiceSupport)
 
 - [Samples](https://github.com/bold360ai/bold360-mobile-samples-ios)
 - [Release Notes](ReleaseNotesIOS)
