@@ -1,6 +1,15 @@
 # Version 3.6.4
 
 > **New**
+* Fix open custom URL in channeling is not working
+* Adding 1.5 seconds before escalating on highValuePushChat
+* Fixed ReadMore crash when fetching json in NRReadMoreViewController
+* Fixing Overriding BrandedForm by changing the delegate from ChatController to ChatViewController
+* Remove the feedback buttons from the bottom of expanded articles
+
+# Version 3.6.4
+
+> **New**
 - Fixed an issue that prevented presenting custom made pre-and post-chat forms. This was caused by the inability to override the BrandedForm type variables. You can find more information on how to override the default pre- and post chat forms look and feel in https://developer.bold360.com/help/EN/Bold360API/Bold360API/PresentFormsIOS.html
 
 # Version 3.6.2
