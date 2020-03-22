@@ -1,4 +1,4 @@
-# Version 3.6.4
+# Version 3.6.5
 
 > **New**
 * Fix open custom URL in channeling is not working
