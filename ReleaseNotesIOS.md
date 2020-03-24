@@ -1,3 +1,9 @@
+# Version 3.6.6
+
+> **New**
+* On presenting post chat options getting "(Not Available)"
+* Mobile SDK should not send html code
+
 # Version 3.6.5
 
 > **New**
