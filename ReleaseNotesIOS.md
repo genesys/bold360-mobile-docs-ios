@@ -1,3 +1,9 @@
+# Version 3.6.7
+
+> **New**
+* Autosizing labels - “End Chat” button
+* Quick buttons in welcome article are presented if FAQ's are presented as well.
+
 # Version 3.6.6
 
 > **New**
