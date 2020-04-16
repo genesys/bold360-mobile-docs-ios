@@ -1,3 +1,8 @@
+# Version 3.6.8
+
+> **New**
+* Fixed truncated text in the post-chat form
+
 # Version 3.6.7
 
 > **New**
