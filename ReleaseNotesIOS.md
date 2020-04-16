@@ -1,7 +1,7 @@
 # Version 3.6.8
 
 > **New**
-* Fixed truncated text in the post-chat form
+* Enabled multi line text for “Drop Down” custom field in post chat 
 
 # Version 3.6.7
 
