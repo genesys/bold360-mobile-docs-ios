@@ -1,7 +1,12 @@
+# Version 3.6.10
+
+> **New**
+* Added the ability to customize the UI for chat forms title.
+
 # Version 3.6.9
 
 > **New**
-* Enabled multi line text on post chat form title
+* Enabled multi line text on post chat form title.
 
 # Version 3.6.8
 
