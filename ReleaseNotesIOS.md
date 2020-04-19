@@ -1,7 +1,12 @@
+# Version 3.6.9
+
+> **New**
+* Enabled multi line text on post chat form title
+
 # Version 3.6.8
 
 > **New**
-* Enabled multi line text for “Drop Down” custom field in post chat 
+* Enabled multi line text for “Drop Down” custom field in post chat.
 
 # Version 3.6.7
 
