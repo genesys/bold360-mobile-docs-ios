@@ -15,6 +15,7 @@ In order to change and override provided SDK implementations and customizations,
 | `CarouselConfiguration`      | backgroundColor, backgroundImage, dateStampColor, customFont, avatar, textColor                                                     |
 | `SystemMessageConfiguration` | backgroundColor, backgroundImage, dateStampColor, customFont, avatar, textColor 
 | `ChatBarConfiguration` | backgroundColor, font, textColor, image, agentName, endChatBtnTitle, endChatBtnTextColor, enabled
+| `BoldFormConfiguration` - title | backgroundColor, font, textColor
 
 
 ### How To Set Configuration
@@ -94,4 +95,14 @@ typedef NS_ENUM(NSInteger, AvatarPosition) {
     AvatarPositionTopRight,
     AvatarPositionBottomRight
 };
+```
+
+### Set BoldForm title configuration
+
+To update BoldForm title UI configuration:
+
+```swift
+chatController.viewConfiguration.formConfiguration.titleConfig.backgroundColor = UIColor.yellow
+chatController.viewConfiguration.formConfiguration.titleConfig.textColor = UIColor.red
+chatController.viewConfiguration.formConfiguration.titleConfig.font = UIFont(name: "Times New Roman", size: 29.0)!
 ```
