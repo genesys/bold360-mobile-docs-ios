@@ -1,4 +1,4 @@
-# Version 3.6.10
+# Version 3.6.11
 
 > **New**
 * Added the ability to presented Initial question in the chat for the end user [BLD-28324].
