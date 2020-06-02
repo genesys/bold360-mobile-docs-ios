@@ -1,6 +1,13 @@
 # Version 3.6.10
 
 > **New**
+* Added the ability to presented Initial question in the chat for the end user [BLD-28324].
+* Added the ability to configure multi line elemnt [BLD-33529].
+* Added the ability to configure carousel [BLD-33529].
+
+# Version 3.6.10
+
+> **New**
 * Added the ability to customize the UI for chat forms title.
 
 # Version 3.6.9
