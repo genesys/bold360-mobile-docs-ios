@@ -1,3 +1,9 @@
+# Version 3.6.13
+
+* Replace UIWebView with WKWebView in the iOS Harmony SDK [BLD-33735]
+* Cox - Agent messages are not presented in full length [BLD-34008]
+* Ringgo - Mobile SDK - Welcome message increase engagement but not interactions [BLD-34730]
+
 # Version 3.6.11
 
 > **New**
