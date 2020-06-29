@@ -1,3 +1,8 @@
+# Version 3.6.15
+
+* Broken UI Arrangement Constraints on the default pre-chat form [BLD-35341] -> another fix
+* File upload is not working in the EU accounts [BLD-35473] -> another fix for minor bug
+
 # Version 3.6.14
 
 * Set initialized entities [BLD-25819]
