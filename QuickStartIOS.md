@@ -113,8 +113,8 @@ If a piece of info is missing from a bot query - the bot asks for the missing da
 The application can populate the entity input values that are available - not to let the bot ask for input params that are "obviously available."
 
 ``` swift
-// Creating Initization Entities:
-botAccount.initizationEntities = ["someKey1": "someValue1", "someKey1": "someValue2"]
+// Creating Initialization Entities:
+botAccount.initializationEntities = ["someKey1": "someValue1", "someKey1": "someValue2"]
 ```
 
 ### Add Chat View Controller by Implementing Delegate Methods  
