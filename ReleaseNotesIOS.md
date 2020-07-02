@@ -1,3 +1,7 @@
+# Version 3.7.0
+
+* Voice-to-voice experience. The SDK has an option to read out Bot answers if the question was asked though dictation by voice.
+
 # Version 3.6.15
 
 * Broken UI Arrangement Constraints on the default pre-chat form [BLD-35341] -> another fix
