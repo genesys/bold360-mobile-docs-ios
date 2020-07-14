@@ -1,3 +1,7 @@
+# Version 3.8.0
+
+* Instant Feedback support, includes history.
+
 # Version 3.7.0
 
 * Voice-to-voice experience. The SDK has an option to read out Bot answers if the question was asked though dictation by voice.
