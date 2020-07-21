@@ -1,5 +1,5 @@
-Bug Report Template
-====================
+#Bug Report Template
+#====================
 
 Bug Name:  
 Summary:
