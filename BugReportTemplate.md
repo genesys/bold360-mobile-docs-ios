@@ -1,22 +1,27 @@
-#Bug Report Template
-#====================
+Bug Report Template
+====================
 
-Bug Name:  
+Bug Name:
+
 Summary:
 
 Submit Date:           
+
 Reporter:       
 
 Platform:                     
-Operating System:
-SDK Version:
 
+Operating System:
+
+SDK Version:
                  
 Description
 ===========
 
 Account details
 ---------------
+
+
 
 Steps to reproduce
 ------------------
