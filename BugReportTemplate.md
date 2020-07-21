@@ -21,7 +21,19 @@ Description
 Account details
 ---------------
 
+# Bot
 
+Account name:
+KnowledgeBase:
+Api Key:
+Context:
+
+# Live
+## for app
+Api Key:
+
+## for agent
+we need live agent to be able to reproduce
 
 Steps to reproduce
 ------------------
