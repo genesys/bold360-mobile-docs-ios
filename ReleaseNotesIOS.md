@@ -8,10 +8,8 @@
 
 # Version 3.6.16
 
-* [BLD-36658] Added support for conversation and search when using get article
-* [BLD-36658] Fixed typo
-* [BLD-36658] Change the value of link mode to boolean
-* [BLD-36658] added components to article call
+* [BLD-36658] Added support for linked article with context.
+
 
 # Version 3.6.15
 
