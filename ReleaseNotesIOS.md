@@ -6,6 +6,13 @@
 
 * Voice-to-voice experience. The SDK has an option to read out Bot answers if the question was asked though dictation by voice.
 
+# Version 3.6.16
+
+* [BLD-36658] Added support for conversation and search when using get article
+* [BLD-36658] Fixed typo
+* [BLD-36658] Change the value of link mode to boolean
+* [BLD-36658] added components to article call
+
 # Version 3.6.15
 
 * Broken UI Arrangement Constraints on the default pre-chat form [BLD-35341] -> another fix
