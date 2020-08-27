@@ -1,3 +1,10 @@
+# Version 3.8.1
+
+* Dark Mode + chat configuration optimizations.
+* Welcome message optimizations.
+* Bug fixes including leaks handling.
+* Warnings resolve.
+
 # Version 3.8.0
 
 * Instant Feedback support, includes history.
