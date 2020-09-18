@@ -1,3 +1,18 @@
+# Version 3.8.3
+
+* [BLD-39342] Fixing issue with changing searchView background color
+* [BLD-39421] Fixed bug with postback text presented instead of the text
+* [BLD-38006] Changing avatar image size
+* [BLD-38006] Changing avatar position for IncomingBotConfiguration to buttom left
+* [BLD-14733] relocate autoMessage indicator to remote chat element - part1 (part2 not ready yet)
+* [BLD-39500] fix read more articles text color
+* [BLD-39343] Adding datestamp font to ChatViewConfiguration
+* [BLD-39500] quick options font separation
+
+# Version 3.8.2
+
+* Fix - Conversation won't work on production environment.
+
 # Version 3.8.1
 
 * Dark Mode + chat configuration optimizations.
