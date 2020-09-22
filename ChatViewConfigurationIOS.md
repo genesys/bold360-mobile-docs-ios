@@ -78,6 +78,15 @@ self.chatController.viewConfiguration.incomingLiveConfig.customFont = font
 self.chatController.viewConfiguration.chatViewConfig.maxLength = {YOUR_VALUE}
 ```
 
+## Avatar Image 
+
+Should use images in the size to be displayed for the client.
+To update the image:
+
+```swift
+self.chatController.viewConfiguration.incomingBotConfig.avatar = UIImage(named: "{IMAGE_NAME}")
+```
+
 ## Avatar Positioning 
 
 `ChatElementConfiguration` has a property `avatarPosition` of type `AvatarPosition` the default value for outgoing element is `AvatarPositionBottomLeft` and for incoming element is `AvatarPositionBottomRight` for changing the position:
