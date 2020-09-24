@@ -88,5 +88,149 @@
     "content": "func createAccount() -&gt; BotAccount { let account = LiveAccount() account.apiKey = {API_KEY} return account; } . ",
     "url": "http://localhost:4000/docs/configuration/settingAccount.html#live-account",
     "relUrl": "/docs/configuration/settingAccount.html#live-account"
+  },"15": {
+    "doc": "Test",
+    "title": "Overview",
+    "content": " ",
+    "url": "http://localhost:4000/docs/test.html#overview",
+    "relUrl": "/docs/test.html#overview"
+  },"16": {
+    "doc": "Test",
+    "title": "Table of contents",
+    "content": ". | About | Features | Intended Audience | . ",
+    "url": "http://localhost:4000/docs/test.html#table-of-contents",
+    "relUrl": "/docs/test.html#table-of-contents"
+  },"17": {
+    "doc": "Test",
+    "title": "About",
+    "content": "If you’re a bold360ai customer, please contact your bold360ai Customer Success Manager to help facilitate the use of this component. bold360ai’s Mobile SDK for iOS is a native iOS SDK, which means that the SDK was developed specifically for iOS devices. This ensures that native application can interact with and take advantage of iOS operating system features and related software. ",
+    "url": "http://localhost:4000/docs/test.html#about",
+    "relUrl": "/docs/test.html#about"
+  },"18": {
+    "doc": "Test",
+    "title": "Features",
+    "content": ". | Create conversations from your app. | Bot Integration. | Live Agent Integration. | . ",
+    "url": "http://localhost:4000/docs/test.html#features",
+    "relUrl": "/docs/test.html#features"
+  },"19": {
+    "doc": "Test",
+    "title": "Intended Audience",
+    "content": "This guide assumes that you have the necessary Objective C or Swift and iOS development skills to build and compile advanced iOS applications using XCode. ",
+    "url": "http://localhost:4000/docs/test.html#intended-audience",
+    "relUrl": "/docs/test.html#intended-audience"
+  },"20": {
+    "doc": "Test",
+    "title": "Test",
+    "content": " ",
+    "url": "http://localhost:4000/docs/test.html",
+    "relUrl": "/docs/test.html"
+  },"21": {
+    "doc": "TestChild",
+    "title": "Overview",
+    "content": " ",
+    "url": "http://localhost:4000/docs/testChild.html#overview",
+    "relUrl": "/docs/testChild.html#overview"
+  },"22": {
+    "doc": "TestChild",
+    "title": "Table of contents",
+    "content": ". | About | Features | Intended Audience | . ",
+    "url": "http://localhost:4000/docs/testChild.html#table-of-contents",
+    "relUrl": "/docs/testChild.html#table-of-contents"
+  },"23": {
+    "doc": "TestChild",
+    "title": "About",
+    "content": "If you’re a bold360ai customer, please contact your bold360ai Customer Success Manager to help facilitate the use of this component. bold360ai’s Mobile SDK for iOS is a native iOS SDK, which means that the SDK was developed specifically for iOS devices. This ensures that native application can interact with and take advantage of iOS operating system features and related software. ",
+    "url": "http://localhost:4000/docs/testChild.html#about",
+    "relUrl": "/docs/testChild.html#about"
+  },"24": {
+    "doc": "TestChild",
+    "title": "Features",
+    "content": ". | Create conversations from your app. | Bot Integration. | Live Agent Integration. | . ",
+    "url": "http://localhost:4000/docs/testChild.html#features",
+    "relUrl": "/docs/testChild.html#features"
+  },"25": {
+    "doc": "TestChild",
+    "title": "Intended Audience",
+    "content": "This guide assumes that you have the necessary Objective C or Swift and iOS development skills to build and compile advanced iOS applications using XCode. ",
+    "url": "http://localhost:4000/docs/testChild.html#intended-audience",
+    "relUrl": "/docs/testChild.html#intended-audience"
+  },"26": {
+    "doc": "TestChild",
+    "title": "TestChild",
+    "content": " ",
+    "url": "http://localhost:4000/docs/testChild.html",
+    "relUrl": "/docs/testChild.html"
+  },"27": {
+    "doc": "TestGrandChild",
+    "title": "Overview",
+    "content": " ",
+    "url": "http://localhost:4000/docs/testGrandChild.html#overview",
+    "relUrl": "/docs/testGrandChild.html#overview"
+  },"28": {
+    "doc": "TestGrandChild",
+    "title": "Table of contents",
+    "content": ". | About | Features | Intended Audience | . ",
+    "url": "http://localhost:4000/docs/testGrandChild.html#table-of-contents",
+    "relUrl": "/docs/testGrandChild.html#table-of-contents"
+  },"29": {
+    "doc": "TestGrandChild",
+    "title": "About",
+    "content": "If you’re a bold360ai customer, please contact your bold360ai Customer Success Manager to help facilitate the use of this component. bold360ai’s Mobile SDK for iOS is a native iOS SDK, which means that the SDK was developed specifically for iOS devices. This ensures that native application can interact with and take advantage of iOS operating system features and related software. ",
+    "url": "http://localhost:4000/docs/testGrandChild.html#about",
+    "relUrl": "/docs/testGrandChild.html#about"
+  },"30": {
+    "doc": "TestGrandChild",
+    "title": "Features",
+    "content": ". | Create conversations from your app. | Bot Integration. | Live Agent Integration. | . ",
+    "url": "http://localhost:4000/docs/testGrandChild.html#features",
+    "relUrl": "/docs/testGrandChild.html#features"
+  },"31": {
+    "doc": "TestGrandChild",
+    "title": "Intended Audience",
+    "content": "This guide assumes that you have the necessary Objective C or Swift and iOS development skills to build and compile advanced iOS applications using XCode. ",
+    "url": "http://localhost:4000/docs/testGrandChild.html#intended-audience",
+    "relUrl": "/docs/testGrandChild.html#intended-audience"
+  },"32": {
+    "doc": "TestGrandChild",
+    "title": "TestGrandChild",
+    "content": " ",
+    "url": "http://localhost:4000/docs/testGrandChild.html",
+    "relUrl": "/docs/testGrandChild.html"
+  },"33": {
+    "doc": "TestGrandGrandChild",
+    "title": "Overview",
+    "content": " ",
+    "url": "http://localhost:4000/docs/testGrandGrandChild.html#overview",
+    "relUrl": "/docs/testGrandGrandChild.html#overview"
+  },"34": {
+    "doc": "TestGrandGrandChild",
+    "title": "Table of contents",
+    "content": ". | About | Features | Intended Audience | . ",
+    "url": "http://localhost:4000/docs/testGrandGrandChild.html#table-of-contents",
+    "relUrl": "/docs/testGrandGrandChild.html#table-of-contents"
+  },"35": {
+    "doc": "TestGrandGrandChild",
+    "title": "About",
+    "content": "If you’re a bold360ai customer, please contact your bold360ai Customer Success Manager to help facilitate the use of this component. bold360ai’s Mobile SDK for iOS is a native iOS SDK, which means that the SDK was developed specifically for iOS devices. This ensures that native application can interact with and take advantage of iOS operating system features and related software. ",
+    "url": "http://localhost:4000/docs/testGrandGrandChild.html#about",
+    "relUrl": "/docs/testGrandGrandChild.html#about"
+  },"36": {
+    "doc": "TestGrandGrandChild",
+    "title": "Features",
+    "content": ". | Create conversations from your app. | Bot Integration. | Live Agent Integration. | . ",
+    "url": "http://localhost:4000/docs/testGrandGrandChild.html#features",
+    "relUrl": "/docs/testGrandGrandChild.html#features"
+  },"37": {
+    "doc": "TestGrandGrandChild",
+    "title": "Intended Audience",
+    "content": "This guide assumes that you have the necessary Objective C or Swift and iOS development skills to build and compile advanced iOS applications using XCode. ",
+    "url": "http://localhost:4000/docs/testGrandGrandChild.html#intended-audience",
+    "relUrl": "/docs/testGrandGrandChild.html#intended-audience"
+  },"38": {
+    "doc": "TestGrandGrandChild",
+    "title": "TestGrandGrandChild",
+    "content": " ",
+    "url": "http://localhost:4000/docs/testGrandGrandChild.html",
+    "relUrl": "/docs/testGrandGrandChild.html"
   }
 }
