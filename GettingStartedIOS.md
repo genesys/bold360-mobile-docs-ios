@@ -9,6 +9,12 @@ This article will help you get started with the development of bold360ai's SDK f
 * With the release of iOS 9 and Xcode 7, a new feature called [App Transport Security (ATS)](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW35) was introduced.
 * [CocoaPods](https://guides.cocoapods.org/using/getting-started.html).
 
+### Important
+
+You must include the `NSSpeechRecognitionUsageDescription` key in your app’s `Info.plist` file. If this key is not present, your app will crash when it attempts to request authorization or use the APIs of the Speech framework.
+
+For more details go to [iOS Dev Portal](https://developer.apple.com/documentation/speech/asking_permission_to_use_speech_recognition).
+
 ## Setup
 
 >Note: Using CocoaPods on an existing Xcode project will modify the project file, so you may want to make a backup before doing this.
