@@ -1,5 +1,10 @@
 - # Voice Support
     This article will help you manage voice configurations for Speech-To-Text and Text-To-Speech.
+    
+    > Important
+    - You must include the NSSpeechRecognitionUsageDescription key in your app’s Info.plist file. If this key is not present, your app will crash when it attempts to request authorization or use the APIs of the Speech framework.
+    - For more details go to [iOS Dev Portal](https://developer.apple.com/documentation/speech/asking_permission_to_use_speech_recognition).
+
 
     - # SpeechToText  (collapsable)
     The following section will help you manage Speech-To-Text configurations.<br/>
