@@ -13,7 +13,7 @@ This article will help you get started with the development of bold360ai's SDK f
 
 You must include the `NSSpeechRecognitionUsageDescription` key in your app’s `Info.plist` file. If this key is not present, your app will crash when it attempts to request authorization or use the APIs of the Speech framework.
 
-For more details go to [iOS Dev Portal](https://developer.apple.com/documentation/speech/asking_permission_to_use_speech_recognition).
+For more details go to [iOS Docs](https://developer.apple.com/documentation/speech/asking_permission_to_use_speech_recognition).
 
 ## Setup
 
