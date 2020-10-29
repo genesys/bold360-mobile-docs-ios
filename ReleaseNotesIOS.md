@@ -2,7 +2,7 @@
 
 * [BLD-40506] Support Xcode12.
 * [BLD-40456] Support read more screen configuration.
-* [BLD-40396] Adding the ability to customise SystemMessage border radius.
+* [BLD-40396] Adding the ability to customise `SystemMessage` border radius.
 * [BLD-41093] FIX channel cell constraint issue.
 * [BLD-41093] FIX forms contraints.
 
