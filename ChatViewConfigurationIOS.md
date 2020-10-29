@@ -10,6 +10,7 @@ In order to change and override provided SDK implementations and customizations,
 |------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | `ChatViewConfiguration`      | backgroundColor, backgroundImage, dateStampColor, customFont                                                                        |
 | `IncomingBotConfiguration`   | quickOptionConfig, persistentOptionConfig                                                                                           |
+| `MultipleSelectionConfiguration`   | titleConfiguration, persistentOptionConfiguration                                                                                           |
 | `IncomingLiveConfiguration`  | backgroundColor, backgroundImage, dateStampColor, customFont, avatar, textColor                                                     |
 | `OutgoingConfiguration`      | backgroundColor, backgroundImage, dateStampColor, customFont, avatar, textColor, sentSuccessfullyIcon, sentFailureIcon, pendingIcon |
 | `CarouselConfiguration`      | backgroundColor, backgroundImage, dateStampColor, customFont, avatar, textColor                                                     |
@@ -90,6 +91,7 @@ self.chatController.viewConfiguration.incomingBotConfig.avatar = UIImage(named: 
 ## Avatar Positioning 
 
 `ChatElementConfiguration` has a property `avatarPosition` of type `AvatarPosition` the default value for outgoing element is `AvatarPositionBottomLeft` and for incoming element is `AvatarPositionBottomRight` for changing the position:
+>Note: The shape of the bubble corners adjacent to the `avatarPosition`, will be square shaped.
 
 ```swift
 self.chatController.viewConfiguration.incomingBotConfig.avatarPosition = .topLeft
@@ -104,6 +106,14 @@ typedef NS_ENUM(NSInteger, AvatarPosition) {
     AvatarPositionTopRight,
     AvatarPositionBottomRight
 };
+```
+
+## Corner Radius
+`ChatElementConfiguration` has a property `borderRadius` which is used for setting separately the border corner radius for the message bubble edges for incoming, outgoing and system messages.
+
+```swift
+config.incomingBotConfig.quickOptionConfig.borderRadius = BorderRadius(top: Corners(left: 40, right: 40 ), bottom: Corners(left: 40, right: 40 ))
+self.chatController.viewConfiguration.multipleSelectionConfiguration.borderRadius = BorderRadius(top: Corners(left: 40, right: 40 ), bottom: Corners(left: 40, right: 40 ))
 ```
 
 ### Set BoldForm title configuration
