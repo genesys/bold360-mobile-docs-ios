@@ -1,3 +1,46 @@
+# Version 3.8.7
+
+* [BLD-40506] Support Xcode12.
+* [BLD-40456] Support read more screen configuration.
+* [BLD-40396] Adding the ability to customise SystemMessage border radius.
+* [BLD-41093] FIX channel cell constraint issue.
+* [BLD-41093] FIX forms contraints.
+
+### Breaking Changes
+
+`MultipleSelectionConfiguration` was added to `ChatConfiguration`  and replaced direct access to 
+`IncomingBotConfiguration.PersistentOptionConfiguration` and `IncomingBotConfiguration.IncomingBotTitleConfiguration`.
+
+To change properties of the persistent options messages now we use:
+
+
+``` swift
+
+chatController.viewConfiguration.multipleSelectionConfiguration.avatar = UIImage(named: <IMAGE_NAME>)
+
+chatController.viewConfiguration.multipleSelectionConfiguration.persistentOptionConfiguration.backgroundColor = UIColor.purple
+
+chatController.viewConfiguration.multipleSelectionConfiguration.titleConfiguration.backgroundColor = UIColor.yellow
+
+```
+
+# Version 3.8.6
+
+* [BLD-39079] Fixed crash on slow connection.
+* [BLD-39394] remove import warnings (no warnings on SDK).
+
+# Version 3.8.5
+
+* [BLD-40398] Fixed bottom constraint when chat view controller is in tab bar controller.
+* [BLD-40398] Fixed height of search view after submitting multiline query.
+* [BLD-40136] Adding persistenOption font to html + supporting bubble background color and text color.
+* [BLD-40398] Fixed bottom constraints - connected vertically 2 major views.
+
+# Version 3.8.4
+
+* [BLD-37924] Fixed method's signature and category name.
+* [BLD-40137] Enabling the change of the sendButton color.
+
 # Version 3.8.3
 
 * [BLD-39342] Fixing issue with changing searchView background color
