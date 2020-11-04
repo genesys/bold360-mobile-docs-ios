@@ -1,6 +1,6 @@
 # Version 3.8.8
 
-* [BLD-41504] Fix version number to three non-negative integers.
+* [BLD-41504] Fix Uploading to Appstore issue - update SDK version number to three non-negative integers.
 
 # Version 3.8.7
 
