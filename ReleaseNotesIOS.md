@@ -1,3 +1,7 @@
+# Version 3.8.8
+
+* [BLD-41504] Fix version number to three non-negative integers.
+
 # Version 3.8.7
 
 * [BLD-40506] Support Xcode12.
