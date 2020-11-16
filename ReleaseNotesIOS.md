@@ -1,3 +1,49 @@
+# Version 3.8.9
+
+## [BLD-41686] Fix live chat forms override issue.
+
+#### Breaking Changes
+
+To dimiss live custom form.
+
+Before: 
+
+```swift
+self.delegate.didDismissForm(self)
+```
+
+After: 
+
+```swift
+self.delegate.submitForm(nil)
+```
+
+> Smaple
+
+https://github.com/bold360ai/bold360-mobile-samples-ios/commit/19e5783f1f3f675da70b01305bf60bd30b5c7390#diff-bdfadc172ed44c581cba3dd99591944896dea03b1c303fd87a9ac1210c597cc3R61
+
+## [BLD-41751] Support custom font on read more view controller.
+
+* To set custom font use following documantion: https://developer.bold360.com/help/EN/Bold360API/Bold360API/ChatViewConfigurationIOS.html
+
+* apple documentation for adding a custom font to a project: https://developer.apple.com/documentation/uikit/text_display_and_fonts/adding_a_custom_font_to_your_app
+
+#### Breaking Changes
+
+Before:
+
+```swift
+config.readMoreViewConfig.font = {}
+```
+
+After:
+
+```swift
+config.readMoreViewConfig.customFont = {}
+// To set UIFont use
+config.readMoreViewConfig.customFont.font = {}
+```
+
 # Version 3.8.8
 
 * [BLD-41504] Fix Uploading to Appstore issue - update SDK version number to three non-negative integers.
