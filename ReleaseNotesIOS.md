@@ -2,7 +2,7 @@
 
 * [BLD-42332] Fix chat header configuration issue.
 
-### Explanation for MultipleSelectionConfiguration 
+#### Explanation for MultipleSelectionConfiguration 
 
 > As mentioned on v3.8.7
 
