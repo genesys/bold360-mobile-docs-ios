@@ -1,3 +1,28 @@
+# Version 3.8.10
+
+* [BLD-42332] Fix chat header configuration issue.
+
+### Explanation for MultipleSelectionConfiguration 
+
+> As mentioned on v3.8.7
+
+`MultipleSelectionConfiguration` was added to `ChatConfiguration`  and replaced direct access to 
+`IncomingBotConfiguration.PersistentOptionConfiguration` and `IncomingBotConfiguration.IncomingBotTitleConfiguration`.
+
+To change properties of the persistent options messages now we use:
+
+
+``` swift
+
+chatController.viewConfiguration.multipleSelectionConfiguration.avatar = UIImage(named: <IMAGE_NAME>)
+
+chatController.viewConfiguration.multipleSelectionConfiguration.persistentOptionConfiguration.backgroundColor = UIColor.purple
+
+chatController.viewConfiguration.multipleSelectionConfiguration.titleConfiguration.backgroundColor = UIColor.yellow
+
+```
+
+
 # Version 3.8.9
 
 ## [BLD-41686] Fix live chat forms override issue.
