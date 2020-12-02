@@ -9,4 +9,4 @@
 platform :ios, "10.0" # make sure it's 10.0 and above.
 ```
 
-3. After running pod update validate inside terminal that the latest version was installed succesfully.
+3. After running `pod update` validate inside terminal that the latest version was installed succesfully.
