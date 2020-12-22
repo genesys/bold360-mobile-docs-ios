@@ -2,6 +2,8 @@
 layout: default
 title: Overview
 nav_order: 1
+permalink: /docs/overview
+
 ---
 
 # Overview
@@ -10,25 +12,22 @@ nav_order: 1
 ## Table of contents
 {: .no_toc .text-delta }
 
-1. TOC
+- TOC
 {:toc}
 
 ---
 
 ## About
-{: .d-inline-block }
-
-If you're a bold360ai customer, please contact your bold360ai Customer Success Manager to help facilitate the use of this component.
-
-bold360ai's Mobile SDK for iOS is a native iOS SDK, which means that the SDK was developed specifically for iOS devices. This ensures that native application can interact with and take advantage of iOS operating system features and related software.
+**Bold mobile SDK for android** is a native android SDK, intended to be used by Apps developed for android devices usage.   
+Native SDK ensures usability by native applications and benefits from the operating system software features. 
 
 ## Features
-
-* Create conversations from your app.
-* Bot Integration.
-* Live Agent Integration.
+Create and integrate AI and live chats to run under your App.
+Customize your chat look to meet your need.
 
 ## Intended Audience
+This guide assumes that you have the necessary android development skills to build and compile advanced applications using Android Studio.  
 
-This guide assumes that you have the necessary Objective C or Swift and iOS development skills to build and compile advanced iOS applications using XCode.
+> *If you're a Bold customer, please contact your Bold Customer Success Manager to help facilitate the use of this component.* 
+{: .mt-10} 
 

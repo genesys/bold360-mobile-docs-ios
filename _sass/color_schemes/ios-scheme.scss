@@ -1,0 +1,189 @@
+
+$yellow: #fffdc6;
+$bluish-grey: #e1e7f3;
+$side-blue: #3e68f3;
+$side-blue-dk: #2b3ddf;
+$orange-100: #f5a03a;
+$orange-200: #f8902f;
+
+$link-color: $side-blue-dk;
+$body-background-color: $grey-lt-000;
+$sidebar-color: $grey-lt-200;
+$nav-child-link-color:$side-blue;
+$border-color: $grey-lt-300;
+$code-background-color: $bluish-grey;
+
+
+.image-40 {
+  display: block;
+  width: 40%;
+}
+
+.image-70 {
+  display: block;
+  width: 70%;
+}
+
+.light-title{
+  font-size:3;
+  font-weight: 500;
+  color:$grey-dk-200;
+  text-decoration: underline
+}
+
+.strong-sub-title{
+  font-size: 4;
+  font-weight: 600;
+  color:$grey-dk-200;
+}
+
+.overview {
+  font-weight: 300;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.breaking {
+  font-weight: 400;
+  font-size: 14px;
+  font-style: oblique;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #f03a22ea;
+  background-color: $code-background-color;
+}
+
+.knownissue {
+  font-weight: 400;
+  font-size: 14px;
+  font-style: oblique;
+  text-transform: capitalize;
+  letter-spacing: 0.08em;
+  color: $yellow-300;
+  background-color: $code-background-color;
+}
+
+blockquote {
+  border-left: .20em solid $bluish-grey;
+  color: #79899b;
+  padding: 0 0.5em;
+  margin-left: 1em;
+}
+
+table td,
+table th {
+  padding: 1rem;
+  background: $bluish-grey;
+  border-color: $white;
+  color: $grey-dk-200;
+}
+table body {
+  padding: 0.2rem;
+  background: $bluish-grey;
+  border-color: $grey-lt-300;
+}
+
+.table-wrapper thead th {
+  border-bottom: 1px solid $white;
+  font-style: unset;
+}
+
+.table-trans tbody tr,
+.table-trans  thead th,
+.table-trans tbody td  {
+  background-color: #00000000;
+}
+
+.btn.btn-orange {
+  color: #fff;
+  background-color: $orange-200;
+  background-image: linear-gradient($orange-100, $orange-200);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25), 0 4px 10px rgba(0,0,0,0.12);
+  font-size: 10px;  
+  text-decoration: none !important;
+  cursor: none !important;
+  user-select: none !important;
+}
+
+.btn.btn-orange.btn-red {
+  background-color: #ff0000;
+  background-image: linear-gradient(#ff0000, #ff0000);
+}
+.btn.btn-orange.btn-green {
+  background-color: $green-200;
+  background-image: linear-gradient($green-000, $green-200);
+}
+
+
+.do-toc li ul{
+  display: none;
+}
+
+// details tag design for all docs:
+details summary {
+  outline: none;
+}
+
+details summary::-webkit-details-marker {
+  background: url('../../assets/images/expand_more.png');
+  height: 18px;
+  width: 18px;
+  color: #00000000;
+  background-position: bottom;
+}
+
+details[open] summary::-webkit-details-marker {
+  background: url('../../assets/images/expand_less.png');
+}
+
+// details tag design for release notes doc only:
+.det  {
+  background-color: #00000000 !important;
+  color: $grey-dk-100 !important;
+  padding: 0.6em;
+  
+}
+
+.det summary {
+  background-color: #00000000 !important;
+  padding: 0.2em;
+  font-size: $font-size-5;
+  color: $side-blue;
+  border-bottom: dashed 1px $side-blue;
+  
+}
+
+.det summary::-webkit-details-marker {
+  float: right;
+}
+
+.det[open] summary{
+  font-size: 0%;
+  border-bottom: none;
+}
+.det[open] {
+  border: solid 1px $grey-dk-000;
+  background-color: $grey-lt-100 !important;
+}
+
+.det[open] h1{
+  color: $side-blue;
+}
+
+.det[open] h4 {
+  text-transform: none;
+  font-weight: 600;  
+  font-size: $font-size-4 !important; 
+  letter-spacing: 0;
+}
+
+.site-nav {
+  @include mq(md) {
+    padding-right: $sp-8;
+  }
+}
+.back-top,
+.back-top:link,
+.back-top:visited{
+  color: #79899b;
+}

@@ -1,3 +1,17 @@
 theme: "just-the-docs"
 remote_theme: pmarsceill/just-the-docs
 title: bold360 iOS SDK
+baseurl: "/bold360-mobile-docs-ios"
+url: "https://logmein-bold-mobile.github.io"
+color_scheme: ios-scheme
+plugins: 
+  - jekyll-redirect-from
+
+permalink: pretty
+
+logo: "/assets/images/bold360_logo.png"
+
+footer_content: ""
+
+back_to_top: true
+back_to_top_text: "To top"
