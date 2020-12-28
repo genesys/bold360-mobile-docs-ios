@@ -23,6 +23,7 @@ Use this Quick Start guide to get you up and running with a working AI or live c
 * Automatic Reference Counting (ARC) is required in your project.
 * With the release of iOS 9 and Xcode 7, a new feature called [App Transport Security (ATS)](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW35) was introduced.
 * [CocoaPods](https://guides.cocoapods.org/using/getting-started.html).
+
 </sub>
 
 
