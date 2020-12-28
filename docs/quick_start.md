@@ -122,8 +122,6 @@ extension ViewController {
 }
 ```
 
-> Note: `LiveAccount` is managed by forms (preChat, postChat, unavailable).
->Only preChat form contains default SDK implementation, means postChat and unavailable forms should be implemented by the application.
 >Make sure to read [chat lifecycle doc](https://developer.bold360.com/help/EN/Bold360API/Bold360API/c_sdk_combined_ios_adv_chat_lifecycle.html) and register to relevant states (e.g `unavailable` state).
 
 ### Setup Bot Chat
