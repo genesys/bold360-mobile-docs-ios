@@ -19,43 +19,50 @@ Use this Quick Start guide to get you up and running with a working AI or live c
 
 ## System Requirements  
 
-* Java 8 or higher.
-* Gradle 5.3.6 or higher.
-* Android Studio.
-* The SDK supports devices with API level 16 or higher. <sub>**(since version 3.5.0**)</sub>
+* [iOS 10 and above](https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-SW1)
+* Automatic Reference Counting (ARC) is required in your project.
+* With the release of iOS 9 and Xcode 7, a new feature called [App Transport Security (ATS)](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW35) was introduced.
+* [CocoaPods](https://guides.cocoapods.org/using/getting-started.html).
+</sub>
 
 
 ## Set up the SDK on your App.
 {: .d-inline-block }
 
-1. ### Import SDK dependencies 
-    {: .no_toc .strong-sub-title}   
+Note: Using CocoaPods on an existing Xcode project will modify the project file, so you may want to make a backup before doing this.
+
+1. Create a Podfile in the root directory of your project.
+
+```sh
+$ pod init
+```
+
+2. Add Official CocoaPods PodSpecs repository to your Podfile:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+```
+
+3. Add bold360ai PodSpecs repository to your Podfile:
+
+```ruby
+source 'https://github.com/nanorepsdk/NRSDK-specs.git'
+```
+
+4. Add bold360ai iOS SDK to your Podfile:
     
-    [Check here for latest SDK version and needed dependencies](https://developer.bold360.com/help/EN/Bold360API/Bold360API/ReleaseNotesAndroid.html) 
+```ruby
+pod 'Bold360AI'
+```
 
-    
-2. ### Extra configurations on build.gradle:
-    {: .no_toc .strong-sub-title}  
-   
-    Add the following to the _`android{...}`_ block definition
+5. Using *terminal*, with your project root directory as the *working path*, run:
 
-    ```gradle
-    android {
-        kotlinOptions {
-            freeCompilerArgs = ['-Xjvm-default=compatibility']
-            jvmTarget = "1.8"
-        }
+```ruby
+pod install
+# pod update (use this when you want to get new released version).
+```
 
-        //overcome the following error: "More than one file was found with OS independent path..."
-        packagingOptions{
-            pickFirst 'META-INF/atomicfu.kotlin_module'
-            
-            // those may also be needed:
-            pickFirst 'META-INF/main_debug.kotlin_module'
-            pickFirst 'META-INF/main_release.kotlin_module'
-        }
-    }
-    ```
+This will download all the necessary files which are required to integrate the bold360ai into your project.
 
 ---
 
@@ -69,59 +76,131 @@ Use this Quick Start guide to get you up and running with a working AI or live c
 
 Follow the next steps to create and start a chat.
 
-1. ### Create an Account
-    - [Create `BotAccount` for chat with AI](/docs/chat-configuration/setting_account#botaccount)
-    {: .no_toc }
+## Create new Project  
+
+### Set Up a Project in Xcode  
+
+1. Open Xcode and click **start new Xcode Project**:
+        ![](images/iOS/conversation/newProj.png)
+
+2. Next, select **Single View Application** and click **Next**:
+        ![](images/iOS/conversation/singleView.png)
+
+3. In the dialog screen displayed, enter the relevant details:
+        ![](images/iOS/conversation/projDetails.png)
+
+### Import SDK
+
+Go to the desired file (e.g., `ViewController.swift`) and add the line below:
+
+```swift
+import Bold360AI
+```
+
+### Setup Chat Controller
+
+```swift
+    var chatController: ChatController!
+    var chatControllerDelegate: ChatControllerDelegate!
+    var chatHandlerProvider: ChatHandlerProvider!
+    var chatViewController: UIViewController!
+```
+
+### Setup Live Chat
+
+```swift
+// setup Live Chat
+extension ViewController {
+    @IBAction func setupBoldChat(_ sender: Any) {
+        // 1. create account & set
+        let account = LiveAccount()
+        account.apiKey = {API_KEY}
+        self.chatController = ChatController(account: account)
+        // 2.  set controller delegate
+        self.chatController.delegate = self
+    }
+}
+```
+
+> Note: `LiveAccount` is managed by forms (preChat, postChat, unavailable).
+>Only preChat form contains default SDK implementation, means postChat and unavailable forms should be implemented by the application.
+>Make sure to read [chat lifecycle doc](https://developer.bold360.com/help/EN/Bold360API/Bold360API/c_sdk_combined_ios_adv_chat_lifecycle.html) and register to relevant states (e.g `unavailable` state).
+
+### Setup Bot Chat
+
+```swift
+// Setup Bot Chat
+extension ViewController {
+    @IBAction func setupBotChat(_ sender: Any) {
+        // 1. create account & set
+        let account = self.createAccount()
+        self.chatController = ChatController(account: account)
+        // 2.  set controller delegate
+        self.chatController.delegate = self
+    }
     
-    - [Create `BoldAccount` for live chat with agent](/docs/chat-configuration/setting_account#boldaccount)
-    {: .no_toc }
-        
-    - [Create `AsyncAccount` to start a messaging chat](/docs/chat-configuration/setting_account#asyncaccount)
-    {: .no_toc }  
----
+    func createAccount() -> BotAccount {
+        let account = BotAccount()
+        account.account = "ACCOUNT"
+        account.knowledgeBase = "KNOWLEDGE_BASE"
+        account.apiKey = "API_KEY"
+        return account;
+    }
+}
+```
 
-2. ### Create [ChatController](/docs/chat-configuration/extra/chatcontroller)
-    With the ChatController one can create and control multiple chats.
-    The chat type is configured by the Account that is provided on chat creation.
+#### Use Context
 
-    ```kotlin
-    val chatController = ChatController.Builder(context)
-                                          .build(account, ...)
-    ...
-    // start a new chat, using same chatController:
-    chatController.startChat(account)
+Context is a key-value parameter, so when you create the `BotAccount` object you can set NSDictionary which contains the related context.
 
-    // restore active chat or starts new chat
-    chatController.restoreChat(fragment?, account?)
-    ```
----
+``` swift
+// Using the context:
+botAccount.context = ["someKey": "someValue"]
+```
 
-3. ### Add the chat fragment to your activity.
+#### Configure Welcome Message Id
 
-    Implement the ChatLoadedListener interface and pass it in the `ChatController.Builder` build method.   
-    Once the chat build succeeded and the fragment is ready to be displayed, `onComplete` will be called with the fragment on the result. 
+When you create the `BotAccount` object you can set welcome message id.
 
-    ```kotlin
-    ChatController.Builder(context).build(account, object : ChatLoadedListener {
-            override fun onComplete(result: ChatLoadResponse) {
-                result.error?.run{
-                  // report Chat load failed
-                } ?: run{
-                  // add result.getFragment() to the applications activity.
-                }
-            }
-        })
-    ```
----
+```swift
+botAccount.welcomeMessageId = "{WELCOME_MESSAGE_ID}"
+```
 
-##### **Notice** 
-{: .no_toc } 
-> Make sure to activate `ChatController.destruct()`, when the ChatController instance is no longer needed (exp: Chats section in app
-  is being closed or the ChatController instance is being replaced). Destruct will verify resources release (including open sockets and communication channels).
+To Disable Welcome Message 
+
+```swift
+botAccount.welcomeMessageId = WelcomeMsgIdNone
+```
+
+#### Create Initialization Entities
+
+Entities is a feature of Bold360 that enables querying data from external sources in a conversational format.
+If a piece of info is missing from a bot query - the bot asks for the missing data to be able to answer.
+The application can populate the entity input values that are available - not to let the bot ask for input params that are "obviously available."
+
+``` swift
+// Creating Initialization Entities:
+botAccount.initializationEntities = ["someKey1": "someValue1", "someKey1": "someValue2"]
+```
+
+### Add Chat View Controller by Implementing Delegate Methods  
+
+```swift
+extension ViewController: ChatControllerDelegate {
+    func didFailLoadChatWithError(_ error: Error!) {
+        print(error.localizedDescription)
+    }
+    
+    func shouldPresentChatViewController(_ viewController: UINavigationController!) {
+        // 4. present modally/ as child view controller over your view controller. 
+       <YOUR_VIEW_CONTROLLER>.present(viewController, animated: false, completion: nil)
+    }
+}
+```
     
 
 ---
 
 ### Code Sample
 {: .no_toc .text-delta}
-[bold360ai samples](https://github.com/bold360ai/bold360-mobile-samples-android)
+[bold360ai samples](https://github.com/bold360ai/bold360-mobile-samples-ios)
