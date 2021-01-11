@@ -17,31 +17,29 @@ toc_float: true
 <summary> Version 3.8.11 </summary>
 
 # Version 3.8.11
-Release date: November 05, 2020
+Release date: January 11, 2021
 {: .overview}
 
+- Attached Pre-chat language selection to take effect.
+
 ### Fixes 
-- Removing value display from live chat forms, selection fields.
+- Fix crash on swiping back in support center.
+- Fix back on controllers which are not support center.
+
 
 ---
 
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:4.1.1"
-implementation "com.bold360ai-sdk.conversation:engine:4.1.1"
-implementation "com.bold360ai-sdk.conversation:chatintegration:4.1.1"
-implementation "com.bold360ai-sdk.conversation:ui:4.1.2"
-implementation "com.bold360ai-sdk.core:accessibility:4.1.0"
+To get latest version run:
 
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
-implementation "com.google.code.gson:gson:2.8.6"
-implementation "android.arch.lifecycle:extensions:1.1.1"
+```ruby
+pod update 
 ```
 </details>
 
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.8.10 </summary>
 
 # Version 3.8.10
 
@@ -72,7 +70,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.8.9 </summary>
 
 
 # Version 3.8.9
@@ -126,7 +124,7 @@ config.readMoreViewConfig.customFont.font = {}
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.8.8 </summary>
 
 # Version 3.8.8
 
@@ -137,7 +135,7 @@ config.readMoreViewConfig.customFont.font = {}
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.8.7 </summary>
 
 # Version 3.8.7
 
@@ -170,7 +168,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.8.6 </summary>
 
 # Version 3.8.6
 
@@ -182,7 +180,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.8.5 </summary>
 
 # Version 3.8.5
 
@@ -196,7 +194,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.8.4 </summary>
 
 # Version 3.8.4
 
@@ -208,7 +206,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.8.3 </summary>
 
 # Version 3.8.3
 
@@ -226,7 +224,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.8.2 </summary>
 
 # Version 3.8.2
 
@@ -237,7 +235,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.8.1 </summary>
 
 # Version 3.8.1
 
@@ -251,7 +249,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.8.0 </summary>
 
 # Version 3.8.0
 
@@ -262,7 +260,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.7.0 </summary>
 
 # Version 3.7.0
 
@@ -273,7 +271,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.6.16 </summary>
 
 # Version 3.6.16
 
@@ -284,7 +282,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.6.15 </summary>
 
 # Version 3.6.15
 
@@ -296,7 +294,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.6.14 </summary>
 
 # Version 3.6.14
 
@@ -310,7 +308,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.6.13 </summary>
 
 # Version 3.6.13
 
@@ -323,7 +321,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.6.11 </summary>
 
 # Version 3.6.11
 
@@ -337,7 +335,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.6.10 </summary>
 
 # Version 3.6.10
 
@@ -349,7 +347,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.6.9 </summary>
 
 # Version 3.6.9
 
@@ -361,7 +359,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.6.8 </summary>
 
 # Version 3.6.8
 
@@ -373,7 +371,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.6.7 </summary>
 
 # Version 3.6.7
 
@@ -386,7 +384,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.6.6 </summary>
 
 # Version 3.6.6
 
@@ -399,7 +397,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.6.5 </summary>
 
 # Version 3.6.5
 
@@ -415,7 +413,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.6.4 </summary>
 
 # Version 3.6.4
 
@@ -427,7 +425,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.6.2 </summary>
 
 # Version 3.6.2
 
@@ -439,7 +437,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.6.1 </summary>
 
 # Version 3.6.1
 
@@ -453,7 +451,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.6.0 </summary>
 
 # Version 3.6.0
 
@@ -469,7 +467,7 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.4 </summary>
+<summary> Version 3.5.5 </summary>
 
 # Version 3.5.5
 
