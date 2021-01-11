@@ -14,9 +14,9 @@ toc_float: true
 {: .det}
 <details open markdown="block">
 
-<summary> Version 4.1.2 </summary>
+<summary> Version 3.8.11 </summary>
 
-# Version 4.1.2
+# Version 3.8.11
 Release date: November 05, 2020
 {: .overview}
 
@@ -41,423 +41,444 @@ implementation "android.arch.lifecycle:extensions:1.1.1"
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 4.1.1 </summary>
+<summary> Version 3.5.4 </summary>
 
-# Version 4.1.1
-Release date: October 01, 2020
-{: .overview}
+# Version 3.8.10
 
-### Features
-- #### Validated live chat support
-  The SDK now provides the way to pass a secured encrypted data string, using the BoldAccount, for creating a secured validated live chat with agent.
+* [BLD-42332] Fix chat header configuration issue.
 
-- #### Addition of chat form related resources
-  In order to enable more flexibility of overriding the chat forms look, we've added the following:
-  - The ability to override the padding size and the margin between, of the chat form fields. `R.dimen.form_field_padding` and `R.dimen.form_fields_gap`
-  - A separate resource color for the rating views background, `R.color.form_rating_field_background`
-  - A style resource for the form fields hint appearance, `@style/FormHintTextAppearance`
+#### Explanation for MultipleSelectionConfiguration 
 
-### Fixes 
-- Disabling the chat input field, once all active chats were ended. User can't continue typing messages.
-- Fix for chat form fields background override by resource.
-- Fix for form fields hint color override by resource.
+> As mentioned on v3.8.7
 
----
+`MultipleSelectionConfiguration` was added to `ChatConfiguration`  and replaced direct access to 
+`IncomingBotConfiguration.PersistentOptionConfiguration` and `IncomingBotConfiguration.IncomingBotTitleConfiguration`.
 
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:4.1.1"
-implementation "com.bold360ai-sdk.conversation:engine:4.1.1"
-implementation "com.bold360ai-sdk.conversation:chatintegration:4.1.1"
-implementation "com.bold360ai-sdk.conversation:ui:4.1.1"
-implementation "com.bold360ai-sdk.core:accessibility:4.1.0"
+To change properties of the persistent options messages now we use:
 
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
-implementation "com.google.code.gson:gson:2.8.6"
-implementation "android.arch.lifecycle:extensions:1.1.1"
+
+``` swift
+
+chatController.viewConfiguration.multipleSelectionConfiguration.avatar = UIImage(named: <IMAGE_NAME>)
+
+chatController.viewConfiguration.multipleSelectionConfiguration.persistentOptionConfiguration.backgroundColor = UIColor.purple
+
+chatController.viewConfiguration.multipleSelectionConfiguration.titleConfiguration.backgroundColor = UIColor.yellow
+
 ```
+
 </details>
 
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 4.1.0 </summary>
+<summary> Version 3.5.4 </summary>
 
-# Version 4.1.0
-Release date: September 16, 2020
-{: .overview}
 
-### Features
-- #### Chat elements
-  - **Chat elements are uniquely identified by a String typed Id property**, instead of their timestamp. timestamp of chat elements is no longer unique.
-  - StorableChatElement was updated accordingly and the method `getId()` was added.
-  - ChatElementListener: Addition of onUpdate and onRemove methods.
-  - All chat types are supports the Id property usage for identifying and adding messages to the chat. 
-  - Chat elements structure was changed, so serialization and deserialization of elements was updated.    
-  Backward support of old elements deserialization was integrated in order to prevent current stored chats from being lost. (As long as the `storageKey` will be provided on the storage fetched elements)
-  - In case of previous stored chats, a migration tool is provided on this version, to convert old scheme elements to the new ones.   
-    > Follow [migrating your chat](./How-to-migrate-to-4.1.0.md) for more details.
- 
- - #### Input field
-  Scrolling support addition enables content of more than 6 lines.
+# Version 3.8.9
 
- ---
+## [BLD-41686] Fix live chat forms override issue.
 
-Breaking changes and Deprecations:
-{: .breaking}   
+#### Breaking Changes
 
-  - ##### _ChatElement_
-    - relocated to package: `com.nanorep.convesationui.structure.elements`**
+To dimiss live custom form.
 
-  - ##### _StorableChatElement_
-    - Interface is now located on package: **`com.nanorep.convesationui.structure.elements`**
-    - getId() method was added. Returns a unique String identification of the element.
-    - The deprecated method `getStorableContent():String` was removed
+Before: 
 
-  - ##### _ChatElementListener_
-    <u>Deprecated methods:</u>
-    - `onRemove(timestampId: Long)` 
-    - `onUpdate(timestampId: Long, item: StorableChatElement)`    
-
-    <u>Replacement methods:</u>
-    - `onRemove(id: String)` 
-    - `onUpdate(id: String, item: StorableChatElement)`
-    
-  - ##### _AgentType_
-    - Enum was deprecated.
-    - Deprecated `agentType` property was removed from chat element classes.
-    
-  - ##### _ClearBoldChatSession.Builder_
-    - Constructor doesn't receive a context as parameter. The context should be provided on `build` method.
-
----
-
-### Fixes
-
-- Connectivity receiver leak errors
-- Fix of the crash that happened if malformed Bold API key was provided. Now it fails with an error.
-- Fix of the crash that was experienced when rotating the device while a chat form was presented.
-- Fix of crash when changing the device language, mid chat. 
-- Fix of carousel readout crash.
-- Chat forms: Replacing hard-coded color and dimension values with resources, to enable override and night mode configured replacements by the hosting App
-- Fix of the issue that if the pre-chat form was canceled, due to activity finish state, the cancellation callback was not triggered, and the chat was not canceled properly.
-- Fixed the issue that if multiple messages were sent in a fast time frame some messages were not visible in the chat, although they were stored in history and sent properly to the agent.
-
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:4.1.0"
-implementation "com.bold360ai-sdk.conversation:engine:4.1.0"
-implementation "com.bold360ai-sdk.conversation:chatintegration:4.1.0"
-implementation "com.bold360ai-sdk.conversation:ui:4.1.0"
-implementation "com.bold360ai-sdk.core:accessibility:4.1.0"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
-implementation "com.google.code.gson:gson:2.8.6"
-implementation "android.arch.lifecycle:extensions:1.1.1"
+```swift
+self.delegate.didDismissForm(self)
 ```
+
+After: 
+
+```swift
+self.delegate.submitForm(nil)
+```
+
+> Smaple
+
+https://github.com/bold360ai/bold360-mobile-samples-ios/commit/19e5783f1f3f675da70b01305bf60bd30b5c7390#diff-bdfadc172ed44c581cba3dd99591944896dea03b1c303fd87a9ac1210c597cc3R61
+
+## [BLD-41751] Support custom font on read more view controller.
+
+* To set custom font use following documantion: https://developer.bold360.com/help/EN/Bold360API/Bold360API/ChatViewConfigurationIOS.html
+
+* apple documentation for adding a custom font to a project: https://developer.apple.com/documentation/uikit/text_display_and_fonts/adding_a_custom_font_to_your_app
+
+#### Breaking Changes
+
+Before:
+
+```swift
+config.readMoreViewConfig.font = {}
+```
+
+After:
+
+```swift
+config.readMoreViewConfig.customFont = {}
+// To set UIFont use
+config.readMoreViewConfig.customFont.font = {}
+```
+
 </details>
 
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 4.0.4 </summary>
+<summary> Version 3.5.4 </summary>
 
-# Version 4.0.4
-Release date: October 01, 2020
-{: .overview}
+# Version 3.8.8
 
-### Fixes
-- Numerical strings with length longer than 3 digits are no longer being obfuscated by SDK.
+* [BLD-41504] Fix Uploading to Appstore issue - update SDK version number to three non-negative integers.
 
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:4.0.3"
-implementation "com.bold360ai-sdk.conversation:engine:4.0.4"
-implementation "com.bold360ai-sdk.conversation:chatintegration:4.0.1"
-implementation "com.bold360ai-sdk.conversation:ui:4.0.3"
-implementation "com.bold360ai-sdk.core:accessibility:4.0.1"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
-implementation "com.google.code.gson:gson:2.8.6"
-implementation "android.arch.lifecycle:extensions:1.1.1"
-```
 </details>
 
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 4.0.3 </summary>
+<summary> Version 3.5.4 </summary>
 
-# Version 4.0.3
-Release date: August 19, 2020
-{: .overview}
+# Version 3.8.7
 
-### Features
-- Hands-free experience is now added to the voice-to-voice mode. When the option is turned on, the microphone is automatically enabled once the answer read out is done.
+* [BLD-40506] Support Xcode12.
+* [BLD-40456] Support read more screen configuration.
+* [BLD-40396] Adding the ability to set the corner radius of the message bubble edges.
+* [BLD-41093] FIX channel cell constraint issue.
+* [BLD-41093] FIX forms contraints.
 
-### Fixes
-- Fixed an issue that caused reading out persistent options twice in voice-to-voice mode.
-- When customizing the chat look and feel, multiple `SendUIConfig` instances were reachable from the `ChatUIProvider`. We simplified it to have a single one that is reachable under `ChatUIProvider.chatInputUIProvider.sendCmpUIProvider.uiConfig`.   
+### Breaking Changes
 
-  > Usage of ‘ChatAutocompleteUIConfig.sendUIConfig’ was deprecated.
-  
-### ChatController API
-- `ChatLoadedListener` can be provided also after ChatController creation, for following chat start/restore operations.
+`MultipleSelectionConfiguration` was added to `ChatConfiguration`  and replaced direct access to 
+`IncomingBotConfiguration.PersistentOptionConfiguration` and `IncomingBotConfiguration.IncomingBotTitleConfiguration`.
 
-Known issue: 
-{: .knownissue}
-Ticket typed channel is not supported on devices with API level lower than 19  
+To change properties of the persistent options messages now we use:
 
----
 
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:4.0.3"
-implementation "com.bold360ai-sdk.conversation:engine:4.0.3"
-implementation "com.bold360ai-sdk.conversation:chatintegration:4.0.1"
-implementation "com.bold360ai-sdk.conversation:ui:4.0.3"
-implementation "com.bold360ai-sdk.core:accessibility:4.0.1"
+``` swift
 
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
-implementation "com.google.code.gson:gson:2.8.6"
-implementation "android.arch.lifecycle:extensions:1.1.1"
+chatController.viewConfiguration.multipleSelectionConfiguration.avatar = UIImage(named: <IMAGE_NAME>)
+
+chatController.viewConfiguration.multipleSelectionConfiguration.persistentOptionConfiguration.backgroundColor = UIColor.purple
+
+chatController.viewConfiguration.multipleSelectionConfiguration.titleConfiguration.backgroundColor = UIColor.yellow
+
 ```
+
 </details>
 
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 4.0.2 </summary>
+<summary> Version 3.5.4 </summary>
 
-# Version 4.0.2
-Release date: August 02, 2020
-{: .overview}
+# Version 3.8.6
 
-Fixed on this version:
+* [BLD-39079] Fixed crash on slow connection.
+* [BLD-39394] remove import warnings (no warnings on SDK).
 
-- **Voice to voice:** response readout is activated on voice recorded requests only.
-
-- **Full article display**: Displayed content and title matches opened article, also on postback responses.
-
-- Prevent images and video images from being cut, on wide devices resolutions.
-
-Deprecations:
-{: .breaking}
-- InputViewListener - typingStarted, typingEnded were replaced with inputStarted, inputEnded.
-- ChatInputData - onSendInput was replaced with onSend
-
-
-Known issue: 
-{: .knownissue}
-- Duplicate configuration options are available for Send component, but only one is currently effective, and should be used.   
-  **`ChatUIProvider.chatInputUIProvider.uiConfig.sendUIConfig`**
-
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:4.0.2"
-implementation "com.bold360ai-sdk.conversation:engine:4.0.2"
-implementation "com.bold360ai-sdk.conversation:chatintegration:4.0.1"
-implementation "com.bold360ai-sdk.conversation:ui:4.0.2"
-implementation "com.bold360ai-sdk.core:accessibility:4.0.1"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
-implementation "com.google.code.gson:gson:2.8.6"
-implementation "android.arch.lifecycle:extensions:1.1.1"
-```
 </details>
 
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 4.0.1 </summary>
+<summary> Version 3.5.4 </summary>
 
-# Version 4.0.1
-Release date: July 19, 2020
-{: .overview}
+# Version 3.8.5
 
-In this version:
+* [BLD-40398] Fixed bottom constraint when chat view controller is in tab bar controller.
+* [BLD-40398] Fixed height of search view after submitting multiline query.
+* [BLD-40136] Adding persistenOption font to html + supporting bubble background color and text color.
+* [BLD-40398] Fixed bottom constraints - connected vertically 2 major views.
 
-### Bot related
-- **UserId management** - The SDK generates a userId via BE API, on Bot chat creation,   if one was not provided by the embedding App.   
-  In order to identify chats sessions as belong to the same user in the reporting, the same userId should be used. Newly generated userId is available to the embedding App, via `AccountInfoProvider.update` implementation. 
-
-- **Multi answer design** - Bot responses which contains multiple answers of kind `inlineChoice`, are displayed as persistent options. Meaning the options are not disappears when one is selected.
-
-Breaking Changes
-{: .breaking}
-- The Embedding App is responsible to **save the userId**, once created, and **provide it on `BotAccount.userId`** for successive chats creation of the same account. 
-
-
-### Fixes
-- Improve SDK allocated resources release.
-- Fix active links on bot responses, while escalated live chat is in progress.
-
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:4.0.1"
-implementation "com.bold360ai-sdk.conversation:engine:4.0.1"
-implementation "com.bold360ai-sdk.conversation:chatintegration:4.0.1"
-implementation "com.bold360ai-sdk.conversation:ui:4.0.1"
-implementation "com.bold360ai-sdk.core:accessibility:4.0.1"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
-implementation "com.google.code.gson:gson:2.8.6"
-implementation "android.arch.lifecycle:extensions:1.1.1"
-```
 </details>
 
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 4.0.0 </summary>
+<summary> Version 3.5.4 </summary>
 
-# Version 4.0.0
-Release date: June 28, 2020
-{: .overview}
+# Version 3.8.4
 
-In this version:
+* [BLD-37924] Fixed method's signature and category name.
+* [BLD-40137] Enabling the change of the sendButton color.
 
-### Voice to voice
-- An extension feature to the speech recognition, Text to speech, responses to recorded requests can be read to the user.
-- Configurable TTS engine
-- Embedding app can alternate the text before it is read to the user.
-- Voice support level is configurable on ConversationSettings
-
-### Messaging chat
-> If you are interested of the Messaging capabilities of the Mobile SDK please reach out to your Customer Success Manager
-
-### TLSv1.2 protocol support
-- SDK supports TLSv1.2 secured connections on lower API level devices (< 21)
-
----
-
-#### Improvements
-- ChatController
-  - ChatController can now be used to create multiple chats, no need to re-instantiate.
-  - Chats end is generated by one of the chatting parties: user, live-agent, or by the embedding app. Chats are no longer being closed automatically.
-  - New APIs and properties:</u>
-    - `onChatInterruption` - notify the SDK when something was activated on the device that may interrupt the regular chat flow, like incoming/outgoing calls.   
-    - `destruct` - The ChatController instance will clear all its resources and active chats.
-    - `wasDestructed` - Indicates if ChatController was destructed and can no longer be used.
-    - `terminateChat` - Ends **all** current open chats.
-    - `endChat` - Ends only active open chat.
-    - `startChat` - start a new chat with account, with the same ChatController instance.   
-    - `restoreChat` - Continue open chat even if the chat UI was removed. Also can be used when the chat fragment is restored by the app, and to start new chats.
-    - `HandoverHandler` - Handover handler can be set to the ChatController instance at any time.
-
-#### Fixes
-- Bot - articles parsing.
-- Bot - Welcome message request doesn't increases the engagements and interactions counters.
-
----
-
-Breaking changes and Deprecations
-{: .breaking}
-
-Breaking Changes 
-{: .strong-sub-title}  
-- <u>Handover</u> - Chat elements related events are not passed automatically to the `ChatElementListener` implementations. Best practice: extend the abstract HandoverHandler class and use its base class injection methods.
-- SDK doesn't ends chats automatically anymore. Chat can be ended by user, live agent or the embedding App. ChatController destruction doesn't ends the chats, only releases their resources. [see ChatController new APIs](#improvements)
-- ErrorCodes definition was relocated to package "com.integration.core.annotations"
-- `DrawablePosition` was removed, since it was a duplicate of `CompoundDrawableLocation`
-
-Deprecations
-{: .strong-sub-title}
->All deprecations replacements and comments are available via javaDoc/KDOC (Android studio quick help)
-
-- Configuring voice support on `ConversationSettings` and `ChatInpuData` replaced with VoiceSettings
-- SessionInfo.update - overrides only properties with the same key (use override method for a complete replacement)
-- Live session properties, such as, ChatId, Department, applicationId, replaced with the identical properties located on `com.integration.core.LiveSession` 
-- Elements injection methods on ChatDelegate were deprecated. 
-- `ChatInputData.textInputHint` replaced with `ChatInputData.inputHints`
-- Constructor deprecation on ContentChatElement class hierarchy.
-- `VisitorDataKeys` were deprecated and replaced with `SessionInfoKeys`
-- `ChatbarCmpConfig` - _drawableLocation_  and _compoundDrawablesPadding_ were deprecated and replaced with _ChatbarCmpConfig.drawableConfig_, which include them both.
-
-Known issues
-{: .strong-sub-title}}
-- Bot - Articles with iframe tag for **embedded videos**, should not contain empty properties, such as `allowfullscreen`. Every property should have a value set to it.
-
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:4.0.0"
-implementation "com.bold360ai-sdk.conversation:engine:4.0.0"
-implementation "com.bold360ai-sdk.conversation:chatintegration:4.0.0"
-implementation "com.bold360ai-sdk.conversation:ui:4.0.0"
-implementation "com.bold360ai-sdk.core:accessibility:4.0.0"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
-implementation "com.google.code.gson:gson:2.8.6"
-implementation "android.arch.lifecycle:extensions:1.1.1"
-```
 </details>
 
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.6 </summary>
+<summary> Version 3.5.4 </summary>
 
-# Version 3.5.6
-Release date: April 27, 2020
-{: .overview}
+# Version 3.8.3
 
-In this version:
+* [BLD-39342] Fixing issue with changing searchView background color
+* [BLD-39421] Fixed bug with postback text presented instead of the text
+* [BLD-38006] Changing avatar image size
+* [BLD-38006] Changing avatar position for IncomingBotConfiguration to buttom left
+* [BLD-14733] relocate autoMessage indicator to remote chat element - part1 (part2 not ready yet)
+* [BLD-39500] fix read more articles text color
+* [BLD-39343] Adding datestamp font to ChatViewConfiguration
+* [BLD-39500] quick options font separation
 
-## Article full view Fixes
-- Fix of the issue that the Article title was not presented in the full screen mode display of articles
-- Fix of the issue that articles were truncated for the end users. If an html encoded character was present in an article, the text after the character was not presented.
-
-### SDK imports
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:3.5.5"
-implementation "com.bold360ai-sdk.conversation:engine:3.5.6"
-implementation "com.bold360ai-sdk.conversation:chatintegration:3.5.5"
-implementation "com.bold360ai-sdk.conversation:ui:3.5.6"
-implementation "com.bold360ai-sdk.core:accessibility:3.5.0"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61"
-implementation "com.google.code.gson:gson:2.8.6"
-implementation "android.arch.lifecycle:extensions:1.1.1"
-```
 </details>
 
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.5 </summary>
+<summary> Version 3.5.4 </summary>
+
+# Version 3.8.2
+
+* Fix - Conversation won't work on production environment.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.8.1
+
+* Dark Mode + chat configuration optimizations.
+* Welcome message optimizations.
+* Bug fixes including leaks handling.
+* Warnings resolve.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.8.0
+
+* Instant Feedback support, includes history.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.7.0
+
+* Voice-to-voice experience. The SDK has an option to read out Bot answers if the question was asked though dictation by voice.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.6.16
+
+* [BLD-36658] Added support for linked article with context.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.6.15
+
+* Broken UI Arrangement Constraints on the default pre-chat form [BLD-35341] -> another fix
+* File upload is not working in the EU accounts [BLD-35473] -> another fix for minor bug
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.6.14
+
+* Set initialized entities [BLD-25819]
+* Broken UI Arrangement Constraints on the default pre-chat form [BLD-35341]
+* Remove remaining references of UIWebView from iOS harmony SDK [BLD-35340]
+* File upload is not working in the EU accounts [BLD-35473]
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.6.13
+
+* Replace UIWebView with WKWebView in the iOS Harmony SDK [BLD-33735]
+* Agent messages are not presented in full length [BLD-34008]
+* Mobile SDK - Welcome message increase engagement but not interactions [BLD-34730]
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.6.11
+
+> **New**
+* Added the ability to presented Initial question in the chat for the end user [BLD-28324].
+* Added the ability to configure multi line elemnt [BLD-33529].
+* Added the ability to configure carousel [BLD-33529].
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.6.10
+
+> **New**
+* Added the ability to customize the UI for chat forms title.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.6.9
+
+> **New**
+* Enabled multi line text on post chat form title.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.6.8
+
+> **New**
+* Enabled multi line text for “Drop Down” custom field in post chat.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.6.7
+
+> **New**
+* Autosizing labels - “End Chat” button
+* Quick buttons in welcome article are presented if FAQ's are presented as well.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.6.6
+
+> **New**
+* On presenting post chat options getting "(Not Available)"
+* Mobile SDK should not send html code
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.6.5
+
+> **New**
+* Fix open custom URL in channeling is not working
+* Adding 1.5 seconds before escalating on highValuePushChat
+* Fixed ReadMore crash when fetching json in NRReadMoreViewController
+* Fixing Overriding BrandedForm by changing the delegate from ChatController to ChatViewController
+* Remove the feedback buttons from the bottom of expanded articles
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.6.4
+
+> **New**
+- Fixed an issue that prevented presenting custom made pre-and post-chat forms. This was caused by the inability to override the BrandedForm type variables. You can find more information on how to override the default pre- and post chat forms look and feel in https://developer.bold360.com/help/EN/Bold360API/Bold360API/PresentFormsIOS.html
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.6.2
+
+> **New**
+- Fixed JSON parsing with special characters.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.6.1
+
+> **New**
+- Support Chat Engagement (Chat element injection).
+- Support Create Initialization Entities.
+- Fixed a bug with multi line fields on forms.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
+# Version 3.6.0
+
+> **New**
+- HandOver improvment and base implementation.
+- Supporting default forms (Prechat, Postchat, Unavailable).
+- Support end chat enable property.
+- Fixed continuity provider.
+- Fixed a bug with context when using support center on search sdk.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
 
 # Version 3.5.5
-Release date: April 02, 2020
-{: .overview}
 
-In this version:
+> **New**
+- Chat bar attachment (Agent information & End chat button).
+- Amplitude event tracking enabled.
+- Added Placeholder hint for input field.
+- Minor file upload bug fixes.
 
-## General Fixes
-- Fix of the issue that the placeholder, in the text input, changed when a chat was channeled to a live agent.
-
-
-## Bold live chat Fixes
-
-- Initial questions submitted through the pre-chat form, are visible to the end user, as the first, end user, sent message.
-- Postchat form submission, returns with no errors.
-
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:3.5.5"
-implementation "com.bold360ai-sdk.conversation:engine:3.5.5"
-implementation "com.bold360ai-sdk.conversation:chatintegration:3.5.5"
-implementation "com.bold360ai-sdk.conversation:ui:3.5.5"
-implementation "com.bold360ai-sdk.core:accessibility:3.5.0"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61"
-implementation "com.google.code.gson:gson:2.8.6"
-implementation "android.arch.lifecycle:extensions:1.1.1"
-```
 </details>
 
 {: .det .mt-2}
@@ -466,191 +487,75 @@ implementation "android.arch.lifecycle:extensions:1.1.1"
 <summary> Version 3.5.4 </summary>
 
 # Version 3.5.4
-Release date: March 11, 2020
-{: .overview}
 
-In this version:
+> **New**
+- Passing account data when escalating from botChat to liveAgent.
+- Predefined pre chat form with extra data.
+- Minor bug fixes.
 
-## General Chat related
-- Fix of the issue that HTML encoded special characters (like &nbsp;) are not displayed at all.
-- User messages are sent as typed - Fix of the the issue that the <br/> tag was visible for the live agent when the end user added a line break in a message.
-- Fix of the issue that if you had additional visual customization on system messages the message had double border
-
-
-## Bot ai chat related
-
-- Re-enabling the feedback gathering method that is presented with a small delay after showing the bot answer as a separate question from the bot.
-- When presenting "High value + push chat" value messages, first the answer is presented than than automatic channeling is performed.
-- Fix of the issue that article links did not open the linked article
-
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:3.5.4"
-implementation "com.bold360ai-sdk.conversation:engine:3.5.4"
-implementation "com.bold360ai-sdk.conversation:chatintegration:3.5.3"
-implementation "com.bold360ai-sdk.conversation:ui:3.5.4"
-implementation "com.bold360ai-sdk.core:accessibility:3.5.0"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61"
-implementation "com.google.code.gson:gson:2.8.6"
-implementation "android.arch.lifecycle:extensions:1.1.1"
-```
-</details>
-
-{: .det .mt-2}
-<details close markdown="block">
-
-<summary> Version 3.5.3 </summary>
-
-# Version 3.5.3
-Release date: February 03, 2019
-{: .overview}
-
-In this version:
-
-## General Chat related
-- Expose an interface to programmatically inject a user query in a conversational bot.
->Note: This feature was already available, docs have been updated
-
-## Bot ai chat related
-- Initialize Entities support
-
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:3.5.2"
-implementation "com.bold360ai-sdk.conversation:engine:3.5.3"
-implementation "com.bold360ai-sdk.conversation:chatintegration:3.5.2"
-implementation "com.bold360ai-sdk.conversation:ui:3.5.2"
-implementation "com.bold360ai-sdk.core:accessibility:3.5.0"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.60"
-implementation "com.google.code.gson:gson:2.8.5"
-implementation "android.arch.lifecycle:extensions:1.1.1"
-```
 </details>
 
 {: .det .mt-2}
 <details close markdown="block">
 
 <summary> Version 3.5.2 </summary>
-Release date: January 07, 2020
-{: .overview}
 
 # Version 3.5.2
 
-In this version:
+This release contains the following bold360ai iOS SDK Features/ Fixes:
 
-## Bold live chat related
+```diff
+! Breaking Changes
 
-- Support "High value + push chat" behavior:  
-  Articles that are configured with "High value + push chat" option, are immediatelly escalate to the first `Chat` channel when recieved.
-
-## Bot ai chat related
-
-- Added analytics reports for `Voice` and `Autocomplete` user's interactions.
-
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:3.5.2"
-implementation "com.bold360ai-sdk.conversation:engine:3.5.2"
-implementation "com.bold360ai-sdk.conversation:chatintegration:3.5.2"
-implementation "com.bold360ai-sdk.conversation:ui:3.5.2"
-implementation "com.bold360ai-sdk.core:accessibility:3.5.0"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.60"
-implementation "com.google.code.gson:gson:2.8.5"
-implementation "android.arch.lifecycle:extensions:1.1.1"
+Passing `LiveAccount` data is done using `account.extraData` instead of `account.info`
 ```
+
+> **New**
+- Support iOS 13.
+- Standalone autocomplete feature. 
+
+> **Bot Chat related**
+- Autocomplete is supported.
+
+> **Live Chat related:**
+- Bot conversation transcript is sent to live console.
+
 </details>
 
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.1 </summary>
+<summary> Version 3.4.8 </summary>
 
-# Version 3.5.1
-Release date: November 28, 2019
-{: .overview}
+# Version 3.4.8
 
-In this version:
+This release contains the following bold360ai iOS SDK Features/ Fixes:
 
-## Bold live chat related
-- **Postchat form, SDKs implementation**
- 
-- **Fixes:**
-  - Upload feature became disabled when upload icon configured as hidden.
-    > Important: Upload image visibility configuration chage
+```diff
+! Breaking Changes
 
-## Bot ai chat related
-- Channels icons as configured in bold360ai console
-- Hint text for input field as configured in bold360ai console
-
----
-
-Breaking Changes
-{: .breaking}
-- StatementScope.isLive is no longer a function, but a property.
-- ErrorCodes relocated to package "com.integration.core.annotations"
-
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:3.5.1"
-implementation "com.bold360ai-sdk.core:accessibility:3.5.0"
-implementation "com.bold360ai-sdk.conversation:engine:3.5.1"
-implementation "com.bold360ai-sdk.conversation:chatintegration:3.5.1"
-implementation "com.bold360ai-sdk.conversation:ui:3.5.1"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.60"
-implementation "com.google.code.gson:gson:2.8.5"
-implementation "android.arch.lifecycle:extensions:1.1.1"
+`HistoryProvider` was deprecated and should not be used. 
+Use full implementation of `ChatElementDelegate` instead.
 ```
+> **Bot Chat related**
+- Welcome message customization support by integrating app.
+
+> **Live Chat related:**
+- Chat availability check support.
+
 </details>
 
 {: .det .mt-2}
 <details close markdown="block">
 
-<summary> Version 3.5.0 </summary>
+<summary> Version 3.4.7 </summary>
 
-# Version 3.5.0
-Release date: October 24, 2019
-{: .overview}
+# Version 3.4.7
 
-In this version:
+This release contains the following bold360ai iOS SDK Features/ Fixes:
 
-- **SDK supports API 16+**   
- 
-  Known issue
-  {: .knownissue}
-  Ticket form is not loaded properly on devices with API < 19
+* Support File Upload - Live Chat.
 
-- **Fixes:**
-  - While on TalkBack mode, only items with action are described with "double tap to activate.." instruction.
-  
-  Known issue:
-  {: .knownissue}
-  While in `TalkBack` mode internal links are not being activated properly.
-  
-  - Improved Carousel items height calculation 
-
-  - Improved parssing of span tag with style attribute
-
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:3.5.0"
-implementation "com.bold360ai-sdk.core:accessibility:3.5.0"
-implementation "com.bold360ai-sdk.conversation:engine:3.5.0"
-implementation "com.bold360ai-sdk.conversation:chatintegration:3.5.0"
-implementation "com.bold360ai-sdk.conversation:ui:3.5.0"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.50"
-implementation "com.google.code.gson:gson:2.8.5"
-implementation "android.arch.lifecycle:extensions:1.1.1"
-```
 </details>
 
 {: .det .mt-2}
@@ -659,85 +564,29 @@ implementation "android.arch.lifecycle:extensions:1.1.1"
 <summary> Version 3.4.0 </summary>
 
 # Version 3.4.0
-Release date: October 03, 2019
-{: .overview}
 
-In this version:
+Release date: April 28, 2019
 
-## General
-- **Autocomplete support** -    
-New input field component was introduced. This field supports autocomplete, which is currently available only on Bot chats.
-  
-- **AccountInfo improvements** -    
+This release contains the following bold360ai iOS SDK Features/ Fixes:
+ 
+* Support History
+* Support restore chat
 
-- **Improving chat restore support**
+</details>
 
-Breaking Changes and deprecations: 
-{: .breaking}
-- Input field configurations are now available via `ChatInputUIProvider`
-- Account class hierarchy.
-Account.info is now of type `SessionInfo`. (was ByteArray)   
-Account details such as `chatId`, `visitorId`, `providerConfig`, etc are available via this object. 
-- _Deprecated method `onAccountUpdate`_ in ChatEventListener   
-  Account updates are received by AccountInfoProvider implementation.
+{: .det .mt-2}
+<details close markdown="block">
 
+<summary> Version 3.3.9 </summary>
 
-## Bot related
-- **Persistent options, incoming element UI customization**   
-`PersistentOptionsUIProvider` supports customization of wrapping bubble element.
+# Version 3.3.9
 
-- **Fixes** - 
-  - fixes related to feedback and readmore articles
-  - fix for ticket typed channel activation
-  - some UI fixes
+Release date: April 17, 2019
 
-Deprecations
-{: .breaking}  
-- _Deprecated - Conversation class_
-BotAccount uses `SessionInfo` instead (id, holds the last conversationId)
--	_Deprecated method `updateAccountInfo`_ in `AccountInfoProvider`   
-Use `update` method instead.
--	_Deprecated property `lastConversation`_ in BotAccount
-Use `info` member instead
-
-
-## Bold related
-- **Department availability and Departments list**, requests support.   
-Via `ChatAvailability` 
-
-- **ChatId exposure** -    
-chatId is available once a live chat is created and account is updated, via 
-`BoldAccount.info` member.
-
-- **Bot chat transcript to live agent** -    
-Once a Bot chat is escalated to a live Bold chat, the bot chat content is passed to the live agent.
-
-- **Fixes** - 
-  - double event raising on upload press
-
-Breaking changes and Deprecations
-{: .breaking}
-- _Live chatbar customization_
-  - was ChatBarComponent.ChatBarViewProvider now ChatbarCmpAdapter
-  - Configuration for End component is handled by `configEndCmp` (was `updateUI)
-  - Configuration for agent details component is handled by `configAgentCmp` (was `updateUI)
-  
-- _Deprecated - VisitorInfo class_
-BoldAccount uses `SessionInfo` instead (id, holds the visitorId)
-
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:3.4.0"
-implementation "com.bold360ai-sdk.core:accessibility:3.4.0"
-implementation "com.bold360ai-sdk.conversation:engine:3.4.0"
-implementation "com.bold360ai-sdk.conversation:chatintegration:3.4.0"
-implementation "com.bold360ai-sdk.conversation:ui:3.4.0"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.31"
-implementation "com.google.code.gson:gson:2.8.5"
-implementation "android.arch.lifecycle:extensions:1.1.1"
-```
+This release contains the following bold360ai iOS SDK Features/ Fixes:
+ 
+* Support all chat view controller attachments (modal, navigation, child vc...).
+* Framework stabilization.
 </details>
 
 {: .det .mt-2}
@@ -746,31 +595,13 @@ implementation "android.arch.lifecycle:extensions:1.1.1"
 <summary> Version 3.3.2 </summary>
 
 # Version 3.3.2
-Release date: September 08, 2019
-{: .overview}
 
-In this version:
+Release date: April 14, 2019
 
-## Bot Chat related
-- Fixed an issue with ticket channel activation.
-- Reopen `customize` method in `ChatUIProvider`.
+This release contains the following bold360ai iOS SDK Features/ Fixes:
 
-### Bold Chat related
-- Fixed an issue that caused the agent’s details to change in the chatbar as the customer was typing.
+* Icon Positioning
 
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:3.3.1"
-implementation "com.bold360ai-sdk.core:accessibility:3.3.1"
-implementation "com.bold360ai-sdk.conversation:engine:3.3.2"
-implementation "com.bold360ai-sdk.conversation:chatintegration:3.3.2"
-implementation "com.bold360ai-sdk.conversation:ui:3.3.2"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.31"
-implementation "com.google.code.gson:gson:2.8.5"
-implementation "android.arch.lifecycle:extensions:1.1.1"
-```
 </details>
 
 {: .det .mt-2}
@@ -779,32 +610,18 @@ implementation "android.arch.lifecycle:extensions:1.1.1"
 <summary> Version 3.3.1 </summary>
 
 # Version 3.3.1
-Release date: August 26, 2019
-{: .overview}
 
-In this version:
+Release date: March 31, 2019
 
-### Bot Chat related
-- Fix for url channel activation.
-- Fix for empty bubble content.
+This release contains the following bold360ai iOS SDK Features/ Fixes:
 
-Known issue: 
-{: .knownissue}
-Ticket typed channels not working
+* Support skip `prechat` including extra params.
+* Support queue position component on live chat with agent.
 
----
+>Note: This version contains **breaking changes**
 
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:3.3.1"
-implementation "com.bold360ai-sdk.conversation:engine:3.3.1"
-implementation "com.bold360ai-sdk.conversation:chatintegration:3.3.1"
-implementation "com.bold360ai-sdk.conversation:ui:3.3.1"
-implementation "com.bold360ai-sdk.core:accessibility:3.3.1"
+* Class name `AccountParams` was replaced by `BotAccount`.
 
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.31"
-implementation "com.google.code.gson:gson:2.8.5"
-implementation "android.arch.lifecycle:extensions:1.1.1"
-```
 </details>
 
 {: .det .mt-2}
@@ -813,166 +630,16 @@ implementation "android.arch.lifecycle:extensions:1.1.1"
 <summary> Version 3.3.0 </summary>
 
 # Version 3.3.0
-Release date: August 08, 2019
-{: .overview}
 
-In this version:
+Release date: March 14, 2019
 
-### Bot Chat related
-- Welcome message customization support by integrating app.
-- Autocomplete standalone component
+This release contains the following bold360ai iOS SDK Features/ Fixes:
 
-Breaking Changes
-{: .breaking}
-- BotAccount location: import com.nanorep.nanoengine.bot.BotAccount
+* File upload API.
+* Fixed article view presentation bug.
+* Native typing indication by design.
+* New default bot/ agent icons.
 
-
-### Bold Live Chat related:
-- Live chatbar: Agent name and avatar display
-- Chat availability check support.
-- Live chat language customization by integrating app
-
-### General:
-- Chat element changes listening support    
-(`import com.nanorep.convesationui.structure.history.ChatElementListener`)
-
-Breaking Changes
-{: .breaking}
-- HistoryProvider was deprecated and should not be used. Use full implementation of ChatElementListener instead.
-
-- ChatUIProvider.customize method became internal and is not accesible for now.
-  Dynamic configurations will be supported in the future.
-
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:3.3.0"
-implementation "com.bold360ai-sdk.conversation:engine:3.3.0"
-implementation "com.bold360ai-sdk.conversation:chatintegration:3.3.0"
-implementation "com.bold360ai-sdk.conversation:ui:3.3.0"
-implementation "com.bold360ai-sdk.core:accessibility:3.3.0"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.31"
-implementation "com.google.code.gson:gson:2.8.5"
-implementation "android.arch.lifecycle:extensions:1.1.1"
-```
-</details>
-
-{: .det .mt-2}
-<details close markdown="block">
-
-<summary> Version 3.2.4 </summary>
-
-# Version: 3.2.4
-Release date: June 12, 2019
-{: .overview}
-
-In this version:
-
-### Bot Chat related:
-
-- On load article (welcome message)
-- Custom user id - overriding default generated id
-- Handover support -Third party chat support
-
-
-### Bold Live Chat related:
-
-- Passing user typing indication to agent. agent can now see when the visitor is typing.
-- Chat bar display while live chat is in progress. Enables end live chat.
-- File upload, supports working with SDK default upload mechanism and integrating with self implementation.
-
-
-### General:
-
-- Improve memory usage and images display on different device resolutions.
-- Improvements in connections establishing and requests posting.
-- Bugs fixes.
-
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:3.2.4"
-implementation "com.bold360ai-sdk.conversation:engine:3.2.4"
-implementation "com.bold360ai-sdk.conversation:chatintegration:3.2.4"
-implementation "com.bold360ai-sdk.conversation:ui:3.2.4"
-implementation "com.bold360ai-sdk.core:accessibility:3.2.4"
-
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.31"
-implementation "com.google.code.gson:gson:2.8.5"
-implementation "android.arch.lifecycle:extensions:1.1.1"
-```
-</details>
-
-{: .det .mt-2}
-<details close markdown="block">
-
-<summary> Version 3.2.3 </summary>
-
-# Version: 3.2.3
-Release date: March 27, 2019
-{: .overview}
-
-In this version:
-
-1. Bold Chat - Support "Skip prechat" and extra data configurations provided by app side.|
-   https://developer.bold360.com/help/EN/Bold360API/Bold360API/c_sdk_combined_android_adv_present_forms.html
-   
-2. Bold Chat - Support queue position indication display Queue position UI is both configurable and overridable.
-   https://developer.bold360.com/help/EN/Bold360API/Bold360API/c_sdk_combined_android_adv_chat_queue_position.html
-
-3. LifeCycle events - There were added 2 new state events.
-   - InQueue - raised when chat enters the queue
-   - Pending - raised when chat was assigned to an agent but not yet accepted.
-
-4. Base design implementation for "readmore" indication over the bubbles. 
-   Support configurations change of the readmore indication.
-   - Full article screen redesign, channels redesign.
-
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:3.2.3"
-implementation "com.bold360ai-sdk.conversation:engine:3.2.3"
-implementation "com.bold360ai-sdk.conversation:chatintegration:3.2.3"
-implementation "com.bold360ai-sdk.conversation:ui:3.2.3"
-implementation "com.bold360ai-sdk.core:accessibility:3.2.2"
-```
-</details>
-
-{: .det .mt-2}
-<details close markdown="block">
-
-<summary> Version 3.2.2 </summary>
-
-# Version 3.2.2
-Release date March 13, 2019
-   
-**In this version:**
-1. SDK default UI configurations and customisations upgrade.   
-
-2. Typing indication when bold live agent starts typing.   
-
-3. File upload enabling support. You can now integrate your existing file upload mechanism with 
-the Bold360ai SDK.   
-
-4. Upgrade to Bot V2 API.   
-
-5. Bugs fixes - among them:
-   - big images in responses, handling, prevents crashes and reduces memory usage. 
-   - Bot timed feedback not stopping when live chat starts
-   - outgoing message status indication updates to "ok" only if was passed successfully to an agent.
-   - Adding chat disconnected message when a chat with live agent was disconnected, and can't be reconnected.
-
----
-
-```gradle
-implementation "com.bold360ai-sdk.core:sdkcore:3.2.2"
-implementation "com.bold360ai-sdk.conversation:engine:3.2.2"
-implementation "com.bold360ai-sdk.conversation:chatintegration:3.2.2"
-implementation "com.bold360ai-sdk.conversation:ui:3.2.2"
-implementation "com.bold360ai-sdk.core:accessibility:3.2.2"
-```
 </details>
 
 {: .det .mt-2}
@@ -982,27 +649,13 @@ implementation "com.bold360ai-sdk.core:accessibility:3.2.2"
 
 # Version 3.2.1
 
-Release date: February 21, 2019
+Release date: February 14, 2019
 
-In this version:
+This release contains the following bold360ai iOS SDK Features/ Fixes:
 
-1. we have some improvements - requests dispatching mechanism was upgraded and improved.
-
-2. Bugs fixes: app crashes, carousel sizing, some regressions fixes.
-
-3. We've upgraded kotlin coroutines version which is now `1.1.1`
-
-4. We're now using the new gradle import methods,`api` and `implementation`
-
----
-
-```gradle
-implementation "com.nanorep.core:sdkcore:3.2.1"
-implementation "com.nanorep.conversation:engine:3.2.1"
-implementation "com.nanorep.conversation:chatintegration:3.2.1"
-implementation "com.nanorep.conversation:ui:3.2.1"
-implementation "com.nanorep.core:accessibility:3.2.1"
-```
+* Error Handling Support.
+* Typing indication Support.
+* Minor search view input fixes.
 </details>
 
 {: .det .mt-2}
@@ -1012,41 +665,33 @@ implementation "com.nanorep.core:accessibility:3.2.1"
 
 # Version 3.2.0
 
-Release date: January 31, 2019
+Release date: January 30, 2019
 
-This release contains the following Bold360 Android SDK Features:
+This release contains the following bold360ai iOS SDK Features:
 
-* Bold live chat with agent:
-  - Identify customers and continuation of chats
-  - Chat forms display. SDK provides default implementation for the preChat form. SDK enables forms override
-    and display by app side. 
-  - Localization
+* Lifecycle State Events.
+* Chat forms display. 
+     - SDK enables forms override and display by app side.
+     - SDK provides default implementation only for the `preChat` form.
+* Chat UI Customizations.
+* Start Directly with Live Agent (No Bot first).
+</details>
 
-* lifecycle state events and notifications subscription.
+{: .det .mt-2}
+<details close markdown="block">
 
-* Bot chat support:
-  - Feedback & Escalation on bot responses.
-  - Responses types - Carousel, Options, Channels, videos, etc.
+<summary> Version 3.0.0 </summary>
 
->**Notice.** Current limitations   
-Imports are needed to all of listed below:
-```gradle
-implementation "com.nanorep.conversation:ui:3.2.0"
+# Version 3.0.0
 
-implementation "com.nanorep.conversation:chatintegration:3.2.0"
-implementation "com.nanorep.conversation:engine:3.2.0"
-implementation "com.nanorep.core:sdkcore:3.2.0"
-implementation "com.nanorep.core:accessibility:3.2.0"
-implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.20"
-implementation "org.jetbrains.anko:anko-commons:0.10.8"
+Release date: December 5, 2018
 
-implementation "com.android.support:appcompat-v7:28.0.0"
-implementation "com.android.support:design:28.0.0"
-implementation "com.android.support.constraint:constraint-layout:1.1.3"
-implementation "com.makeramen:roundedimageview:2.3.0"
-implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:0.27.0-eap13"
-implementation "com.google.code.gson:gson:2.8.2"
-implementation "android.arch.lifecycle:extensions:1.1.1"
-```
+This release contains the following Bold360 iOS SDK Features:
+
+* Request and submit answers to pre-chat
+* Identify customers
+* Send and receive chat messages
+* Bot Support
+* Feedback & Escalation 
 
  
