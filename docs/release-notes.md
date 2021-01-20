@@ -20,7 +20,7 @@ Release date: January 20, 2021
 {: .overview}
 
 ### Fixes 
-- Fix phone keyboard is hidingthe text bar.
+- Fix phone keyboard is hiding the text bar.
 
 ---
 
