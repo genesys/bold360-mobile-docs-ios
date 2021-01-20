@@ -10,8 +10,29 @@ toc_float: true
 {: .no_toc }
 
 ---
-
 {: .det}
+<details open markdown="block">
+
+<summary> Version 3.8.11 </summary>
+
+# Version 3.8.12
+Release date: January 20, 2021
+{: .overview}
+
+### Fixes 
+- Fix phone keyboard is hidingthe text bar.
+
+---
+
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
+
+
+{: .det .mt-2}
 <details open markdown="block">
 
 <summary> Version 3.8.11 </summary>
