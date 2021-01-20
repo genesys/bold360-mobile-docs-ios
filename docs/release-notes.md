@@ -13,7 +13,7 @@ toc_float: true
 {: .det}
 <details open markdown="block">
 
-<summary> Version 3.8.11 </summary>
+<summary> Version 3.8.12 </summary>
 
 # Version 3.8.12
 Release date: January 20, 2021
@@ -33,7 +33,7 @@ pod update
 
 
 {: .det .mt-2}
-<details open markdown="block">
+<details close markdown="block">
 
 <summary> Version 3.8.11 </summary>
 
