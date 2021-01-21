@@ -7,8 +7,17 @@ nav_order: 1
 ---
 
 # Update SDK to Latest Version.
+{: .no_toc}
 
-## Follow below steps to make sure you don't miss something.
+## Table of contents
+{: .no_toc .text-delta }
+
+- TOC
+{:toc}
+
+---
+
+## Steps to successful update:
 
 1. Clear pods from you project.
 
