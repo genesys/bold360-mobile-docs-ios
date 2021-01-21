@@ -3,7 +3,7 @@ layout: default
 title: "pod update" doesn't update to latest version
 parent: FAQ
 nav_order: 1
-# permalink: /docs/faq/"pod update" doesn't update to latest version
+# permalink: /docs/faq/pod-update-version
 ---
 
 # Update SDK to Latest Version.
