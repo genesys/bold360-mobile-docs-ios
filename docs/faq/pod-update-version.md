@@ -19,32 +19,32 @@ nav_order: 2
 
 ## Steps to successful update:
 
-1. Clear pods from you project.
+* Clear pods from you project.
 
 ```ruby
 cd PROJECT_FILE
 pod deintegrate
 ```
 
-2. Make sure under `Podfile` deployment target set to `10.0` and above.
+* Make sure under `Podfile` deployment target set to `10.0` and above.
 
 ```ruby
 platform :ios, '10.0'
 ```
 
-3. Validate that relevant `source` is mantioned on Podfile.
+* Validate that relevant `source` is mantioned on Podfile.
 
 ```ruby
 source 'https://github.com/nanorepsdk/NRSDK-specs.git'
 ```
 
-4. Validate the SDK name is written properly.
+* Validate the SDK name is written properly.
 
 ```ruby
 pod 'Bold360AI'
 ```
 
-5. Run the `update` command.
+* Run the `update` command.
 
 ```ruby
 pod update # not pod install
