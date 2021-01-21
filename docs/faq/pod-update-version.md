@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "pod update" doesn't update to latest version
+title: Update SDK to Latest Version
 parent: FAQ
-nav_order: 1
+nav_order: 2
 # permalink: /docs/faq/pod-update-version
 ---
 
-# Update SDK to Latest Version.
+# Update SDK to Latest Version
 {: .no_toc}
 
 ## Table of contents
@@ -50,7 +50,7 @@ pod 'Bold360AI'
 pod update # not pod install
 ```
 
-## How the `Podfile` should look at the end?
+## Right `Podfile` Example
 
 ```ruby
 platform :ios, "10.0"
