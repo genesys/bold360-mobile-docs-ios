@@ -70,8 +70,13 @@ font1.font = UIFont(name: "{CUSTOM_FONT_NAME}", size: 20)
 self.chatController.viewConfiguration.outgoingConfig.customFont = font
 self.chatController.viewConfiguration.incomingBotConfig.customFont = font1
 self.chatController.viewConfiguration.incomingLiveConfig.customFont = font
-
 ```
+
+>Note: Currently there is a known limitation for setting the customFont for the chatController.viewConfiguration.multipleSelectionConfiguration .persistentOptionConfiguration and .titleConfiguration
+A possible workaround is to use chatController.viewConfiguration.incomingBotConfig .persistentOptionConfig and .titleConfig
+
+>Note: apple documentation for adding a custom font to a project: https://developer.apple.com/documentation/uikit/text_display_and_fonts/adding_a_custom_font_to_your_app
+
 
 ### Limit Chat Element Length
 
