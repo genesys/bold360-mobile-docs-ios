@@ -10,6 +10,7 @@ toc_float: true
 {: .no_toc }
 
 ---
+
 {: .det}
 <details open markdown="block">
 
