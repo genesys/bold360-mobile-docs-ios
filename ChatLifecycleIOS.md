@@ -43,10 +43,10 @@ liveAccount.extraData?.departmentId = "{DEPARTMENT_ID}"
 
 2. Call `checkAvailability` under `ChatController`.
 ```swift
-ChatController.checkAvailability(self.createAccount()) { (isAvailable, reason, error) in
-   // Validate no error
-   // Check isAvailable
-   // If not available check reason
+ChatController.checkAvailability(self.createAccount()) { (availabilityResult) in
+   // Validate no error on result.error
+   // Check isAvailable with result.isAvailable
+   // If not available check result.reason
 }
 ```
 
