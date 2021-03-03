@@ -11,17 +11,27 @@ toc_float: true
 
 ---
 
+
 {: .det}
 <details open markdown="block">
 
 <summary> Version 3.8.12 </summary>
 
-# Version 3.8.12
-Release date: January 20, 2021
+# Version 3.9.0
+Release date: March 5, 2021
 {: .overview}
 
+- Improve the configuration objects hierarchy.
+- Support hyperlink colors.
+- Support background images for chat elements (incoming, outgoing).
+- Support disabling live chat bar via `chatBarConfiguration`.
+- Add borders configuration on `searchViewConfig`.
+
+
 ### Fixes 
-- Fix phone keyboard is hiding the text bar.
+- Fix maximum length.
+- Fix custom font assigment.
+- Fix displaying of correct avatar size.
 
 ---
 
@@ -32,6 +42,25 @@ pod update
 ```
 </details>
 
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.8.12 </summary>
+
+# Version 3.8.12
+Release date: January 20, 2021
+{: .overview}
+
+### Fixes 
+- Fix phone keyboard is hiding the text bar.
+---
+
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
 
 {: .det .mt-2}
 <details close markdown="block">
