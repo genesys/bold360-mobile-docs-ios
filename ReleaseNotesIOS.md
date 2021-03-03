@@ -1,3 +1,68 @@
+---
+layout: default
+title: Release Notes
+nav_order: 5
+toc_float: true
+  
+---
+
+# Release Notes
+{: .no_toc }
+
+---
+
+{: .det}
+<details open markdown="block">
+
+<summary> Version 3.8.12 </summary>
+
+# Version 3.8.12
+Release date: January 20, 2021
+{: .overview}
+
+### Fixes 
+- Fix phone keyboard is hiding the text bar.
+
+---
+
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
+
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.8.11 </summary>
+
+# Version 3.8.11
+Release date: January 11, 2021
+{: .overview}
+
+- Attached Pre-chat language selection to take effect.
+
+### Fixes 
+- Fix crash on swiping back in support center.
+- Fix back on controllers which are not support center.
+
+
+---
+
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.8.10 </summary>
+
 # Version 3.8.10
 
 * [BLD-42332] Fix chat header configuration issue.
@@ -21,6 +86,13 @@ chatController.viewConfiguration.multipleSelectionConfiguration.persistentOption
 chatController.viewConfiguration.multipleSelectionConfiguration.titleConfiguration.backgroundColor = UIColor.yellow
 
 ```
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.8.9 </summary>
 
 
 # Version 3.8.9
@@ -69,9 +141,23 @@ config.readMoreViewConfig.customFont = {}
 config.readMoreViewConfig.customFont.font = {}
 ```
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.8.8 </summary>
+
 # Version 3.8.8
 
 * [BLD-41504] Fix Uploading to Appstore issue - update SDK version number to three non-negative integers.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.8.7 </summary>
 
 # Version 3.8.7
 
@@ -99,10 +185,24 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 
 ```
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.8.6 </summary>
+
 # Version 3.8.6
 
 * [BLD-39079] Fixed crash on slow connection.
 * [BLD-39394] remove import warnings (no warnings on SDK).
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.8.5 </summary>
 
 # Version 3.8.5
 
@@ -111,10 +211,24 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 * [BLD-40136] Adding persistenOption font to html + supporting bubble background color and text color.
 * [BLD-40398] Fixed bottom constraints - connected vertically 2 major views.
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.8.4 </summary>
+
 # Version 3.8.4
 
 * [BLD-37924] Fixed method's signature and category name.
 * [BLD-40137] Enabling the change of the sendButton color.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.8.3 </summary>
 
 # Version 3.8.3
 
@@ -127,9 +241,23 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 * [BLD-39343] Adding datestamp font to ChatViewConfiguration
 * [BLD-39500] quick options font separation
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.8.2 </summary>
+
 # Version 3.8.2
 
 * Fix - Conversation won't work on production environment.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.8.1 </summary>
 
 # Version 3.8.1
 
@@ -138,23 +266,57 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 * Bug fixes including leaks handling.
 * Warnings resolve.
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.8.0 </summary>
+
 # Version 3.8.0
 
 * Instant Feedback support, includes history.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.7.0 </summary>
 
 # Version 3.7.0
 
 * Voice-to-voice experience. The SDK has an option to read out Bot answers if the question was asked though dictation by voice.
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.6.16 </summary>
+
 # Version 3.6.16
 
 * [BLD-36658] Added support for linked article with context.
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.6.15 </summary>
 
 # Version 3.6.15
 
 * Broken UI Arrangement Constraints on the default pre-chat form [BLD-35341] -> another fix
 * File upload is not working in the EU accounts [BLD-35473] -> another fix for minor bug
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.6.14 </summary>
 
 # Version 3.6.14
 
@@ -163,11 +325,25 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 * Remove remaining references of UIWebView from iOS harmony SDK [BLD-35340]
 * File upload is not working in the EU accounts [BLD-35473]
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.6.13 </summary>
+
 # Version 3.6.13
 
 * Replace UIWebView with WKWebView in the iOS Harmony SDK [BLD-33735]
 * Agent messages are not presented in full length [BLD-34008]
 * Mobile SDK - Welcome message increase engagement but not interactions [BLD-34730]
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.6.11 </summary>
 
 # Version 3.6.11
 
@@ -176,20 +352,48 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 * Added the ability to configure multi line elemnt [BLD-33529].
 * Added the ability to configure carousel [BLD-33529].
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.6.10 </summary>
+
 # Version 3.6.10
 
 > **New**
 * Added the ability to customize the UI for chat forms title.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.6.9 </summary>
 
 # Version 3.6.9
 
 > **New**
 * Enabled multi line text on post chat form title.
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.6.8 </summary>
+
 # Version 3.6.8
 
 > **New**
 * Enabled multi line text for “Drop Down” custom field in post chat.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.6.7 </summary>
 
 # Version 3.6.7
 
@@ -197,11 +401,25 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 * Autosizing labels - “End Chat” button
 * Quick buttons in welcome article are presented if FAQ's are presented as well.
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.6.6 </summary>
+
 # Version 3.6.6
 
 > **New**
 * On presenting post chat options getting "(Not Available)"
 * Mobile SDK should not send html code
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.6.5 </summary>
 
 # Version 3.6.5
 
@@ -212,15 +430,36 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 * Fixing Overriding BrandedForm by changing the delegate from ChatController to ChatViewController
 * Remove the feedback buttons from the bottom of expanded articles
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.6.4 </summary>
+
 # Version 3.6.4
 
 > **New**
 - Fixed an issue that prevented presenting custom made pre-and post-chat forms. This was caused by the inability to override the BrandedForm type variables. You can find more information on how to override the default pre- and post chat forms look and feel in https://developer.bold360.com/help/EN/Bold360API/Bold360API/PresentFormsIOS.html
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.6.2 </summary>
+
 # Version 3.6.2
 
 > **New**
 - Fixed JSON parsing with special characters.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.6.1 </summary>
 
 # Version 3.6.1
 
@@ -228,6 +467,13 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 - Support Chat Engagement (Chat element injection).
 - Support Create Initialization Entities.
 - Fixed a bug with multi line fields on forms.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.6.0 </summary>
 
 # Version 3.6.0
 
@@ -238,6 +484,12 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 - Fixed continuity provider.
 - Fixed a bug with context when using support center on search sdk.
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.5 </summary>
 
 # Version 3.5.5
 
@@ -247,12 +499,26 @@ chatController.viewConfiguration.multipleSelectionConfiguration.titleConfigurati
 - Added Placeholder hint for input field.
 - Minor file upload bug fixes.
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.4 </summary>
+
 # Version 3.5.4
 
 > **New**
 - Passing account data when escalating from botChat to liveAgent.
 - Predefined pre chat form with extra data.
 - Minor bug fixes.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.5.2 </summary>
 
 # Version 3.5.2
 
@@ -274,6 +540,13 @@ Passing `LiveAccount` data is done using `account.extraData` instead of `account
 > **Live Chat related:**
 - Bot conversation transcript is sent to live console.
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.4.8 </summary>
+
 # Version 3.4.8
 
 This release contains the following bold360ai iOS SDK Features/ Fixes:
@@ -290,11 +563,25 @@ Use full implementation of `ChatElementDelegate` instead.
 > **Live Chat related:**
 - Chat availability check support.
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.4.7 </summary>
+
 # Version 3.4.7
 
 This release contains the following bold360ai iOS SDK Features/ Fixes:
 
 * Support File Upload - Live Chat.
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.4.0 </summary>
 
 # Version 3.4.0
 
@@ -305,6 +592,13 @@ This release contains the following bold360ai iOS SDK Features/ Fixes:
 * Support History
 * Support restore chat
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.3.9 </summary>
+
 # Version 3.3.9
 
 Release date: April 17, 2019
@@ -313,6 +607,12 @@ This release contains the following bold360ai iOS SDK Features/ Fixes:
  
 * Support all chat view controller attachments (modal, navigation, child vc...).
 * Framework stabilization.
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.3.2 </summary>
 
 # Version 3.3.2
 
@@ -321,6 +621,13 @@ Release date: April 14, 2019
 This release contains the following bold360ai iOS SDK Features/ Fixes:
 
 * Icon Positioning
+
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.3.1 </summary>
 
 # Version 3.3.1
 
@@ -335,6 +642,13 @@ This release contains the following bold360ai iOS SDK Features/ Fixes:
 
 * Class name `AccountParams` was replaced by `BotAccount`.
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.3.0 </summary>
+
 # Version 3.3.0
 
 Release date: March 14, 2019
@@ -346,6 +660,13 @@ This release contains the following bold360ai iOS SDK Features/ Fixes:
 * Native typing indication by design.
 * New default bot/ agent icons.
 
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.2.1 </summary>
+
 # Version 3.2.1
 
 Release date: February 14, 2019
@@ -355,6 +676,12 @@ This release contains the following bold360ai iOS SDK Features/ Fixes:
 * Error Handling Support.
 * Typing indication Support.
 * Minor search view input fixes.
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.2.0 </summary>
 
 # Version 3.2.0
 
@@ -368,6 +695,12 @@ This release contains the following bold360ai iOS SDK Features:
      - SDK provides default implementation only for the `preChat` form.
 * Chat UI Customizations.
 * Start Directly with Live Agent (No Bot first).
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
+<summary> Version 3.0.0 </summary>
 
 # Version 3.0.0
 
@@ -380,3 +713,5 @@ This release contains the following Bold360 iOS SDK Features:
 * Send and receive chat messages
 * Bot Support
 * Feedback & Escalation 
+
+ 
