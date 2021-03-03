@@ -69,10 +69,10 @@ self.delegate.submitForm(brandedForm)
 
 >Form Cancelation
 
-*Please Notify When Back Button Was Tapped To Dismiss Form.* 
+*Please Notify When Back Button Was Tapped.* 
 
 ```swift
-self.delegate.didDismissForm(self)
+self.delegate.didDismissForm(nil)
 ```
 
 ## How to skip Prechat Form
