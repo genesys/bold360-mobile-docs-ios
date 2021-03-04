@@ -26,12 +26,20 @@ Release date: March 5, 2021
 - Support background images for chat elements (incoming, outgoing).
 - Support disabling live chat bar via `chatBarConfiguration`.
 - Add borders configuration on `searchViewConfig`.
+- Support avatar image size.
+- Added border configuration to the search bar.
+- Full support for dark mode.
 
 
 ### Fixes 
 - Fix maximum length.
 - Fix custom font assigment.
 - Fix displaying of correct avatar size.
+
+
+#### Breaking Changes
+
+- We made few significant cahnges in the `Configuration` structure so recommended to follow the updated documentation: [UI-Customization] (https://logmein-bold-mobile.github.io/bold360-mobile-docs-ios/docs/chat-configuration/ui-customization)
 
 ---
 
