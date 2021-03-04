@@ -1,0 +1,188 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+
+@media (prefers-color-scheme: dark) {
+    html{
+        filter: invert(1)  hue-rotate(.5turn);
+    }
+    img {
+        filter: invert(1)  hue-rotate(.5turn);
+    }
+}
+.conversation {
+	font-family: Roboto, Helvetica, Arial, sans-serif;
+	/*box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.2) inset;*/
+	padding: 15px;
+	background-size: contain;
+}
+
+.client,
+.server {
+	border-radius: 10px 10px 10px 0px;
+	background: #fff;
+	color: #4a4a4a;
+	max-width: 100%;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	float: left;
+	margin: 0 0 5px;
+	/*box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.15);*/
+}
+
+
+.client {
+	background-color: #00bcd4;
+	border-radius: 10px 10px 0;
+	color: #fff;
+	float: right;
+	/*box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.15);*/
+}
+
+p {
+	margin: 0px;
+}
+
+.bubbleParent {
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.bubbleParent-system {
+	justify-content: center;
+}
+
+.answerParent-system {
+	width: 100%;
+}
+
+.avatar-parent {
+	display: flex;
+	align-items: flex-start;
+}
+
+.avatar-parent-left {
+	margin-right: 10px;
+}
+
+.avatar-parent-right {
+	margin-left: 10px;
+}
+
+.avatar {
+	background-size: 100% 100%;
+}
+.bubbleTime{
+	color: #4a4a4a;
+}
+
+.timeDiv.incoming {
+	float: left;
+}
+/*
+.client-avatar {
+	background-image: url(https://firebasestorage.googleapis.com/v0/b/groupy-79fd4.appspot.com/o/users%2FOz%20Ben%20Oved.png?alt=media&token=524899fa-6b0c-49de-bf84-58c81569d639);
+}
+
+.server-avatar {
+	background-image: url(https://firebasestorage.googleapis.com/v0/b/groupy-79fd4.appspot.com/o/users%2FOz%20Ben%20Oved.png?alt=media&token=524899fa-6b0c-49de-bf84-58c81569d639);
+}
+*/
+
+.bubbleParent-left {
+	flex-direction: row;
+}
+
+.bubbleParent-right {
+	flex-direction: row-reverse;
+}
+
+.bubbleParent-bottom .avatar {
+	align-self: flex-end;
+	margin-bottom: 35px;
+}
+
+.bubbleParent-top .avatar {
+	top: 0px;
+}
+
+bubbleParent-top-with-date .avatar {
+	top: 60px;
+}
+
+.bubbleParent-server + .bubbleParent-server .avatar,
+.bubbleParent-client + .bubbleParent-client .avatar {
+	/*display: none; */
+}
+
+.titleContainer {
+	height: auto;
+	padding: 18px 0;
+	background: #d8d8d8;
+	border-radius: 40px 40px 0 0;
+}
+
+.title {
+	font-size: 16px;
+	background: none;
+}
+
+.answers {
+	border-width: 1px;
+	margin-left: 0;
+}
+
+.answer {
+	border-bottom-width: 1px;
+}
+
+.gradient {
+	background: -webkit-linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1));
+}
+
+.persistentOption,
+.quickOption {
+	margin: 0 -15px;
+	padding: 0 5px 10px;
+	width: auto;
+}
+
+.channel.userOption {
+	background: #3896a9;
+	border-color: #3896a9;
+	color: #fff;
+}
+
+.bottomAnswer {
+	border-radius: 0 0 43px;
+}
+
+.channel {
+	box-sizing: border-box;
+	/*background-color: #1c6979;*/
+	border: none;
+	color: #fff;
+	padding: 0 15px;
+	min-width: 110px;
+	/*min-height: 49px;*/
+}
+
+.channel:focus {
+	background-color: #fff;
+	color: #1c6979;
+	outline: none;
+}
+
+.channel-no-icon:focus {
+	background-image: none !important;
+}
+
+.channel-1 { background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2225%22%20height%3D%2218%22%20viewBox%3D%220%200%2025%2018%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M13%2012.77a.87.87%200%200%201-1.23%200L.4%201.4c-.02.15-.07.3-.07.44V15.8c0%20.95.78%201.73%201.74%201.73H23c.96%200%201.74-.78%201.74-1.74v-14c0-.24-.05-.47-.14-.68L13%2012.74z%22%2F%3E%3Cpath%20d%3D%22M12.38%2010.92L23.18.12%2023%20.1H2.07c-.15%200-.28.04-.43.08l10.74%2010.74z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E'); }
+.channel-3 { background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2225%22%20height%3D%2222%22%20viewBox%3D%220%200%2025%2022%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20fill-rule%3D%22evenodd%22%20d%3D%22M1.64%2022l.25-.28c.4-.5.63-1.05.83-1.65a9.56%209.56%200%200%200%20.43-1.98l.1-1.27a.12.12%200%200%200-.04-.1%2010.2%2010.2%200%200%201-1.88-2.1c-.67-1-1.1-2.1-1.3-3.28-.27-1.72%200-3.35.8-4.9.7-1.32%201.66-2.42%202.86-3.35%201.33-1%202.83-1.7%204.44-2.16A14.85%2014.85%200%200%201%2010.4.46a16.1%2016.1%200%200%201%202.94-.1c1.04.04%202.08.2%203.1.47%201.94.5%203.72%201.37%205.26%202.7%201.12.94%202%202.07%202.6%203.42.37.8.6%201.68.66%202.57.12%201.55-.2%203-.93%204.4A9.6%209.6%200%200%201%2022%2016.5a12.2%2012.2%200%200%201-3.2%202.13%2014.42%2014.42%200%200%201-3.12%201.03%2015.77%2015.77%200%200%201-5.5.16%2015.08%2015.08%200%200%201-2.2-.48.15.15%200%200%200-.15.03%2016.26%2016.26%200%200%201-2.3%201.5c-.75.4-1.52.74-2.33.94-.5.16-.98.2-1.48.2h-.1z%22%2F%3E%3C%2Fsvg%3E'); }
+.channel-5 { background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2223%22%20height%3D%2223%22%20viewBox%3D%220%200%2023%2023%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20fill-rule%3D%22evenodd%22%20d%3D%22M21.96%2017.7l-.3-.3-.56-.58c-2.26-2.23-3.15-3.14-3.24-3.2a35.86%2035.86%200%200%201-.3-.3c-1.12-1.05-1.9-.2-2.9%201.3l-.27.4a.1.1%200%200%200-.08.03l-.08.13c-1.15%201.76-1.05%201.8-1.45%201.7h-.05c-1.28-.4-1.13-.5-3.64-3.04-2.54-2.5-2.62-2.36-3.02-3.65a.4.4%200%200%201%200-.1c-.1-.4-.06-.3%201.7-1.46l.14-.1.4-.26c1.53-1%202.37-1.78%201.32-2.9l-.3-.3c-.07-.1-.98-1-3.2-3.25L5.6%201.3a35.86%2035.86%200%200%201-.3-.3C4.06-.12%202.9.72%201.72%202.57.54%204.4.16%205.5.15%205.52c-.53%201.7.47%203.75.9%204.45%201.46%202.47%202.03%203.5%205.28%206.7%203.2%203.25%204.23%203.82%206.7%205.28.7.42%202.76%201.43%204.45.9%200%200%201.12-.4%202.96-1.57%201.85-1.2%202.7-2.34%201.52-3.58z%22%2F%3E%3C%2Fsvg%3E'); }
+
+.channel-1:focus { background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2225%22%20height%3D%2218%22%20viewBox%3D%220%200%2025%2018%22%3E%3Cg%20fill%3D%22%231c6979%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M13%2012.77a.87.87%200%200%201-1.23%200L.4%201.4c-.02.15-.07.3-.07.44V15.8c0%20.95.78%201.73%201.74%201.73H23c.96%200%201.74-.78%201.74-1.74v-14c0-.24-.05-.47-.14-.68L13%2012.74z%22%2F%3E%3Cpath%20d%3D%22M12.38%2010.92L23.18.12%2023%20.1H2.07c-.15%200-.28.04-.43.08l10.74%2010.74z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E'); }
+.channel-3:focus { background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2225%22%20height%3D%2222%22%20viewBox%3D%220%200%2025%2022%22%3E%3Cpath%20fill%3D%22%231c6979%22%20fill-rule%3D%22evenodd%22%20d%3D%22M1.64%2022l.25-.28c.4-.5.63-1.05.83-1.65a9.56%209.56%200%200%200%20.43-1.98l.1-1.27a.12.12%200%200%200-.04-.1%2010.2%2010.2%200%200%201-1.88-2.1c-.67-1-1.1-2.1-1.3-3.28-.27-1.72%200-3.35.8-4.9.7-1.32%201.66-2.42%202.86-3.35%201.33-1%202.83-1.7%204.44-2.16A14.85%2014.85%200%200%201%2010.4.46a16.1%2016.1%200%200%201%202.94-.1c1.04.04%202.08.2%203.1.47%201.94.5%203.72%201.37%205.26%202.7%201.12.94%202%202.07%202.6%203.42.37.8.6%201.68.66%202.57.12%201.55-.2%203-.93%204.4A9.6%209.6%200%200%201%2022%2016.5a12.2%2012.2%200%200%201-3.2%202.13%2014.42%2014.42%200%200%201-3.12%201.03%2015.77%2015.77%200%200%201-5.5.16%2015.08%2015.08%200%200%201-2.2-.48.15.15%200%200%200-.15.03%2016.26%2016.26%200%200%201-2.3%201.5c-.75.4-1.52.74-2.33.94-.5.16-.98.2-1.48.2h-.1z%22%2F%3E%3C%2Fsvg%3E'); }
+.channel-5:focus { background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2223%22%20height%3D%2223%22%20viewBox%3D%220%200%2023%2023%22%3E%3Cpath%20fill%3D%22%231c6979%22%20fill-rule%3D%22evenodd%22%20d%3D%22M21.96%2017.7l-.3-.3-.56-.58c-2.26-2.23-3.15-3.14-3.24-3.2a35.86%2035.86%200%200%201-.3-.3c-1.12-1.05-1.9-.2-2.9%201.3l-.27.4a.1.1%200%200%200-.08.03l-.08.13c-1.15%201.76-1.05%201.8-1.45%201.7h-.05c-1.28-.4-1.13-.5-3.64-3.04-2.54-2.5-2.62-2.36-3.02-3.65a.4.4%200%200%201%200-.1c-.1-.4-.06-.3%201.7-1.46l.14-.1.4-.26c1.53-1%202.37-1.78%201.32-2.9l-.3-.3c-.07-.1-.98-1-3.2-3.25L5.6%201.3a35.86%2035.86%200%200%201-.3-.3C4.06-.12%202.9.72%201.72%202.57.54%204.4.16%205.5.15%205.52c-.53%201.7.47%203.75.9%204.45%201.46%202.47%202.03%203.5%205.28%206.7%203.2%203.25%204.23%203.82%206.7%205.28.7.42%202.76%201.43%204.45.9%200%200%201.12-.4%202.96-1.57%201.85-1.2%202.7-2.34%201.52-3.58z%22%2F%3E%3C%2Fsvg%3E'); }
