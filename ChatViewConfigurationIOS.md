@@ -130,3 +130,12 @@ chatController.viewConfiguration.formConfiguration.titleConfig.backgroundColor =
 chatController.viewConfiguration.formConfiguration.titleConfig.textColor = UIColor.red
 chatController.viewConfiguration.formConfiguration.titleConfig.font = UIFont(name: "Times New Roman", size: 29.0)!
 ```
+
+## Known Issues
+
+1. Background image is not supported on system message.
+2. Carousel is not configurable.
+3. Background image is not supported on chat view.
+4. Background image is not supported on read more channels.
+5. Background image is not supported on quick options.
+6. "Read More+" button is not configurable.
