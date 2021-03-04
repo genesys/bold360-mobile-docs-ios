@@ -6,13 +6,13 @@ nav_order: 2
 # permalink: /docs/chat-configuration/chat-settings
 ---
 
-# Chat settings {{site.data.vars.need-work}}
+# Chat settings {{site.data.vars.force-work}}
 {: .no_toc }
 
 ## Table of contents
 {: .no_toc .text-delta }
 
-1. TOC
+- TOC
 {:toc}
 
 ---
@@ -45,14 +45,14 @@ Available voice behavior options are defined by <u>`VoiceSupport`</u>.
 {: .mt-8}
 ### Chat transcript request
 Each supported chat is being "recorded" while in progress, to allow passing its transcript, if requested, just before it ends or being escalated.
-Exp: Passing AI chat flow to a live agent, when AI chat is being escalated to a live or messaging chat.
+e.g., Passing AI chat flow to a live agent, when AI chat is being escalated to a live or messaging chat.
 In order to change and control which chat scope can request the preceding chat records, use the following:
 ```kotlin
 val conversationSettings = ConversationSettings()
                            .enableChatLogRequest(Requesting_Scope, isEnabled)
 ```
 
-> Exp: In order to enable passing preceding bot chat records to the live agent:
+> e.g., In order to enable passing preceding bot chat records to the live agent:
 ```kotlin
 ConversationSettings().enableChatLogRequest(StatementScope.BoldScope, true)         
 ```   
