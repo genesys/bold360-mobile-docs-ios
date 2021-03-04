@@ -18,7 +18,7 @@ toc_float: true
 <summary> Version 3.9.0 </summary>
 
 # Version 3.9.0
-Release date: March 5, 2021
+Release date: March 4, 2021
 {: .overview}
 
 - Improve the configuration objects hierarchy.
