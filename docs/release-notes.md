@@ -18,7 +18,7 @@ toc_float: true
 <summary> Version 3.9.0 </summary>
 
 # Version 3.9.0
-Release date: March 5, 2021
+Release date: March 4, 2021
 {: .overview}
 
 - Improve the configuration objects hierarchy.
@@ -39,9 +39,8 @@ Release date: March 5, 2021
 
 #### Breaking Changes
 
-- We made few significant cahnges in the `Configuration` structure so recommended to follow the updated documentation: 
-  https://logmein-bold-mobile.github.io/bold360-mobile-docs-ios/docs/chat-configuration/ui-customization
-
+- We made few significant cahnges in the `Configuration` structure so recommended to follow the updated documentation: [UI Customization](https://logmein-bold-mobile.github.io/bold360-mobile-docs-ios/docs/chat-configuration/ui-customization) 
+  
 ---
 
 To get latest version run:
