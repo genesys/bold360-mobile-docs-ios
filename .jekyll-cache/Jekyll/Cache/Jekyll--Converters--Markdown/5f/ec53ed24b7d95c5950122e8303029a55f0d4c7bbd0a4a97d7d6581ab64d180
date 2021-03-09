@@ -1,6 +1,0 @@
-I"ø<h1 class="no_toc" id="chat-configuration">Chat Configuration</h1>
-
-<p>This article will help you customize initial chat view UI, and show you how to change UI on runtime according to live data.</p>
-
-<p>In order to change and override provided SDK implementations and customizations, one need to provide his own changed <code class="language-plaintext highlighter-rouge">ChatConfiguration</code> instance on <code class="language-plaintext highlighter-rouge">ChatController.viewConfiguration</code>.</p>
-:ET
