@@ -15,6 +15,30 @@ toc_float: true
 {: .det}
 <details open markdown="block">
 
+<summary> Version 3.9.1 </summary>
+
+# Version 3.9.1
+Release date: March 16, 2021
+{: .overview}
+
+- Passing API key as parameter on extra data request.
+
+### Fixes
+
+- Post chat form row heights.
+  
+---
+
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
 <summary> Version 3.9.0 </summary>
 
 # Version 3.9.0
@@ -40,7 +64,6 @@ Release date: March 4, 2021
 #### Breaking Changes
 
 - We made few significant cahnges in the `Configuration` structure so recommended to follow the updated documentation: [UI Customization](https://github.com/Logmein-Bold-Mobile/bold360-mobile-docs-ios/blob/master/ChatViewConfigurationIOS.md) 
-  
 ---
 
 To get latest version run:
@@ -49,6 +72,9 @@ To get latest version run:
 pod update 
 ```
 </details>
+
+{: .det .mt-2}
+<details close markdown="block">
 
 {: .det .mt-2}
 <details close markdown="block">
