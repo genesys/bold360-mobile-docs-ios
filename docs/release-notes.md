@@ -55,7 +55,8 @@ Release date: March 4, 2021
 - Full support for dark mode.
 
 
-### Fixes 
+### Fixes
+
 - Fix maximum length.
 - Fix custom font assigment.
 - Fix displaying of correct avatar size.
@@ -83,7 +84,9 @@ Release date: January 20, 2021
 {: .overview}
 
 ### Fixes 
+
 - Fix phone keyboard is hiding the text bar.
+
 ---
 
 To get latest version run:
@@ -104,7 +107,8 @@ Release date: January 11, 2021
 
 - Attached Pre-chat language selection to take effect.
 
-### Fixes 
+### Fixes
+
 - Fix crash on swiping back in support center.
 - Fix back on controllers which are not support center.
 
