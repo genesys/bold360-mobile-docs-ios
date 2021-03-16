@@ -76,9 +76,6 @@ pod update
 {: .det .mt-2}
 <details close markdown="block">
 
-{: .det .mt-2}
-<details close markdown="block">
-
 <summary> Version 3.8.12 </summary>
 
 # Version 3.8.12
