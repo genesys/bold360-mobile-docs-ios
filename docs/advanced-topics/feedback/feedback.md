@@ -29,8 +29,8 @@ The Feedback feature is available only for AI chats.
 
 There are 2 types of feedback that can be configured, but only one can be active.
 
-- [Timed feedback](./timed-feedback) - A configured periodic give feedback message, received as a response to an SDK timed feedback query to the BE.  
-The Feedback applies on chat session as total.
-
 - [Instant Feedback](./instant-feedback) - Each incoming message, that is available for feedback, is attached with an SDK's feedback component.   
 The feedback applies to the specific response/article it was attached to.
+
+- [Timed feedback](./timed-feedback) - A configured periodic give feedback message, received as a response to an SDK timed feedback query to the BE.  
+The Feedback applies on chat session as total.
