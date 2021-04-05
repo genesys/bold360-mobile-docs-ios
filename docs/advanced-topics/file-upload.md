@@ -18,197 +18,89 @@ nav_order: 9
 ---
 
 ## Overview
-The SDK provides an upload mechanism, but enables you to use your own.   
-{: .overview}
+This article will help you to support file upload.
 
-Follow the next steps to integrate upload functionality to your chat:
+**You can checkout an implementation example [here](https://github.com/bold360ai/bold360-mobile-samples-ios/tree/master/BasicSample/BasicSample/ChatViewControllers/FileUpload).**
+## Enable file transfer in the admin console.
 
-> If you don't use the SDK for chat ui creation, but want to use the provided uploader mechanism, go to [step 2.](#Use-SDK's-provided-uploader)
+1. Open [https://admin.bold360.com/](https://admin.bold360.com/) and log in.
+2. Go to CHANNELS -> Chat -> Chat Windows -> Choose relevant window -> File Transfer section.
+3. Check `Enable` and choose: `Agent to customer` , `Customer to agent`.
 
-### 1.  Define your file upload trigger   
-The UI component the user will use to trigger the upload. 
+<img src="../../../assets/images/file_upload_console.png"  alt="1" width = 600px height = 900px>
 
-- ### Use SDK provided trigger   
-  The SDK provides an upload trigger (attach icon) which will be positioned inside the input field.  In order to be notified when the user had activated the trigger in order to do some uploads, you need to implement `onUploadFileRequest` in `ChatEventListener`.
-  ```kotlin
-    override fun onUploadFileRequest(){
-        // user wants to upload content to the agent
-    }
-  ```
+<!-- ### Customize File Upload Icon
+Related UI configurations are available in: [User Input Field](../../../docs/chat-configuration/ui-customization/user-input-field) -->
 
-  - Customize upload icon: 
-  {: .light-title}
-    via `ChatInputUIProvider` config object.
+## Using Default File Upload Button
+### Register To Delegate
+```swift
+override func viewDidLoad() {
+    chatController.delegate = self
+}
+```
 
-    ```kotlin
-    val chatController = ChatController.Builder(this).apply {
-        ...
-        chatUIProvider(ChatUIProvider().apply{
-            chatInputUIProvider.uiConfig.uploadImage(...)
-        })
-        ...
-    }
-    ```
+### Implement Delegate Upload Trigger Event
+In order to be notified when the user triggered the upload, you need to implement `didClickUploadFile` in `ChatControllerDelegate`.
+```swift
+extension FileUploadDemoViewController: ChatControllerDelegate {
+    func didClickUploadFile() {
+        // present file picker
+    } 
+}
+```
 
-- ### Use your own trigger  
-  - Apply your own upload UI component.   
-    Insure that upload feature is enabled, before you display the UI to the user:
-    ```kotlin
-    chatController.isEnabled(ChatFeatures.FileUpload);
-    ```
-    > Learn how to enable/disable file transfer on admin console [here]({{'/assets/images/console-upload.png' | relative_url}})
+### Creating Upload Request
+Once the file was picked create an upload request.
 
-  - Hide the SDKs upload icon:
+```swift
+let request = UploadRequest()
+request.fileName = (resources.first!).originalFilename
+request.fileType = .picture
+request.fileData = data
+```
 
-    ```kotlin
-    val chatController = ChatController.Builder(this).apply {
-        ...
-        chatUIProvider(ChatUIProvider().apply{
-            chatInputUIProvider.uiConfig.showUpload = false
-        })
-        ...
-    }
-    ```
+### Uploading Files
 
+```swift
+///  Once upload request created start upload file process.
+self.chatController.uploadFile(request, progress: { (progress) in
+    /// You can get progress values, to show upload progress bar.
+    print("application file upload progress -> %.5f", progress)
+}) { (info: FileUploadInfo!) in
+    /// Call handle function on ChatController with upload file information.
+    // self.uploadBtn.removeFromSuperview() uncomment for custom file upload
+    self.chatController.handle(BoldEvent.fileUploaded(info))
+}
+```
 
-## 2. Choose an upload provider
+## Using Custom File Upload Button 
+To implement your own File Upload button:
+Listen to the relevant chat state (.pending) by implementing `didUpdateState` in `ChatControllerDelegate`.
 
-- ### Use SDK's provided uploader
-
-  - Create a `FileUploadInfo` object, for every content you need to upload.
-
-    ```kotlin
-    //... user selected the file to upload
-    val uploadInfo = FileUploadInfo().apply{
-        type = ... // as defined in @FileType
-        name = ... // can differ from the actual file name
-        filePath = ... // actual selected file path
-        content = file.readBytes()... // if was not provided on the constructor
-    }
-    ```
-     
-  - Activate the upload:
-    
-    1. When using the ChatController 
-    
-        ```kotlin
-        chatController.uploadFile(uploadInfo) { uploadResults ->
-            //.... got UploadResults and do whatever
-            uploadsResults.error?.run{
-                Log.e(TAG, "Got an error on ${uploadResults.data.name} 
-                                    file upload: ${uploadsResults.error}")
-                ...
-            }
-        }
-        ```
-    Upload results are passed over the provided callback.
-
-	2. When using the Uploader
-        ```kotlin
-        BoldLiveUploader().upload(uploadInfo, AccountDetails(...)) { uploadResults ->
-            //.... got UploadResults and do whatever
-            uploadsResults.error?.run{
-                Log.e(TAG, "Got an error on ${uploadResults.data.name} 
-                                    file upload: ${uploadsResults.error}")
-                ...
-            }
-        }
-        ```
-
-
-- ### Use your own uploader
-
-    - When user triggers an upload and chooses the content to be uploaded, upload that content with your uploader.
-    - Pass an UploadEvent to the `chatController` with the upload results, in order to have the upload bubble in the chat.
-
-      ```kotlin
-      MyUploader.upload(...){
-          //.... do upload stuff
-
-          // pass results to the SDK
-          val uploadResults = UploadResults(FileUploadInfo?, NRError?)
-          chatController.handleEvent(Upload, new UploadEvent(uploadResult));
-      }
-      ```
-
-## Extra
-
-### Listening to upload notifications
-
-One can listen to files upload events via the `ChatController`, by registering to the available uploads notifications he needs.
-
-```kotlin
-chatController.subscribeNotifications(notifiableImpl:Notifiable,
-                    Notifications.UploadEnd, Notifications.UploadStart,
-                    Notifications.UploadProgress, Notifications.UploadFailed)
-
-// Notifiable implementation (notifiableImpl):
-{
-    ...
-
-    override fun onNotify(notification: Notification, dispatcher: DispatchContinuation) {
-
-        when (notification.notification) {
-            Notifications.UploadStart,
-            Notifications.UploadEnd,
-            Notifications.UploadFailed -> {
-                (notification as UploadNotification).apply {
-                    // uploadInfo:FileUploadInfo member is available
-                    ...
+```swift
+extension FileUploadDemoViewController: ChatControllerDelegate {
+    func didUpdateState(_ event: ChatStateEvent!) {
+        switch event.state {
+        ///a. Listen to relevant chat state
+        case .pending:
+            /// b. Validate file transfer enabled on bold admin console.
+            if(self.chatController.isFileTransferEnabled) {
+                /// c. Add custom button.
+                DispatchQueue.main.async {
+                    self.uploadBtn.backgroundColor = .blue
+                    self.uploadBtn.setTitle("Upload File", for: .normal)
+                    self.uploadBtn.frame.size = CGSize(width: 150, height: 70)
+                    self.uploadBtn.center = (self.navigationController?.visibleViewController?.view.center)!
+                    self.uploadBtn.addTarget(self, action: #selector(self.uploadFile), for: .touchUpInside)
+                    self.navigationController?.visibleViewController?.view.addSubview(self.uploadBtn)
                 }
             }
-
-            Notifications.UploadProgress -> {
-                (notification as ProgressNotification).apply {
-                    // uploadInfo:FileUploadInfo member is available
-                    // progress:Int member is also available
-                    ...
-                }
-            }
+            break
+        default:
+            break
         }
     }
 }
 ```
-## <a name="uicustom"/>UI Customization
-
-- #### Customizing uploads progress indication
-   The SDK provides uploads propress indication bar   
-
-    ![]({{'assets/images/uploads_bar.png' | relative_url}})
-
-    - The uploads bar can customized via `ChatUIProvider.uploadsCmpUIProvider.configure`.
-
-        ```kotlin
-        // display uploads summary bar as floating component 
-        chatUIProvider.uploadsCmpUIProvider.configure = { adapter:UploadsCmpAdapter->
-            adapter.apply {
-                ...            
-            }
-        }
-        ```
-
-    - The uploads bar can be overrided with your own implementation, via `ChatUIProvider.uploadsCmpUIProvider.overrideFactory`   
-      ```kotlin
-      chatUIProvider.uploadsCmpUIProvider.overrideFactory =
-            object: UploadsbarCmpUIProvider.UploadFactory {
-                override fun create(context: Context): UploadsCmpAdapter {
-                    return .... // create customed component
-                }
-            }
-      ```
-      
-    - In order to notify the SDK that the component done with the uploads display and should be removed, pass `CmpEvent` to the `ChatController`:
-
-        ```kotlin
-        chatController.handleEvent(CmpEvent.EventName,
-                        CmpEvent(ComponentType.UploadsStripCmp, CmpEvent.Idle))
-        ```
-      > Customizations that were configured with `UploadsCmpUIProvider.configure` will be applied on your customed component as well.
-
-- #### Customizing upload outgoing bubble
-  Same as regular [outgoing bubble customizations]({{'/docs/chat-configuration/ui-customization/how-it-works' | relative_url}}).
-
-  - ##### Customizing upload content type images
-    Provided icons can be override by appying new drawables resources in the app resources with matching reasources ids.   
-    > picture_ico, default_ico, excel_ico, archive_ico
----
+>Note: File upload must be enabled in the admin console.
