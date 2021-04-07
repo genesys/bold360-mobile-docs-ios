@@ -18,9 +18,6 @@ nav_order: 3
 
 ---
 
-## Overview
-...
-
 ## Listening to chat elements changes
 In order to be able to be notified of all elements changes in the chat, implement `ChatElementDelegate`, and register as follows:
 
