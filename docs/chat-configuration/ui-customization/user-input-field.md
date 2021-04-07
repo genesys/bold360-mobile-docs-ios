@@ -33,9 +33,9 @@ The behavior and functionality of the input field is defined by the active chat 
 ## Available features
 
 * Typing and sending messages 
-* [Autocomplete](/docs/advanced-topics/autocomplete/in-chat)
-* [Voice recording and readout control](/docs/advanced-topics/voice)
-* [File upload](/docs/advanced-topics/file-upload) on live chats
+* [Autocomplete](../../../../docs/advanced-topics/autocomplete/in-chat)
+* [Voice recording and readout control](../../../../docs/advanced-topics/voice)
+* [File upload](../../../../docs/advanced-topics/file-upload) on live chats
 
 ---
 
