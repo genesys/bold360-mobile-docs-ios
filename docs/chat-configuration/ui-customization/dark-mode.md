@@ -14,6 +14,10 @@ In order to apply dark theme to your chat, you can define overriding and dark mo
 
 For more information use [iOS Dev center](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/dark-mode)
 
+| Before                                                                                          | After                                                                                          |
+|-------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| <img src="../../../../assets/images/darkcolor_before.png"  alt="1" width = 300px height = 450px> | <img src="../../../../assets/images/darkcolor_after.png"  alt="1" width = 300px height = 450px> |
+
 ## Known Limitations
 
 * Only Chat Screen supports fully dark mode.
