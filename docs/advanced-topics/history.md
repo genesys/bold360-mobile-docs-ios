@@ -65,7 +65,7 @@ override func viewDidLoad() {
 
 ### Implement ChatElementDelegate
 ```swift
-extension HistoryDemoViewController: ChatControllerDelegate {
+extension HistoryDemoViewController: ChatElementDelegate {
     func fetch(_ from: Int, handler: (([Any]?) -> Void)!) {
         print("fetch")
     }
