@@ -7,7 +7,7 @@ nav_order: 2
 # permalink: /docs/chat-configuration/tracking-events/chat-availability
 ---
 
-# Chat Availability {{site.data.vars.need-work}}
+# Chat Availability {{site.data.vars.need-review}}
 {: .no_toc }
 
 ## Table of contents
@@ -20,44 +20,30 @@ nav_order: 2
 
 ## Overview
 Chat considered available, when the chat can be answered by a live agent.
-Chat unavailability triggers state event `StateEvent.Unavailable`, which will have an `UnavailableReason` and will be passed to the hosting App along side unavailable form / message. 
-{: .overview}
+The availability of the chat can be checked any time, without creating `ChatController` instance.
 
-> If the chat is canceled by the user while in [`StateEvent.InQueue`]({{'/docs/chat-configuration/tracking-events/chat-lifecycle#inqueue' | relative_url}}) or while waiting for acceptance [`StateEvent.Pending`]({{'/docs/chat-configuration/tracking-events/chat-lifecycle#pending' | relative_url}}), chat end will be handled as `unavailable`.  
-{: .overview}
+## Check chat availability
 
----
+### 1. Create `Account`.
 
-## ChatAvailability API
-### Availability check
-Check if your chat is available.   
+```swift
+// for example create live account.
+let liveAccount = LiveAccount()
+```
 
-1. Create an `Account`.
+>Note: To check availability for specific **department id** do as below on `LiveAccount`:
+ 
+```swift
+liveAccount.extraData?.departmentId = "{DEPARTMENT_ID}"
+```
 
-2. Call `ChatAvailability.checkAvailability` as follows:
-    ```kotlin
-    ChatAvailability.checkAvailability(account, callback = object : ChatAvailability.Callback {
-        override fun onComplete(result: ChatAvailability.AvailabilityResult) {
-            // Validate no error
-            // Check isAvailable and check the UnavailabilityReason if not 
-        }
-    })
-    ```
-
-    > `ChatAvailability.AvailabilityResult` provides the check parameters (apiKey, departmentId, etc) as well as the execution results 
-
-{: .mt-5}
-Availability check with department 
-{: .strong-sub-title}
-  
-Use `ChatAvailability.checkAvailability` call as before, just add the departmentId.   
-    
-```kotlin
-ChatAvailability.checkAvailability(account, departmentId, callback = object : ChatAvailability.Callback {
-    override fun onComplete(result: ChatAvailability.AvailabilityResult) {
-        // do your wonders...  
-    }
-})
+### 2. Call `checkAvailability` under `ChatController`.
+```swift
+ChatController.checkAvailability(self.createAccount()) { (availabilityResult) in
+   // Validate no error on result.error
+   // Check isAvailable with result.isAvailable
+   // If not available check result.reason
+}
 ```
 
 {: .mt-5}
@@ -66,27 +52,24 @@ ChatAvailability.checkAvailability(account, departmentId, callback = object : Ch
 ---
 
 ### Available departments
-With `ChatAvailability` API, you can also fetch the current available departments, for your account configuration.
 
-1. Create an `Account`.
+>Chat Departments Fetch
+The departments list can be fetched any time, without creating `ChatController` instance.
 
-2. Call `ChatAvailability.availableDepartments` as follows:
-    ```kotlin
-    ChatAvailability.availableDepartments(account, callback = object : ChatAvailability.DepartmentsCallback {
-        override fun onComplete(result: ChatAvailability.DepartmentsResult) {
-            // Validate no error
-            result.error?.let{
-                //handle error
-            } ?:        
-            // get departments list
-            result.data.takeIf { it.isNotEmpty() }?.let{
-                // handle departments list
-            }
-        }
-    })
-    ```
+## Fetch Departments
 
-    > `ChatAvailability.DepartmentsResult` will contain, if no errors occurred, a list of `Department` items. Each contains name, id and language of the department.
+### 1. Create `Account`.
 
+```swift
+// for example create live account.
+let liveAccount = LiveAccount()
+```
 
-
+### 2. Call `fetchDepartments` under `ChatController`.
+```swift
+ChatController.fetchDepartments(self.createAccount()) { result in
+    if let departments = result?.departments {
+        self.departments = departments
+    }
+}
+```

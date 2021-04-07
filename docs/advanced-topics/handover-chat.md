@@ -17,102 +17,91 @@ nav_order: 10
 --- 
 
 ## Overview
-**Handing** the control of the chat to a provided custom `HandoverHandler` extension.   
-Intended to enable the option to start a chat with a third party provider. 
-{: .overview}
+Handover is a chat session with a custom provider that is configured and controlled by the customer.
+The Handover is being controlled at the app by a provided custom `ChatHandler`.
 
----
+`Chat handlers` are being used at the SDK in order to separate the chat sessions between different providers such as `Bot` and `Live (bold360ai agent)`.
+They handle the user actions and the chat events passed from the chat UI.
 
-## HandoverAccount
+### Implement `ChatHandler` protocol
 
-Use this account to create chats with third party live chat providers. Usually used for creating `Handover chats`. 
-
-A HandoverAccount is being created automatically, by the SDK, when a chat with AI escalates to `Handover` chat, by chat channel selection.   
-The Handover configuration data, that was configured over the chat channel, will be configured to the account session .
-  
-```kotlin
-val chatConfig = "provider defined configuration string"
-val account = HandoverAccount(chatConfig)
-```    
-
----
-
-## Setting Handover chat escalation
-Handover chat is automatically being activated, by the SDK, when chat channel configured with `custom provider` was selected on chat with AI.   
-A [`HandoverAccount`]({{'/docs/chat-configuration/chat-account/handover-account' | relative_url}}) is created according to the channel data.
-
-Do the following for a successful Handover chat escalation.
-
-- ### Create Handover escalation channel
-    [Create a chat channel](https://developer.bold360.com/help/EN/Bold360API/Bold360API/c_use_ww_integration.html) in the Bold360ai admin console, configured with `custom provider`.   
-    <sup>For more information see: [How do I define a channeling policy?](https://support.bold360.com/bold360/help/how-do-i-define-channeling-policy)</sup>
-
-
-- ### Create HandoverHandler
-    In order to be able to bridge between your third party chat implementation, and the bold chat SDK, you need to provide an extension of `HandoverHandler` to the ChatController. This handler will connect the user, the chat SDK and the third party  chat in use.
-
-    ```kotlin
-    // Custom Handover handler:
-    class MyHandover(context:Context) : HandoverHandler(context) {
-        override fun startChat(accountInfo:AccountInfo?) {
-            // create and start your custom chat session.
-            ...
-            // pass Started event to the ChatController, and to the App.
-            passStateEvent(StateEvent(StateEvent.Started, getScope())
-        }
-
-        override fun endChat(forceClose: Boolean) {
-            // end your custom chat session.
-            ...
-
-            // pass Ended event.    
-            passStateEvent(StateEvent(StateEvent.Ended, getScope()))
-        }
-
-        override fun post(message: ChatStatement){
-            // handle user message - pass it to your third party chat
-            ...
-            // Add the user message to the chat
-            chatDelegate.injectElement(message);
+```swift
+class HandOverHandler: NSObject, ChatHandler {
+    var delegate: ChatHandlerDelegate!
+    
+    var chatControllerDelegate: ChatControllerDelegate!
+    
+    var chatHandlerProvider: ChatHandlerProvider!
+    
+    // See 'File Upload' doc
+    var isFileTransferEnabled: Bool {
+        return false
+    }
+    
+    // See 'Autocompletion Support' doc
+    var isAutocompleteEnabled: Bool {
+        return false
+    }
+    
+    func startChat(_ chatHandlerParams: [String : Any]?) {
+        // Present system message
+        
+        
+        // Do the connection to the chat provider
+    }
+    
+    func endChat() {
+        
+    }
+    
+    func postStatement(_ statement: StorableChatElement) {
+        
+        // Configure the bubble
+        statement.configuration = self.chatHandlerProvider.configuration(for: .OutgoingElement)
+        self.delegate.presentStatement(statement)
+        
+        // Updated the double "V" sign for read notification
+        self.perform(#selector(HandOverHandler.updateBubble(statement:)), with: statement, afterDelay: 3)
+        
+        // Just for testing you can cancel the handover by typing stop
+        if statement.text == "Stop" {
+            self.chatHandlerProvider.didEndChat(self)
         }
     }
+    
+    func didStartTyping(_ isTyping: Bool) {
+        
+    }
+    
+    func handleClickedLink(_ link: URL!) {
+        
+    }
+    
+    func handleEvent(_ eventParams: [AnyHashable : Any]!) {
+        
+    }
+    
+    @objc func updateBubble(statement: StorableChatElement) {
+        self.delegate.update(StatementStatus.Pending, element: statement)
+    }
+}
+```
 
-    // Set custon Handover handler to the ChatContoller:
-    // on ChatController creation:
-    val chatController = ChatController.Builder(context)
-                                    .chatHandoverHandler(myHandoverHandler)
-                                    ...
-                                    .build(account,...)
-    // or later:
-    chatController.handoverHandler = myHandoverHandler                      
-    ```
-<!-- Handover chat initiation flow Diagram -->
+### Handover handler implementation
 
----
+As noted above, the Handover is being controlled from a class that implements the `ChatHandler` protocol.
 
-## How to
+In order to add the implemented class to the SDK, add the next at the ChatController:
 
-- ### Inject and update chat elements   
-    HandoverHandler base class provides various methods, like: `injectElement`, `updateElement`, `storeElement`, etc, that can be used while the handover chat is in progress.   
-    Base class implementations also make sure elements changes are passed to the `ChatElementListener` (History updates)
+### 1. Create new class that implements `ChatHandler` as described above.
 
-- ### Display and enable the chat input field
-    On chat start or/and on state `StateEvent.Resumed`, your custom handler should enable the chat input field, in order to let the user type messages. This can be done by activating the method `enableChatInput`. Override this method, if you need to configure different behavior to the field other than the default provided by its super.
+```swift
+// `HandOverHandler` was created above.
+var handOver = HandOverHandler()
+```
 
-- ### Control chat UI components
-    The HandoverHandler has access to a `ChatDelegate` implementation, which provides access to the chat fragments UI components, the chat elements and other abilities.   
+### 2. Then in relevant place like `viewDidLoad` do:
 
-    **Exp: Controling AgentTyping UI component visibility state:**
-    ```kotlin
-    // show AgentTyping:
-    chatDelegate?.updateCmp(ComponentType.LiveTypingCmp, data = null)
-
-    // hide AgentTyping:
-    chatDelegate?.removeCmp(ComponentType.LiveTypingCmp)
-    ```
-
-- ### Adding extra details and configurations for chat creation
-    Handover chat is created by the hosting app. It is provided by a `HandoverAccount` that may contain some configurations needed for the chat.   
-    Before the chat starts, the app will be triggered to [provide]({{'/docs/chat-configuration/extra/account-info-provider#account-provide' | relative_url}}) the account needed for the chat, at this point, details can be added to the the account [SessionInfo]({{'/docs/chat-configuration/extra/account-info-provider#session-info' | relative_url}}) property.   
-    If no extra details are needed, the account should be passed as is.
-
+```swift
+chatController.handOver = self.handOver
+```

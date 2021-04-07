@@ -17,7 +17,7 @@ Chat configurations can be controlled by the embbeding App, by using the `ChatCo
 {: .overview}
 
 ```swift
-var chatConfig = Bold360AI.ChatConfiguration()
+let chatConfig = Bold360AI.ChatConfiguration()
 /* do some custom change */
 chatController.viewConfiguration = chatConfig
 ```

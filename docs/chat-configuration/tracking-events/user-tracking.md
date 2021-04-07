@@ -24,31 +24,3 @@ On the first account chat session, the userId should remain null. The SDK genera
 This token enables the tracking of user activity.
 {: .overview}
 
-## How to get the generated userId
-Once the chat is created, an account update event is triggered on the [`AccountInfoProvider`]({{'/docs/chat-configuration/extra/account-info-provider' | relative_url}}), the userId can be taken from the provided updated account.
-
-```kotlin
-class SimpleAccountProvider : AccountInfoProvider {
-
-    var accounts: MutableMap<String, AccountInfo> = mutableMapOf()
-
-    override fun update(account: AccountInfo) {
-        accounts[account.getApiKey()]?.userId = account.userId
-        // saved userId should be used on future chats creation for this account
-    }
-}
-```
-
-## Create a chat with the generated userId
-
-The `userId` should be provided on the `BotAccount`.
-```kotlin
-val account = BotAccount(API_KEY, ACCOUNT_NAME,
-                KNOWLEDGE_BASE, SERVER, CONTEXT_MAP).apply {
-                        
-                        userId = SAVED_GENERATED_ID
-                } 
-                
-ChatController.Builder(context)...build(account, ...)
-```
-

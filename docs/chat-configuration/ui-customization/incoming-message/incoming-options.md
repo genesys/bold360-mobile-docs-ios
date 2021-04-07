@@ -5,7 +5,7 @@ np_toc: true
 nav_exclude: true
 ---
 
-# Incoming message options {{site.data.vars.need-work}}
+# Incoming message options {{site.data.vars.need-review}}
 {: .no_toc }
 
 ## Table of contents
@@ -20,69 +20,55 @@ nav_exclude: true
 Incoming bot response can have persistent options. Those options will not dissappear after user selection.   
 
 ### How to customize
-This kind of incoming element can be customized by overriding default implementation of the PersistentOptionsUIProvider.
-- The options style can be configured by `PersistentOptionsUIProvider.optionsStyleConfig`   
-- The wrapping bubble can be customized by `PersistentOptionsUIProvider.contentStyleConfig`
-  ```kotlin
-  ChatUIProvider(context).apply {
-      
-      chatElementsUIProvider.incomingUIProvider.persistentOptionsUIProvider.apply {
-          // customize options text style:
-          optionsStyleConfig = StyleConfig(...)
-          
-          // customize the wrapping bubble look:
-          contentStyleConfig = { adapter -> 
-              adapter.textBackground(...)
-              
-              // do more adjustments
-          }
-      }    
-  }
+This kind of incoming element can be customized by overriding default implementation of the `MultipleSelectionConfiguration`.
+
+This component contains:
+* titleConfiguration - `IncomingBotTitleConfiguration`
+* persistentOptionConfiguration - `PersistentOptionConfiguration`
+
+While configuring make sure you update both if needed.
+
+
+  ```swift
+    func updateMultiLine() {
+        self.chatConfig.multipleSelectionConfiguration.titleConfiguration.textColor = self.colorType.bgColor
+        self.chatConfig.multipleSelectionConfiguration.titleConfiguration.cornersRadius = Corners(left: 10, right: 10)
+        self.chatConfig.multipleSelectionConfiguration.titleConfiguration.backgroundColor = UIColor.green
+        self.updateMultilineItem()
+    }
+
+    func updateMultilineItem() {
+        self.chatConfig.multipleSelectionConfiguration.persistentOptionConfiguration.backgroundColor = UIColor.yellow
+        self.chatConfig.multipleSelectionConfiguration.persistentOptionConfiguration.textColor = self.colorType.textColor
+        self.chatConfig.multipleSelectionConfiguration.persistentOptionConfiguration.customFont = CustomFont(font: UIFont(name: "Times New Roman", size: 9.0)!)
+    }
   ```
 
-- Options look can also be customized by override as follows:
-```kotlin
-ChatUIProvider(context).apply {
-    
-    chatElementsUIProvider.incomingUIProvider.persistentOptionsUIProvider.overrideFactory = 
-                object : UIInfoFactory {
-                    override fun info(): ViewInfo {
-                        /* return your own ViewInfo object - 
-                                which defines the layout resource for the options */
-                    }
-                }
-}
-```
+### Before & After
+
+| Before                                                                                           | After                                                                                           |
+|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| <img src="../../../../../assets/images/multiline_before.png"  alt="1" width = 300px height = 450px> | <img src="../../../../../assets/images/multiline_after.png"  alt="1" width = 300px height = 450px> |
 
 ## QuickOptions
 Incoming bot response can have several options to the user to choose from. Those options are not constant and will disappear after user action.
 
 ### How to customize
-1. Customization by override.   
-    {: .strong-sub-title}   
 
-    Apply your own layout resource. 
-    ```kotlin
-    ChatUIProvider(context).apply {
-        
-        chatElementsUIProvider.incomingUIProvider.quickOptionsUIProvider.overrideFactory = 
-            object : QuickOptionUIProvider.QuickOptionsFactory {
-                override fun info(): ViewInfo {
-                    /* return your own ViewInfo object - 
-                                    which defines the layout resource for the options */
-                }
-            }
-    ```
-2. Customization by properties change on `QuickOptionsUIProvider`.   
-   {: .strong-sub-title} 
+This kind of incoming element can be customized by overriding default implementation of the `QuickOptionConfiguration`.
 
-    ```kotlin
-    uiProvider.chatElementsUIProvider
-        .incomingUIProvider.quickOptionsUIProvider.apply { 
-                optionsMargin = xxx // dp value
-                startMargin = xxx // dp value
-        }
-    ```
+```swift
+func updateQuickOption() {
+        self.chatConfig.incomingBotConfig.quickOptionConfig.backgroundColor = UIColor.red
+}
+```
+
+### Before & After
+
+| Before                                                                                           | After                                                                                           |
+|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| <img src="../../../../../assets/images/quickoptions_before.png"  alt="1" width = 300px height = 450px> | <img src="../../../../../assets/images/quickoptions_after.png"  alt="1" width = 300px height = 450px> |
+
 
 ## Channels
 - Channels are a sub type of QuickOptions. Channels are used for user escalation actions.   
@@ -91,25 +77,5 @@ Incoming bot response can have several options to the user to choose from. Those
 
 ### <U>Customizing channels icons</U>
 - #### By setting the icons via the Bold360ai console:
-    ![]({{'/assets/images/console-channeling-icons.png' | relative_url}})
-    {: .image-40}
-
-- #### By overriding SDK default icons. 
-    
-   - By overriding the channels drawable resources:
-
-        - Phone : `R.drawable.call_channel`
-        - Chat : `R.drawable.chat_channel`
-        - Ticket: `R.drawable.email_channel`
-
-    - By overriding the icons generating method:
-
-      ```kotlin
-      ChatUIProvider(context).apply {
-        chatElementsUIProvider.incomingUIProvider.quickOptionsUIProvider.overrideFactory =
-            object : QuickOptionUIProvider.QuickOptionsFactory {
-                override fun generateDefaultChannelImage(context: Context, channelType: Int): Drawable? {
-                    // return drawable according to channelType
-                }
-            }
-      ```
+  
+    <img src="../../../../../assets/images/console-channeling-icons.png"  alt="1" width = 1200px height = 1400px> 

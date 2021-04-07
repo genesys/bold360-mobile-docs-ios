@@ -117,13 +117,13 @@ The behavior and functionality of the input field is defined by the active chat 
 
 ## Known Issues
 
-1. The ability to change the text inside the input field exists but does nothing:
+### 1. The ability to change the text inside the input field exists but does nothing:
 
 ``` swift
 chatController.viewConfiguration.searchViewConfig.text = "Does nothing"
 ```
 
-1. The ability to change the image for the uploadIcon exists but does nothing:
+### 2. The ability to change the image for the uploadIcon exists but does nothing:
 
 ``` swift
 chatController.viewConfiguration.searchViewConfig.uploadIcon = UIImage(systemName: "search")

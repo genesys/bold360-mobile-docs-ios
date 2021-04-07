@@ -18,7 +18,7 @@ nav_order: 1
 ---
 
 ## Overview
-The SDKs chat with AI bridges your APP with the conversational platform of Bold360 ai. Provides a messaging-based user experience in which the Bold360 ai engine gathers information from the customer in a way similar to what a human agent would do in a regular conversation. Based on customer input and the engine's search capabilities, the Conversational Bot provides the customer relevant information.
+The SDKs chat with AI bridges your APP with the conversational platform of Bold360 ai. Provides a messaging-based user experience in which the Bold360 AI engine gathers information from the customer in a way similar to what a human agent would do in a regular conversation. Based on customer input and the engine's search capabilities, the Conversational Bot provides the customer relevant information.
 {: .overview}
 
 The main key for creating a chat is the account.
@@ -30,82 +30,112 @@ With the account you can configure the chatbot that will be created, provide ext
 
 ### Creating account
 
-```kotlin
-val account = BotAccount(API_KEY, ACCOUNT_NAME,
-                        KNOWLEDGE_BASE, SERVER)
-```  
+```swift
+extension ViewController {
+    @IBAction func setupBotChat(_ sender: Any) {
+        let account = self.createAccount()
+        self.chatController = ChatController(account: account)
+    }
+    
+    func createAccount() -> BotAccount {
+        let account = BotAccount()
+        account.apiKey = "API_KEY"
+        account.account = "ACCOUNT_NAME"
+        account.knowledgeBase = "KNOWLEDGE_BASE"
+        botAccount.perform(Selector.init(("setServer:")), with:"SERVER")
+        return account;
+    }
+}
+``` 
 
 - API_KEY - As was configured to your account.
 - ACCOUNT_NAME <sub>[mandatory]</sub> - As was configured to your account.
 - KNOWLEDGE_BASE <sub>[mandatory]</sub> - The knowledge base that should be used for this chat.
 - SERVER <sub>[mandatory]</sub> - As was configured to your account.
 
-### Configure UserId
-The UserId is used for reports and analitics. UserId should be managed and applied by the application on the chat creation, if not provided, the SDK creates a new id. In order to relate analitic content to the same user, the same UserId should be provided.
-
-```kotlin 
-val account = BotAccount(...).apply{
-    userId = SAVED_USER_ID
-}
-```
-
-> Hosting application can get the newly created UserId on [`AccountInfoProvider.update`]({{'/docs/chat-configuration/extra/account-info-provider#account-update' | relative_url}}) and keep it for later use.
-```kotlin 
-override fun update(account: AccountInfo) {
-    account.userId
-}
-```
-
-
 ### Configure Contexts
 If your account supports context based answers, you may want to configure those on your account to be used during the chat.
 
-    ```kotlin
-    // Create contexts map 
-    val contexts = mapOf("ContextKey1" to "ContextValue1",
-                        "ContextKey2" to "ContextValue2", ... )
+Context is a key-value parameter, so when you create the `BotAccount` object you can set NSDictionary which contains the related context.
 
-    // set on constructor:
-    val account = BotAccount(API_KEY, ACCOUNT_NAME,
-                            KNOWLEDGE_BASE, SERVER, contexts)
+```swift
+botAccount.context = ["someKey": "someValue"]
+```
+#### Configure Welcome Message Id
+When you create the `BotAccount` object you can set welcome message id.
 
+```swift
+botAccount.welcomeMessageId = "{WELCOME_MESSAGE_ID}"
+```
 
-    // or later in time, before chat creation:                           
-    account.contexts = contexts
-    ```
+>To Disable Welcome Message 
 
-### Configure [Initialization Entities]({{'/docs/advanced-topics/entities-and-personal-info#initentities' | relative_url}})
-Custom Entities, are pices of information that should be provided by the application/user during the chat, instead of using a form, we use the conversation to gather those details.
-Some entities are static and are not going to change during the chat, therefore can be provided on the chat creation. Those entities are provided on the account.
+```swift
+botAccount.welcomeMessageId = WelcomeMsgIdNone
+```
 
- ```kotlin
- account.initializationEntities = mapOf("EntityKey1" to "EntityValue1",
-                                     "EntityKey2" to "EntityValue2", ... )
- ```
- ---
+#### Configure Initialization Entities
+Entities is a feature of Bold360 that enables querying data from external sources in a conversational format.
+If a piece of info is missing from a bot query - the bot asks for the missing data to be able to answer.
+The application can populate the entity input values that are available - not to let the bot ask for input params that are "obviously available."
+
+``` swift
+// Creating Initialization Entities:
+botAccount.initializationEntities = ["someKey1": "someValue1", "someKey1": "someValue2"]
+```
 
 ## AI Chat continuity
 Chatbot continuity has no special meaning as in live chat. 
 Previous conversationId can be provided, for the initiated chat session, and if valid will be used, otherwise a new chat session will be created.
-The created  conversationId is available for Hosting app managment via [`AccountInfoProvider.update`]({{'/docs/chat-configuration/extra/account-info-provider#account-update' | relative_url}}).
-```kotlin 
-override fun update(account: AccountInfo) {
-    account.info.id // conversationId
-}
+
+This section describes the different operations you can perform with the continuity service.
+
+* **Update** - updates continuity item 
+* **Fetch** - fetches parameters stored in update method.
+  > For Example: on start chat can store chatID.
+
+### Known Limitations
+
+* Continuity persistent storage is currently not provided by the SDK, <br />
+  it should be done by the using app. 
+
+### Overview
+When implementing the `ContinuityProvider`, on chat start the `fetchContinuity` method will be called.
+Using `updateContinuityInfo` method can be used to store or expose data of each chat. e.g. Retrieving the `chatID` of the previews chat.
+ 
+#### Simple Flow  
+
+### Usage  
+
+#### General API Notes  
+
+The following classes/interfaces are the public API for continuity management:
+
+* **`ChatController`** - Use this class to set `ContinuityProvider`.
+
+#### Basic Implementation
+
+1 . Create conversation view (via `ChatController`)
+
+2 . Conform to & Set `ContinuityProvider`
+ 
+```swift
+controller.continuityProvider = self
 ```
 
----
+3 . Implement `ContinuityProvider` Functions
 
-
-## How to
-- ### Customize and override chat [Welcome Message]({{'/docs/chat-configuration/extra/welcome-message' | relative_url}})
-  Bold360 console configured welcome message article, can be overridden, or provided if none configured, on the account. 
-
-    ```kotlin
-    botAccount.welcomeMessage = ARTICLE_ID 
-    // if id is not valid, no message will be displayed
-
-    botAccount.welcomeMessage = BotAccount.None 
-    // prevent welcome message display                 
-    ```
+```swift
+func updateContinuityInfo(_ params: [String : String]!) {
+        params.forEach { (key, value) in
+            UserDefaults.standard.set(value, forKey: key)
+        }
+        UserDefaults.standard.synchronize()
+}
+    
+func fetchContinuity(forKey key: String!, handler: ((String?) -> Void)!) {
+        handler(UserDefaults.standard.value(forKey: key) as? String)
+}
+``` 
+4 . Present Chat viewController.
 

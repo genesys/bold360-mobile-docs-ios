@@ -7,7 +7,7 @@ permalink: /docs/chat-configuration/ui-customization/incoming-message/
 nav_order: 3
 ---
 
-# Incoming message
+# Incoming message {{site.data.vars.need-review}}
 {: .no_toc}
 
 ## Table of contents 
@@ -32,67 +32,39 @@ Chatbot messages may be constructed by multiple UI components, depends on the me
 The incoming message component contains the textual content of the message, persistent options, readmore.
 Other message properties such channels quick options and feedback, are displyed by separate components. 
 
-|![]({{'/assets/images/incoming-message-2.png' | relative_url}})|![]({{'/assets/images/incoming-message-1.png' | relative_url}})|
-|---|---|
-|![]({{'/assets/images/incoming-message-3.png' | relative_url}})|
-{: .table-trans}
-
 ---
 
 ## How to customize
-The incoming message component supports all [customization methods]({{ '/docs/chat-configuration/ui-customization/how-it-works#customization-methods' | relative_url }})
-Customization options are defined by the configuration adapter `ExtendedBubbleContentUIAdapter`. The component implementation implements this adapter.  
-The configured customization will be applied to the component after it was created, and when it was binded with data.
+The incoming message component supports many customizatins.
+> To see all supported configuration open `IncomingMessageConfiguration`.
 
-Customizing SDKs implementation
-{: .eg-class}
-```kotlin
-ChatUIProvider(context).apply {
-    chatElementsUIProvider.incomingUIProvider.apply {
-        // on creation customization
-        configure = { adapter: BubbleContentUIAdapter ->
-                        adapter.apply {
-                            setTextStyle(StyleConfig(14, Color.RED, Typeface.SANS_SERIF))
-                            setBackground(ColorDrawable(Color.GRAY))
-                            setAvatar(ContextCompat.getDrawable(context, R.drawable.avatar))
-                        }
-                    }
+The default configuration can be changed via 
+* `ChatController.viewConfiguration.incomingBotConfig`  
+* `ChatController.viewConfiguration.incomingLiveConfig`
 
-        // Dynamic customization on data update
-        customize = { adapter: BubbleContentUIAdapter, element: IncomingElementModel? ->
-                        element?.takeIf { it.elemScope.isLive }?.let {
-                                adapter.apply {
-                                    setAvatar(ContextCompat.getDrawable(context, R.drawable.agent))
-                                    setTextStyle(StyleConfig(10, Color.WHITE))
-                                    setBackground(ColorDrawable(Color.RED))
-                                }
-                            }
-                        adapter
-                    }
+```swift
+lazy var chatConfig = { () -> Bold360AI.ChatConfiguration in
+        var config = Bold360AI.ChatConfiguration()
+        return config
+    }()
+
+    func updateBotIncoming() {
+        self.chatConfig.incomingBotConfig.backgroundColor = UIColor.yellow
+        self.chatConfig.incomingBotConfig.textColor = UIColor.red
     }
-}
-```            
 
-Overriding default implementation
-{: .eg-class}
-```kotlin
-ChatUIProvider(context).apply {
-    chatElementsUIProvider.outgoingUIProvider.apply {
-        overrideFactory = 
-            object : IncomingElementUIProvider.IncomingBubbleFactory {
-
-                // simple incoming message component - text, avatar, timestamp
-                override fun createIncoming(context: Context): BubbleContentAdapter =
-                                                                CustomIncomingView(context)
-
-                // extended incoming message, 
-                // supports chatbot special message additions - persistent options, readmore
-                override fun createExtendedIncoming(context: Context): ExtendedBubbleContentAdapter =
-                                                                        CustomExtendedIncomingView(context)
-            }
+    func updateLiveIncoming() {
+        self.chatConfig.incomingLiveConfig.backgroundColor = UIColor.green
+        self.chatConfig.incomingLiveConfig.textColor = UIColor.blue
     }
-}
 ```
+
+### Before & After
+
+| Before                                                                                          | After                                                                                          |
+|-------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| <img src="../../../../assets/images/incoming_before.png"  alt="1" width = 300px height = 450px> | <img src="../../../../assets/images/incoming_after.png"  alt="1" width = 300px height = 450px> |
+
 ---
 
 ## Readmore component on long chatbot messages
@@ -100,39 +72,30 @@ Chatbot messages content display has a length limit, called <u>threshold</u>. Me
 A `readmore` component will appear on the bottom of a trimmed message, leading to a full message view.   
 {: .overview}
 
-|![]({{'/assets/images/readmore-closed.png' | relative_url}})|![]({{'/assets/images/readmore-open.png' | relative_url}})|
-{: .table-trans}
+The `readmore` component supports configuration under `incomingBotConfig`.
 
-The `readmore` component supports [configuration by adapter]({{ '/docs/chat-configuration/ui-customization/how-it-works#adapter-configure' | relative_url }}) only. The configuration options are defined by `ReadmoreAdapter`.   
-
-In order to customize the `readmore` component display, access `readmoreUIProvider` from `ChatUIProvider` and override the [`configure`]({{ '/docs/chat-configuration/ui-customization/how-it-works#adapter-configure' | relative_url }}) method.
-
-```kotlin
-ChatUIProvider(context).apply {
-    chatElementsUIProvider.incomingUIProvider
-                            .readmoreUIProvider.configure = { adapter:ReadmoreAdapter -> 
-                                    adapter.apply {
-                                        setReadmoreStyle(StyleConfig(16,
-                                                                adapter.uiContext.resources.getColor(R.color.colorTextDark),
-                                                                Typeface.create("sans-serif-light", Typeface.NORMAL)))
-                                        alignReadmore(UiConfigurations.Alignment.AlignStart)
-                                    }
-                                }
-}
+```swift
+    func updateBotIncoming() {
+        self.chatConfig.incomingBotConfig.backgroundColor = UIColor.yellow
+        self.chatConfig.incomingBotConfig.textColor = UIColor.red
+    }
 ```
 
-{: .mt-5 .eg-class}
-> `readmore` component displayed text, can be customized, by overriding `R.string.read_more` string resource.
+### Before & After
 
-{: .mt-5}
-Customizing chatbot message length display [<sub>threshold</sub>](#readmore-component-on-long-chatbot-messages)
-{: .strong-sub-title}
+|                    | Before                                                                                           | After                                                                                           |
+|--------------------|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| Standard Read More | <img src="../../../../assets/images/readmore_before.png"  alt="1" width = 200px height = 350px>  | <img src="../../../../assets/images/readmore_after.png"  alt="1" width = 200px height = 350px>  |
+| Styled Read More   | <img src="../../../../assets/images/readmore2_before.png"  alt="1" width = 200px height = 350px> | <img src="../../../../assets/images/readmore2_after.png"  alt="1" width = 200px height = 350px> |
+
+### Customizing chatbot message length display
 By default the threshold is configured to limit the text length to 320 characters.   
-The threshold can be configured to a value between 320 - 640.   
+The threshold can be configured to different value.
 
-In order to customize the chatbot messages displayed length, create a [`ConversationSettings`]({{ '/docs/chat-configuration/chat-settings' | relative_url }}) object, and configure the new threshold. Pass the ConversationSettings object upon [`ChatController`]({{ '/docs/chat-configuration/extra/chatcontroller' | relative_url }}) creation. 
-```kotlin
-ChatController.Builder(context)
-                .conversationSettings(ConversationSettings()
-                                        .setReadMoreThreshold(400))
+>Works only for `incomingBotConfig`.
+
+```swift
+    func updateBotIncoming() {
+        self.chatConfig.incomingBotConfig.maxLength = 100
+    }
 ```

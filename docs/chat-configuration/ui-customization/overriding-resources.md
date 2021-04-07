@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Overriding Resources
-parent: UI Customization
-grand_parent: Chat Configuration 
+# parent: UI Customization
+# grand_parent: Chat Configuration 
 # permalink: /docs/chat-configuration/ui-customization/overriding-resources
 nav_order: 10
 ---
