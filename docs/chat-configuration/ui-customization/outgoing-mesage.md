@@ -68,7 +68,7 @@ When the user sends a message, the message goes through a cycle of states.
 The message status icons are configurable. Icons configuration can be done
 
 ```swift
-self.chatConfig.outgoingConfig.pendingIcon = UIImage(systemName:"SOME_IMAGE")
-self.chatConfig.outgoingConfig.sentFailureIcon = UIImage(systemName:"SOME_IMAGE")
-self.chatConfig.outgoingConfig.sentSuccessfullyIcon = UIImage(named:"SOME_IMAGE")
+self.chatConfig.outgoingConfig.pendingIcon = UIImage(systemName: "search")
+self.chatConfig.outgoingConfig.sentFailureIcon = UIImage(systemName: "search")
+self.chatConfig.outgoingConfig.sentSuccessfullyIcon = UIImage(named:"search")
 ```

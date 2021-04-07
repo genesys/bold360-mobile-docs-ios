@@ -7,7 +7,7 @@ nav_order: 5
 # permalink: /docs/chat-configuration/tracking-events/user-tracking
 ---
 
-# User tracking {{site.data.vars.need-work}}
+# User Tracking {{site.data.vars.need-work}}
 {: .no_toc }
 
 ## Table of contents

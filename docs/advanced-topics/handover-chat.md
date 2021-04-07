@@ -23,6 +23,8 @@ The Handover is being controlled at the app by a provided custom `ChatHandler`.
 `Chat handlers` are being used at the SDK in order to separate the chat sessions between different providers such as `Bot` and `Live (bold360ai agent)`.
 They handle the user actions and the chat events passed from the chat UI.
 
+**You can checkout an implementation example [here](https://github.com/bold360ai/bold360-mobile-samples-ios/blob/master/BasicSample/BasicSample/HandOver/HandOverHandler.swift).**
+
 ### Implement `ChatHandler` protocol
 
 ```swift

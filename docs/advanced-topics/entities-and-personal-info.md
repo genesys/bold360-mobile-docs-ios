@@ -6,7 +6,7 @@ nav_order: 9
 # permalink: /docs/advanced-topics/entities-and-personal-info
 ---
 
-# Chat Entities and Personal information {{site.data.vars.need-review}}
+# Chat Entities and Personal information {{site.data.vars.need-work}}
 {: .no_toc }
 
 ## Table of contents

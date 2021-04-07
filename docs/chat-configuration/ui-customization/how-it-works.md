@@ -22,6 +22,9 @@ nav_order: 1
 All customizable UI components enable the hosting app to apply some UI changes to the SDKs default implementations or replace them completely by custom components.   
 {: .overview}   
 
+**You can checkout an implementation example [here](https://github.com/bold360ai/bold360-mobile-samples-ios/blob/master/BasicSample/BasicSample/ChatViewControllers/Config.swift).**
+
+
 In order to change and override provided SDK implementations and customizations, one need to provide his own changed `ChatConfiguration` instance on `ChatController.viewConfiguration`.   
 {: .overview}
 
@@ -35,5 +38,5 @@ Under `ChatController.viewConfiguration` which is the `ChatConfiguration` many d
 let config = Bold360AI.ChatConfiguration()
 config.chatViewConfig.backgroundColor = UIColor.gray
 config.systemMessageConfig.backgroundColor = UIColor.blue
-config.chatBarConfiguration.font = customFont.font
+config.chatViewConfig.hyperlinkColor = UIColor.red
 ```
