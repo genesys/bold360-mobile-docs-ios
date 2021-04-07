@@ -22,96 +22,47 @@ nav_order: 9
 In the chat there are 2 main time related elements:
 
 - **The dates notifications in the chat** - grouping elements of the same date messages 
-
-![]({{'/assets/images/chat_datestamp.png' | relative_url}})
-{: .image-40}
-
-{: .mt-6}
 - **The messages timestamp** - usually appears arround the message bubble
 
-![]({{'/assets/images/chat_timestamp.png' | relative_url}})
-{: .image-40}
+| The dates notifications in the chat                                                              | The messages timestamp                                                                          |
+|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| <img src="../../../../assets/images/generaldate_before.png"  alt="1" width = 300px height = 450px> | <img src="../../../../assets/images/datestamp_before.png"  alt="1" width = 300px height = 450px> |
 
 ---
 
 ## Datestamp display
-In order to change default datestamp display:
-1. Implement `DatesampFormatFactory`
-2. Pass that implementation to the ConversationSettings using `ConversationSettings.datestamp` method.
+In order to change default datestamp display use `ChatViewConfiguration`
 
-    ```kotlin
-    class MyDatestampFactory : DatesampFormatFactory {
-        override fun formatDate(datestamp:Long):String{
-            return ...
-        }
-    }
+```swift
+    lazy var chatConfig = { () -> Bold360AI.ChatConfiguration in
+        var config = Bold360AI.ChatConfiguration()
+        return config
+    }()
 
-    val settings = ConversationSttongs()
-                    .datestamp(enable, myDatestampFactory)
-                    //... set more settings
-
-    ChatController.Builder(context).apply{
-            //... do some initiations
-            conversationSettings(setting)
-        }
-    ```
-
-### Datestamp display factories
-The SDK provides 2 predefined factories: 
-
-- SimpleDatestampFormatFactory
-{: .text-blue-300}   
-Uses the pattern `"EEE, d MMM, yyyy"` to display dates
-
-{: .mt-6}
-- FriendlyDatestampFormatFactory <sub>_default_</sub>   
-{: .text-blue-300}   
-Provides more common display, using `today`, `yesterday` phrases.
-
----
+    let dateStamp = DateStampConfiguration()
+        dateStamp.formatter = DateFormatter()
+        dateStamp.formatter.dateFormat = "MMM dd,yyyy"
+        dateStamp.customFont = CustomFont(font: UIFont.boldSystemFont(ofSize: 12))
+        dateStamp.textColor = UIColor.black
+    
+    self.chatConfig.chatViewConfig.dateStamp = dateStamp
+```
 
 ## Timestamp display
-There are 2 ways of setting a new look to the timestamp display.
+In order to change default datestamp display use `ChatViewConfiguration`
 
-1. Configure by [chat settings]({{'/docs/chat-configuration/chat-settings' | relative_url}})
-    {: .strong-sub-title}
-  
-    Using `ConversationSettings.timestampConfig` method.
-    ```kotlin
-    val settings = ConversationSttongs()
-            .timestampConfig(enable, TimestampStyle(
-                time_pattern, text_size, text_color, font_typeface
-            ))
-            //... set more settings
+```swift
+    lazy var chatConfig = { () -> Bold360AI.ChatConfiguration in
+        var config = Bold360AI.ChatConfiguration()
+        return config
+    }()
 
-    ChatController.Builder(context).apply{
-    //... do some initiations
-    conversationSettings(setting)
-    }
-    ```
+    let timeStamp = DateStampConfiguration()
+        timeStamp.formatter = DateFormatter()
+        timeStamp.formatter.dateFormat = "HH:mm"
+        timeStamp.customFont = CustomFont(font: UIFont.boldSystemFont(ofSize: 8))
+        timeStamp.textColor = self.colorType.dateStampColor
+    
+    self.chatConfig.chatViewConfig.timeStamp = timeStamp
+```
 
-2. Overriding [configure/customize](./how-it-works)
-    {: .strong-sub-title}
-
-    Overriding the configure and/or customize methods and set the desired look for the timestamp on `ChatUIProvider.chatElementsUIProvider.`[incomingUIProvider](./incoming-message) and/or `ChatUIProvider.chatElementsUIProvider.`[outgoingUIProvider](./outgoing-message).   
-      
-    ```kotlin
-    val chatUI = ChatUIProvider(context).apply {
-            this.chatElementsUIProvider.incomingUIProvider.configure = { adapter ->
-                    this.setTimestampStyle(TimestampStyle(time_pattern, text_size, text_color))
-                }
-                adapter
-            }
-
-            this.chatElementsUIProvider.outgoingUIProvider.configure = { adapter ->
-                    this.setTimestampStyle(TimestampStyle("hh:mm aa", 10, Color.parseColor("#aeaeae")))
-                }
-                adapter
-            }
-        }
-
-    ChatController.Builder(context).apply{
-            //... do some initiations
-            chatUIProvider(chatUI)
-        }
-    ```

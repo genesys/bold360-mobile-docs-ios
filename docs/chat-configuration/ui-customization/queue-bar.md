@@ -45,6 +45,8 @@ The following should be enabled, in order to have chats queue support, and to be
 
 ---
 
+<img src="../../../../assets/images/queue_before.png"  alt="1" width = 300px height = 450px> 
+
 ## Known Limitation
 
 This view is not configurable.

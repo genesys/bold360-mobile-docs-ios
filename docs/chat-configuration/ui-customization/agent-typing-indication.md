@@ -21,5 +21,7 @@ nav_order: 8
 ## Overview
 Appears when the live agent is typing.  
 
+<img src="../../../../assets/images/typing_before.png"  alt="1" width = 300px height = 450px>
+
 ## Known Limitation
 This view is not configurable.
