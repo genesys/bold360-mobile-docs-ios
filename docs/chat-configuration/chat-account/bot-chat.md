@@ -42,7 +42,6 @@ extension ViewController {
         account.apiKey = "API_KEY"
         account.account = "ACCOUNT_NAME"
         account.knowledgeBase = "KNOWLEDGE_BASE"
-        botAccount.perform(Selector.init(("setServer:")), with:"SERVER")
         return account;
     }
 }

@@ -8,4 +8,4 @@ nav_order: 6
 
 # FAQ
 
-To report about technical issue, [open issue](https://github.com/Logmein-Bold-Mobile/bold360-mobile-docs-ios/issues).
+To report technical issue, [open issue](https://github.com/Logmein-Bold-Mobile/bold360-mobile-docs-ios/issues).
