@@ -7,7 +7,7 @@ grand_parent: Chat Configuration
 nav_order: 11
 ---
 
-# Dark mode Support {{site.data.vars.need-review}}
+# Dark mode Support 
 
 ### How to apply Dark mode to your Chat
 In order to apply dark theme to your chat, you can define overriding and dark mode resources additions, that will replace the resources used by the SDK.

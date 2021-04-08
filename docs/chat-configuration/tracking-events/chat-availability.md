@@ -7,7 +7,7 @@ nav_order: 2
 # permalink: /docs/chat-configuration/tracking-events/chat-availability
 ---
 
-# Chat Availability {{site.data.vars.need-review}}
+# Chat Availability
 {: .no_toc }
 
 ## Table of contents

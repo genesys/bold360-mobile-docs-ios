@@ -5,7 +5,7 @@ np_toc: true
 nav_exclude: true
 ---
 
-# Incoming message options {{site.data.vars.need-review}}
+# Incoming message options
 {: .no_toc }
 
 ## Table of contents
@@ -44,9 +44,9 @@ While configuring make sure you update both if needed.
     }
   ```
 
-### Before & After
+### Default (instead of before) and Customized (instead of after)
 
-| Before                                                                                           | After                                                                                           |
+| Default                                                                                           | Customized                                                                                           |
 |--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | <img src="../../../../../assets/images/multiline_before.png"  alt="1" width = 300px height = 450px> | <img src="../../../../../assets/images/multiline_after.png"  alt="1" width = 300px height = 450px> |
 
@@ -63,9 +63,9 @@ func updateQuickOption() {
 }
 ```
 
-### Before & After
+### Default (instead of before) and Customized (instead of after)
 
-| Before                                                                                           | After                                                                                           |
+| Default                                                                                           | Customized                                                                                           |
 |--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | <img src="../../../../../assets/images/quickoptions_before.png"  alt="1" width = 300px height = 450px> | <img src="../../../../../assets/images/quickoptions_after.png"  alt="1" width = 300px height = 450px> |
 

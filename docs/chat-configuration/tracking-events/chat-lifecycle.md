@@ -7,7 +7,7 @@ nav_order: 1
 # permalink: /docs/chat-configuration/tracking-events/chat-lifecycle
 ---
 
-# Chat Lifecycle {{site.data.vars.need-review}}
+# Chat Lifecycle 
 {: .no_toc }
 
 ## Table of contents

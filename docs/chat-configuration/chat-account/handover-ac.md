@@ -7,7 +7,7 @@ grand_parent: Chat Configuration
 nav_order: 4
 ---
 
-# HandoverAccount {{site.data.vars.need-review}}
+# HandoverAccount
 
 Handover is a chat session with a custom provider that is configured and controlled by the customer.
 The Handover is being controlled at the app by a provided custom `ChatHandler`.

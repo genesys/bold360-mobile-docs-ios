@@ -7,7 +7,7 @@ permalink: /docs/chat-configuration/ui-customization/incoming-message/
 nav_order: 3
 ---
 
-# Incoming message {{site.data.vars.need-review}}
+# Incoming message 
 {: .no_toc}
 
 ## Table of contents 

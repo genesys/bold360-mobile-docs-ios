@@ -7,7 +7,7 @@ nav_order: 4
 # permalink: /docs/chat-configuration/tracking-events/error-handling
 ---
 
-# Error Handling {{site.data.vars.need-review}}
+# Error Handling 
 {: .no_toc }
 
 ## Table of contents

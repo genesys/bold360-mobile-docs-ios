@@ -7,7 +7,7 @@ grand_parent: Chat Configuration
 nav_order: 9
 ---
 
-# Date and Time {{site.data.vars.need-review}}
+# Date and Time 
 {: .no_toc }
 
 ## Table of contents

@@ -7,7 +7,7 @@ nav_order: 3
 # permalink: /docs/chat-configuration/tracking-events/events-and-notifications
 ---
 
-# Events and Notifications {{site.data.vars.need-review}}
+# Events and Notifications
 {: .no_toc }
 
 ## Table of contents

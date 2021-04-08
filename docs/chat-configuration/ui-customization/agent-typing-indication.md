@@ -7,7 +7,7 @@ grand_parent: Chat Configuration
 nav_order: 8
 ---
 
-# Agent Typing Indication {{site.data.vars.need-review}}
+# Agent Typing Indication 
 {: .no_toc }
 
 ## Table of contents

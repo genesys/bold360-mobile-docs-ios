@@ -6,7 +6,7 @@ nav_order: 5
 # permalink: /docs/chat-configuration/tracking-events/forms
 ---
 
-# Live chat forms {{site.data.vars.need-review}}
+# Live chat forms
 {: .no_toc }
 
 ## Table of contents
