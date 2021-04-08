@@ -5,7 +5,7 @@ parent: Advanced Topics
 nav_order: 3
 ---
 
-# Chat Restoring {{site.data.vars.need-work}}
+# Chat Restoring
 {: .no_toc }
 
 ## Table of contents

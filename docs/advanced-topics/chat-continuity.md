@@ -6,7 +6,7 @@ nav_order: 2
 has_toc: false
 ---
 
-# Chat Continuity {{site.data.vars.need-work}}
+# Chat Continuity
 {: .no_toc }
 
 ## Table of contents
