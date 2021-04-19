@@ -43,3 +43,33 @@ controller.chatElementDelegate = self
     //use item     
 }
 ```
+
+## Listening to channeling button execute
+
+In order to be able to be notified of channeling button execute in the chat, implement `ApplicationHandler`, as follows:
+
+1 .  Return `true` under `shouldHandleClickedLink`
+
+```swift
+    func presenting(_ controller: UIViewController, shouldHandleClickedLink link: String) -> Bool {
+        // You can add some logic as 
+        if (link.contains("someKey://")) {
+            return true
+        }
+
+        return false
+    }
+```
+
+2 . Implement `didClickLink` 
+
+```swift
+    func didClickLink(_ url: String) {
+       if let link = URL(string: url) {
+           UIApplication.shared.openURL(link)
+        }
+    }
+```
+
+> Related: Direct the user to a different section in the application (in app navigation).
+
