@@ -15,6 +15,32 @@ toc_float: true
 {: .det}
 <details open markdown="block">
 
+<summary> Version 3.10.0 </summary>
+
+# Version 3.10.0
+Release date: May 12, 2021
+{: .overview}
+
+- Avatar variant for Dark Mode can be configured.
+- Retrieve the article using statement API.
+
+### Fixes
+
+- Embedded Youtube videos can be played.
+- Live chat forms displayed with a unified font across the entire form.
+  
+---
+
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
 <summary> Version 3.9.1 </summary>
 
 # Version 3.9.1
