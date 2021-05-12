@@ -23,8 +23,8 @@ For more information use [iOS Dev center](https://developer.apple.com/design/hum
 
 In order to apply dynamic image on avatar
 
-### 1. Add dynamic image on `Assets.xcassets`.
-### 2. Set the dynamic image name under `{SOME_CHAT_ELEMENT_CONFIG}.avatrImageName`.
+#### 1. Add dynamic image on `Assets.xcassets`.
+#### 2. Set the dynamic image name under `{SOME_CHAT_ELEMENT_CONFIG}.avatrImageName`.
 
 ```swift
 config.incomingBotConfig.avatrImageName = "{IMAGE_NAME}"
