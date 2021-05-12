@@ -27,7 +27,7 @@ In order to apply dynamic image on avatar
 ### 2. Set the dynamic image name under `{SOME_CHAT_ELEMENT_CONFIG}.avatrImageName`.
 
 ```swift
-config.incomingBotConfig.avatrImageName = "robot"
+config.incomingBotConfig.avatrImageName = "{IMAGE_NAME}"
 ```
 
 
