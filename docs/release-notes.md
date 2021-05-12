@@ -21,8 +21,9 @@ toc_float: true
 Release date: May 12, 2021
 {: .overview}
 
-- Avatar variant for Dark Mode can be configured.
-- Retrieve the article using statement API.
+- [Changed Pod Specs fetching from Bintray to S3](https://logmein-bold-mobile.github.io/bold360-mobile-docs-ios/docs/faq/JCenter-deprecation/).
+- [Avatar variant for Dark Mode can be configured](https://logmein-bold-mobile.github.io/bold360-mobile-docs-ios/docs/chat-configuration/ui-customization/dark-mode/#avatar-dynamic-image-suuport).
+- Improved `ReadMore` content Loading.
 
 ### Fixes
 
