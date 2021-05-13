@@ -126,14 +126,19 @@ controller.continuityProvider = self
 
 ```swift
 func updateContinuityInfo(_ params: [String : String]!) {
+       // Permanent storage for the values
         params.forEach { (key, value) in
-            UserDefaults.standard.set(value, forKey: key)
+            if (key == "ChatID" || key == "VisitorID" || key == "UserID") {
+                // store the value if you want to continue with the same session
+            }
+           UserDefaults.standard.set(value, forKey: key)
         }
         UserDefaults.standard.synchronize()
 }
     
-func fetchContinuity(forKey key: String!, handler: ((String?) -> Void)!) {
-        handler(UserDefaults.standard.value(forKey: key) as? String)
+func fetchContinuity(forKey key: String!, handler: ((String?) -> Void)!) {   
+     // Extract the values from the permanent storage
+     handler(UserDefaults.standard.value(forKey: key) as? String)
 }
 ``` 
 4 . Present Chat viewController.
