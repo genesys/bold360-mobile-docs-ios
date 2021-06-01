@@ -15,6 +15,33 @@ toc_float: true
 {: .det}
 <details open markdown="block">
 
+<summary> Version 3.10.0 </summary>
+
+# Version 3.10.0
+Release date: May 12, 2021
+{: .overview}
+
+- [Changed Pod Specs fetching from Bintray to S3](https://logmein-bold-mobile.github.io/bold360-mobile-docs-ios/docs/faq/JCenter-deprecation/).
+- [Avatar variant for Dark Mode can be configured](https://logmein-bold-mobile.github.io/bold360-mobile-docs-ios/docs/chat-configuration/ui-customization/dark-mode/#avatar-dynamic-image-suuport).
+- Improved `ReadMore` content Loading.
+
+### Fixes
+
+- Embedded Youtube videos can be played.
+- Live chat forms displayed with a unified font across the entire form.
+  
+---
+
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
 <summary> Version 3.9.1 </summary>
 
 # Version 3.9.1
