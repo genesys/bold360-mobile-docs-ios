@@ -55,7 +55,7 @@ account.extraData.department = "{DEPARTMENT_ID}"
 
 or
 
-account.extraData.setExtraParams(["department":"{DEPARTMENT_ID}","name": "{NAME}", "address": "{ADDRESS}"])
+account.extraData.extraParams = ["department":"{DEPARTMENT_ID}","name": "{NAME}", "address": "{ADDRESS}"]
 ```
 
 [see available fields here](https://developer.bold360.com/help/EN/Bold360API/Bold360API/c_bc_sdk_ios_core_integration_chat_session.html)
@@ -118,7 +118,7 @@ extension ClassName: AccountProvider {
 
 **Tip**
 
-For the `setExtraParams()` method:
+For the `extraParams` setter:
 Existing keys values are being overrided and new keys are created with the custom_ prefix. The default keys are listed in https://developer.bold360.com/help/EN/Bold360API/Bold360API/c_bc_sdk_ios_core_integration_chat_session.html
 
 ```swift
@@ -126,7 +126,7 @@ extension ClassName: AccountProvider {
     var accountExtraData: AccountExtraData {
         
         let liveAccount = LiveAccountExtraData()
-        liveAccount.setExtraParams(["first_name":"{FIRST_NAME}","last_name":"{Last_Name}"])        
+        liveAccount.extraParams = ["first_name":"{FIRST_NAME}","last_name":"{Last_Name}"]
         return liveAccount
     }
 }
