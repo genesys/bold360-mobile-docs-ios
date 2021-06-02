@@ -15,6 +15,26 @@ toc_float: true
 {: .det}
 <details open markdown="block">
 
+<summary> Version 3.11.0 </summary>
+
+# Version 3.11.0
+Release date: June 2, 2021
+{: .overview}
+
+- Optimization of podspec dependencies by version number mention.
+  
+---
+
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
 <summary> Version 3.10.0 </summary>
 
 # Version 3.10.0
