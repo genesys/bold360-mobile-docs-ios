@@ -21,7 +21,7 @@ toc_float: true
 Release date: June 2, 2021
 {: .overview}
 
-- Optimization of podspec dependencies by version number mention.
+- Optimization of podspec's dependencies by mentioning pods version number.
   
 ---
 
