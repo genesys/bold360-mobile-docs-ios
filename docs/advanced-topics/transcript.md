@@ -26,7 +26,7 @@ The `ChatElementDelegate` enables you to handle the different messages (incommin
 The application can then take these messages and perform the desired action.
 The delegate mentioned above is only an enabler for app developers to use to implement any desired action on the messages, for example: print to the screen or download.
 
-<img src="../../../../assets/images/transcript.png"  alt="1"> 
+![alt text](https://logmein-bold-mobile.github.io/bold360-mobile-docs-ios/assets/images/transcript.png)
 
 In the example provided below, the chat messages are collected and then the application can take the file and download it.
 
