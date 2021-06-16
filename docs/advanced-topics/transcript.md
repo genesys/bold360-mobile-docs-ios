@@ -22,6 +22,13 @@ nav_order: 2
 
 The SDK enables the host App to provide its own implementation, and maintain an updated chat transcript, by listening to triggered events whenever chat elements changes.
 
+The `ChatElementDelegate` enables you to handle the different messages (incomming message, outgoing message...).
+The application can then take these messages and perform the desired action.
+The delegate mentioned above is only an enabler for app developers to use to implement any desired action on the messages, for example: print to the screen or download.
+
+<img src="../../../../assets/images/transcript.png"  alt="1"> 
+
+In the example provided below, the chat messages are collected and then the application can take the file and download it.
 **You can checkout an implementation example [here](https://github.com/bold360ai/bold360-mobile-samples-ios/tree/master/TranscriptFetchSample).**
 
 {: .overview}
