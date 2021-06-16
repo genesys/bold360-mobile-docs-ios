@@ -20,7 +20,7 @@ nav_order: 2
 ## Overview
 > ##### Transcript management is out of the SDKs scope.  
 
-The SDK enables the host App to provide its own implementation, and maintain an updated chat transcript, by listening to triggered events whenever chat elements changes.
+The SDK enables the host App to provide its own implementation to store, and maintain an updated chat transcript, by listening to triggered events whenever chat elements changes.
 
 The `ChatElementDelegate` enables you to handle the different messages (incomming message, outgoing message...).
 The application can then take these messages and perform the desired action.
