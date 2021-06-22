@@ -20,7 +20,15 @@ nav_order: 2
 ## Overview
 > ##### Transcript management is out of the SDKs scope.  
 
-The SDK enables the host App to provide its own implementation, and maintain an updated chat transcript, by listening to triggered events whenever chat elements changes.
+The SDK enables the host App to provide its own implementation to store, and maintain an updated chat transcript, by listening to triggered events whenever chat elements changes.
+
+The `ChatElementDelegate` enables you to handle the different messages (incomming message, outgoing message...).
+The application can then take these messages and perform the desired action.
+The delegate mentioned above is only an enabler for app developers to use to implement any desired action on the messages, for example: print to the screen or download.
+
+![alt text](https://logmein-bold-mobile.github.io/bold360-mobile-docs-ios/assets/images/transcript.png)
+
+In the example provided below, the chat messages are collected and then the application can take the file and download it.
 
 **You can checkout an implementation example [here](https://github.com/bold360ai/bold360-mobile-samples-ios/tree/master/TranscriptFetchSample).**
 
