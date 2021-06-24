@@ -15,6 +15,28 @@ toc_float: true
 {: .det}
 <details open markdown="block">
 
+<summary> Version 3.11.1 </summary>
+
+# Version 3.11.1
+Release date: June 24, 2021
+{: .overview}
+  
+### Fixes
+
+- Instant feedback shows all feedback options.
+ 
+---
+
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
+
+{: .det .mt-2}
+<details close markdown="block">
+
 <summary> Version 3.11.0 </summary>
 
 # Version 3.11.0
