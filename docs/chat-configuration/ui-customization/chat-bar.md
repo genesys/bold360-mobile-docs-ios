@@ -53,7 +53,5 @@ The UI component data is being updated on chat acceptance and on every operator 
 ## Known Issues
 1. Currently the ability to change the agentName, agentAvatarImage and endChatBtnTitle are visible but are shown for only a few moments until the agent accepts the chat.
 2. The UI configuration for the different chat elements inside the `ChatBar` will be seperated.
-3. The ChatBar is displayed for a moment before the preChatForm is displayed and not only after.
-
 
 
