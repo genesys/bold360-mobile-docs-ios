@@ -15,6 +15,35 @@ toc_float: true
 {: .det}
 <details open markdown="block">
 
+<summary> Version 3.12.0 </summary>
+
+# Version 3.12.0
+Release date: July 7, 2021
+{: .overview}
+  
+- Adding the ability for the end user to update he's email for the transcript while in chat with an agent.
+- Adding the ability to remove the checkmarks from the bottom of bot and agent answers.
+- Adding auto messages support.
+ 
+### Fixes
+
+- Feedback options are not appearing on the iOS sdk.
+- Images and videos don't fit screen size.
+- Chat bar appears before Pre Chat.
+
+---
+
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
+
+
+{: .det}
+<details open markdown="block">
+
 <summary> Version 3.11.1 </summary>
 
 # Version 3.11.1
