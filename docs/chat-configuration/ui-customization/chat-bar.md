@@ -35,6 +35,7 @@ The UI component data is being updated on chat acceptance and on every operator 
     chatBarConfig.endChatButtonEnabled = true /* Remove "End Chat Button" view display */
     chatBarConfig.enabled = true /* Remove "ChatBar" view display */
     chatBarConfig.endChatBtnTextColor = UIColor.purple
+    chatBarConfig.userTranscriptBtnImage = UIImage(systemName: "sunrise")
     chatBarConfig.backgroundColor = UIColor.yellow
     chatBarConfig.textColor = UIColor.red /* Changes the agentName text color */
     chatBarConfig.font = UIFont.italicSystemFont(ofSize: 15) /* Changes the font for the agentName and EndChatButton */
