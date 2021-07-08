@@ -11,9 +11,30 @@ toc_float: true
 
 ---
 
-
 {: .det}
 <details open markdown="block">
+
+<summary> Version 3.12.1 </summary>
+
+# Version 3.12.1
+Release date: July 8, 2021
+{: .overview}
+
+### Fixes
+
+- Handle positive feedback when there are no channels.
+
+---
+
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
+
+{: .det}
+<details close markdown="block">
 
 <summary> Version 3.12.0 </summary>
 
