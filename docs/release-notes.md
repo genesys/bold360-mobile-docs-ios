@@ -14,6 +14,28 @@ toc_float: true
 {: .det}
 <details open markdown="block">
 
+<summary> Version 3.12.2 </summary>
+
+# Version 3.12.2
+Release date: July 13, 2021
+{: .overview}
+
+### Fixes
+
+- Passing context on channeling request.
+
+---
+
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
+
+{: .det}
+<details close markdown="block">
+
 <summary> Version 3.12.1 </summary>
 
 # Version 3.12.1
