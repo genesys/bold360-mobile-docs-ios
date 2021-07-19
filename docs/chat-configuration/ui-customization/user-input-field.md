@@ -55,6 +55,8 @@ The behavior and functionality of the input field is defined by the active chat 
   searchViewConfig.textColor = UIColor.blue
   searchViewConfig.customFont = CustomFont(font: UIFont.italicSystemFont(ofSize: 15))
   searchViewConfig.sendIcon = UIImage(systemName: "restore")
+  /* File upload */
+  searchViewConfig.uploadIcon = UIImage(systemName: "shuffle")
   /* Voice support */
   searchViewConfig.voiceEnabled = true
   searchViewConfig.speechOnIcon = UIImage(systemName: "wind")
@@ -110,24 +112,10 @@ The behavior and functionality of the input field is defined by the active chat 
 | Before                                                                                           | After                                                                                           |
 | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | <img src="../../../../assets/images/searchbar_before.png"  alt="1" width = 200px height = 350px> | <img src="../../../../assets/images/searchbar_after.png"  alt="1" width = 200px height = 350px> |
+| <img src="../../../../assets/images/upload_before.png"  alt="1" width = 200px height = 350px>   | <img src="../../../../assets/images/upload_after.png"  alt="1" width = 200px height = 350px>   |
 | <img src="../../../../assets/images/record_before.png"  alt="1" width = 200px height = 350px>    | <img src="../../../../assets/images/record_after.png"  alt="1" width = 200px height = 350px>    |
 | <img src="../../../../assets/images/readout_before.png"  alt="1" width = 200px height = 350px>   | <img src="../../../../assets/images/readout_after.png"  alt="1" width = 200px height = 350px>   |
 
----
-
-## Known Issues
-
-### 1. The ability to change the text inside the input field exists but does nothing:
-
-``` swift
-chatController.viewConfiguration.searchViewConfig.text = "Does nothing"
-```
-
-### 2. The ability to change the image for the uploadIcon exists but does nothing:
-
-``` swift
-chatController.viewConfiguration.searchViewConfig.uploadIcon = UIImage(systemName: "search")
-```
 
   
 
