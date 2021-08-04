@@ -26,6 +26,13 @@ Release date: August 4, 2021
 
 ---
 
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
+
 {: .det}
 <details close markdown="block">
 
