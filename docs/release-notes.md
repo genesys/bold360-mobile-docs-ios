@@ -14,6 +14,21 @@ toc_float: true
 {: .det}
 <details open markdown="block">
 
+<summary> Version 3.12.3 </summary>
+
+# Version 3.12.3
+Release date: August 4, 2021
+{: .overview}
+
+### Fixes
+
+- Adding Right-to-Left Support.
+
+---
+
+{: .det}
+<details close markdown="block">
+
 <summary> Version 3.12.2 </summary>
 
 # Version 3.12.2

@@ -10,7 +10,7 @@ nav_order: 13
 # Right to Left Support 
 
 ### How to apply RTL
-In order to apply right-to-left to your chat, you can define the ` UISemanticContentAttribute` to `forceRightToLeft` on `UIView` inside `AppDelegate` `didFinishLaunchingWithOptions`.
+In order to apply right-to-left to your chat, you can define the `UISemanticContentAttribute` to `forceRightToLeft` on `UIView` inside `AppDelegate` `didFinishLaunchingWithOptions`.
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
