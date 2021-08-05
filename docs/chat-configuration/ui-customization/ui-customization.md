@@ -75,7 +75,7 @@ self.chatController.viewConfiguration.incomingBotConfig.avatarPosition = .topLef
 
 ### Avatar Position Options
 
-```Objective C
+```objc
 typedef NS_ENUM(NSInteger, AvatarPosition) {
     AvatarPositionTopLeft,
     AvatarPositionBottomLeft,
