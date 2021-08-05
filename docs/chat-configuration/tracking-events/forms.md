@@ -38,6 +38,18 @@ Each field has properties which defines its type and behavior, among them: field
 
 ---
 
+## How to Customize
+`ChatConfiguration` exposes the formConfiguration object which can be used to customize the UI for the SDK default forms.
+
+### Set BoldForm title configuration
+To update BoldForm title UI configuration:
+
+```swift
+chatController.viewConfiguration.formConfiguration.titleConfig.backgroundColor = UIColor.yellow
+chatController.viewConfiguration.formConfiguration.titleConfig.textColor = UIColor.red
+chatController.viewConfiguration.formConfiguration.titleConfig.font = UIFont(name: "Times New Roman", size: 29.0)!
+```
+
 ## How to override
 The SDK provides a way for the hosting App to use self customed form implementations, and display them when needed.
 
@@ -140,3 +152,8 @@ account.extraData.setExtraParams(["department":"{DEPARTMENT_ID}","name": "{NAME}
 ```
 
 [see available fields here](https://developer.bold360.com/help/EN/Bold360API/Bold360API/c_bc_sdk_ios_core_integration_chat_session.html)
+
+## Known Issues
+
+1. The default SDK forms UI customization enables editing only the title's UI.
+2. The `BoldFormConfiguration` object on the `ChatConfiguration` exposes the `multiSelectElementConfig` property which does nothing.
