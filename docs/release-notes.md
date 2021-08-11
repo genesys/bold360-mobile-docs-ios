@@ -23,6 +23,7 @@ Release date: August 4, 2021
 ### Fixes
 
 - Adding Right-to-Left Support.
+- Handle Encoding issue for iOS version <= iOS 13.5.
 
 ---
 
