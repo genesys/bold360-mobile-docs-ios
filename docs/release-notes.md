@@ -14,6 +14,36 @@ toc_float: true
 {: .det}
 <details open markdown="block">
 
+<summary> Version 3.13.0 </summary>
+
+# Version 3.13.0
+Release date: September 12, 2021
+{: .overview}
+
+- Context attachment on every request.
+  
+### Fixes
+
+- Read more fix.
+- Fixing issue when the element is not found in the ChatRecorder.
+- Support extra data while starting live chat.
+- Increasing the default title size for the read more articles.
+- Upload icon configurable.
+- Fix placeholder hint for the input field was not displayed after the message was auto-corrected.
+- Minor bug fixes.
+
+---
+
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
+
+{: .det}
+<details close markdown="block">
+
 <summary> Version 3.12.3 </summary>
 
 # Version 3.12.3
