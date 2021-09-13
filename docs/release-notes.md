@@ -24,13 +24,11 @@ Release date: September 12, 2021
   
 ### Fixes
 
-- Read more fix.
-- Fixing issue when the element is not found in the ChatRecorder.
-- Support extra data while starting live chat.
-- Increasing the default title size for the read more articles.
-- Upload icon configurable.
-- Fix placeholder hint for the input field was not displayed after the message was auto-corrected.
-- Minor bug fixes.
+- Read more screen now shows article content.
+- Support passing extra data upon live chat start.
+- The read more article header size is larger.
+- The upload icon is now configurable.
+- The placeholder hint for the input field is displayed after a message is auto-corrected.
 
 ---
 
