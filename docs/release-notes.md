@@ -24,12 +24,12 @@ Release date: September 12, 2021
   
 ### Fixes
 
-- Read more screen now shows article content.
-- Support passing extra data upon live chat start.
+- Supporting the passing of extra data when starting a live chat.
 - The read more article header size is larger.
-- The upload icon is now configurable.
 - The placeholder hint for the input field is displayed after a message is auto-corrected.
-
+- Outside office hours unavailability message appears based on branding.
+- Centering vertically the input text in the input field.
+  
 ---
 
 To get latest version run:
