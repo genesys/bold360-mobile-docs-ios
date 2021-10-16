@@ -12,7 +12,34 @@ toc_float: true
 ---
 
 {: .det}
-<details open markdown="block">
+<details close markdown="block">
+
+<summary> Version 3.14.0 </summary>
+
+# Version 3.14.0
+Release date: October 14, 2021
+{: .overview}
+
+### Features
+
+- Text color and font can be configured for live forms.
+- Ticket typed channel with Linked article url.
+
+### Fixes
+
+- Reports for bot channels were not delivered. 
+  
+---
+
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
+
+{: .det}
+<details close markdown="block">
 
 <summary> Version 3.13.0 </summary>
 
@@ -188,6 +215,7 @@ Release date: May 12, 2021
 - [Changed Pod Specs fetching from Bintray to S3](https://logmein-bold-mobile.github.io/bold360-mobile-docs-ios/docs/faq/JCenter-deprecation/).
 - [Avatar variant for Dark Mode can be configured](https://logmein-bold-mobile.github.io/bold360-mobile-docs-ios/docs/chat-configuration/ui-customization/dark-mode/#avatar-dynamic-image-suuport).
 - Improved `ReadMore` content Loading.
+- M1 Mac Support.
 
 ### Fixes
 

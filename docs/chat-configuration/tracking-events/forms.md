@@ -42,12 +42,31 @@ Each field has properties which defines its type and behavior, among them: field
 `ChatConfiguration` exposes the formConfiguration object which can be used to customize the UI for the SDK default forms.
 
 ### Set BoldForm title configuration
-To update BoldForm title UI configuration:
 
 ```swift
-chatController.viewConfiguration.formConfiguration.titleConfig.backgroundColor = UIColor.yellow
-chatController.viewConfiguration.formConfiguration.titleConfig.textColor = UIColor.red
 chatController.viewConfiguration.formConfiguration.titleConfig.font = UIFont(name: "Times New Roman", size: 29.0)!
+chatController.viewConfiguration.formConfiguration.titleConfig.textColor = UIColor.red
+```
+
+### Set BoldForm text fields configuration
+
+```swift
+chatController.viewConfiguration.formConfiguration.textElementConfig.font = UIFont(name: "Times New Roman", size: 14.0)!
+chatController.viewConfiguration.formConfiguration.textElementConfig.textColor = UIColor.blue
+```
+
+### Set BoldForm text multi selection configuration
+
+```swift
+chatController.viewConfiguration.formConfiguration.multiSelectElementConfig.font = UIFont(name: "Times New Roman", size: 14.0)!
+chatController.viewConfiguration.formConfiguration.multiSelectElementConfig.textColor = UIColor.brown
+```
+
+### Set BoldForm text rating configuration
+
+```swift
+chatController.viewConfiguration.formConfiguration.ratingTitleConfig.font = UIFont(name: "Times New Roman", size: 14.0)!
+chatController.viewConfiguration.formConfiguration.ratingTitleConfig.textColor = UIColor.brown
 ```
 
 ## How to override
