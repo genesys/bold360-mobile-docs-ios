@@ -17,7 +17,7 @@ toc_float: true
 <summary> Version 3.14.0 </summary>
 
 # Version 3.14.0
-Release date: October 14, 2021
+Release date: October 17, 2021
 {: .overview}
 
 ### Features
