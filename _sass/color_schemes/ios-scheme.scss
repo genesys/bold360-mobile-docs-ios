@@ -108,6 +108,39 @@ body {
   background-color: $code-background-color;
 }
 
+.notice {
+  letter-spacing: 0.06em;
+  color: $side-blue-dk;
+  background-color: none;
+}
+
+.red{
+  color: #f03a22ea;
+}
+
+.gray{
+  color: $side-blue
+}
+
+.small-remark{
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+
+.removed {
+  letter-spacing: 0.06em;
+  color: $orange-200;
+  background-color: none;
+  font-size: 14px;
+}
+
+.added {
+  letter-spacing: 0.06em;
+  color: $green-100;
+  background-color: none;
+  font-size: 15px;
+}
+
 blockquote {
   border-left: .20em solid $bluish-grey;
   color: #79899b;
@@ -214,9 +247,14 @@ details[open] summary::-webkit-details-marker {
 }
 
 .det[open] summary{
-  font-size: 0%;
+  color: transparent !important;
   border-bottom: none;
 }
+.det[open] summary::marker{
+  size: 0.5%;
+  color: $side-blue;
+}
+
 .det[open] {
   border: solid 1px $grey-dk-000;
   background-color: $grey-lt-200 !important;
@@ -224,6 +262,7 @@ details[open] summary::-webkit-details-marker {
 
 .det[open] h1{
   color: $side-blue;
+  margin-top: 0.1em !important;
 }
 
 .det[open] h4 {
@@ -277,4 +316,8 @@ details[open] summary::-webkit-details-marker {
 .side-custom .site-nav, .side-custom .site-header, .side-custom .site-footer {
   width: 60%;
   min-width: 245px;
+}
+
+hr{
+  background-color: $bluish-grey !important;
 }
