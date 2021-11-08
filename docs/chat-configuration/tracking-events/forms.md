@@ -28,7 +28,7 @@ The SDK provides un-configurable implementation of the following forms:
 - **Email** - Uses for submitting an email address, mid-chat, for the chat transcript delivery when the chat ends.
 {: .overview}
 
-**You can checkout an implementation example [here](https://github.com/bold360ai/bold360-mobile-samples-ios/blob/master/BasicSample/BasicSample/ChatViewControllers/BoldFormViewController.swift).**
+**You can checkout an implementation example [here](https://github.com/genesys/bold360-mobile-samples-ios/blob/master/BasicSample/BasicSample/ChatViewControllers/BoldFormViewController.swift).**
 
 Each form construct of dynamic list of fields according to admin console configurations set for the account's chat window.  
 Each field has properties which defines its type and behavior, among them: field type, isRequired, and if available, its current value.

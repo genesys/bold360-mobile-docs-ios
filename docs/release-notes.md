@@ -212,8 +212,8 @@ pod update
 Release date: May 12, 2021
 {: .overview}
 
-- [Changed Pod Specs fetching from Bintray to S3](https://logmein-bold-mobile.github.io/bold360-mobile-docs-ios/docs/faq/JCenter-deprecation/).
-- [Avatar variant for Dark Mode can be configured](https://logmein-bold-mobile.github.io/bold360-mobile-docs-ios/docs/chat-configuration/ui-customization/dark-mode/#avatar-dynamic-image-suuport).
+- [Changed Pod Specs fetching from Bintray to S3](https://genesys.github.io/bold360-mobile-docs-ios/docs/faq/JCenter-deprecation/).
+- [Avatar variant for Dark Mode can be configured](https://genesys.github.io/bold360-mobile-docs-ios/docs/chat-configuration/ui-customization/dark-mode/#avatar-dynamic-image-suuport).
 - Improved `ReadMore` content Loading.
 - M1 Mac Support.
 
@@ -283,7 +283,7 @@ Release date: March 4, 2021
 
 #### Breaking Changes
 
-- We made few significant cahnges in the `Configuration` structure so recommended to follow the updated documentation: [UI Customization](https://github.com/Logmein-Bold-Mobile/bold360-mobile-docs-ios/blob/master/ChatViewConfigurationIOS.md) 
+- We made few significant cahnges in the `Configuration` structure so recommended to follow the updated documentation: [UI Customization](https://github.com/genesys/bold360-mobile-docs-ios/blob/master/ChatViewConfigurationIOS.md) 
 
 ---
 
@@ -399,9 +399,9 @@ After:
 self.delegate.submitForm(nil)
 ```
 
-> Smaple
+> Sample
 
-https://github.com/bold360ai/bold360-mobile-samples-ios/commit/19e5783f1f3f675da70b01305bf60bd30b5c7390#diff-bdfadc172ed44c581cba3dd99591944896dea03b1c303fd87a9ac1210c597cc3R61
+https://github.com/genesys/bold360-mobile-samples-ios/commit/19e5783f1f3f675da70b01305bf60bd30b5c7390#diff-bdfadc172ed44c581cba3dd99591944896dea03b1c303fd87a9ac1210c597cc3R61
 
 ## [BLD-41751] Support custom font on read more view controller.
 

@@ -23,7 +23,7 @@ Use this Quick Start guide to get you up and running with a working AI or live c
 
 `platform :ios, '10.0'`
 
->Note: M1 Mac is supported from [v3.10.0](https://logmein-bold-mobile.github.io/bold360-mobile-docs-ios/docs/release-notes/#version-3100).
+>Note: M1 Mac is supported from [v3.10.0](https://genesys.github.io/bold360-mobile-docs-ios/docs/release-notes/#version-3100).
 
 * Automatic Reference Counting (ARC) is required in your project.
 * With the release of iOS 9 and Xcode 7, a new feature called [App Transport Security (ATS)](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW35) was introduced.
@@ -50,7 +50,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 3. Add bold360ai PodSpecs repository to your Podfile:
 
 ```ruby
-source 'https://github.com/nanorepsdk/NRSDK-specs.git'
+source 'https://github.com/genesys/Bold360ai-SDK-Specs'
 ```
 
 4. Add bold360ai iOS SDK to your Podfile:
@@ -205,4 +205,4 @@ extension ViewController: ChatControllerDelegate {
 
 ### Code Sample
 {: .no_toc .text-delta}
-[bold360ai samples](https://github.com/bold360ai/bold360-mobile-samples-ios)
+[bold360ai samples](https://github.com/genesys/bold360-mobile-samples-ios)
