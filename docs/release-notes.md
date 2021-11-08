@@ -399,9 +399,9 @@ After:
 self.delegate.submitForm(nil)
 ```
 
-> Smaple
+> Sample
 
-https://github.com/bold360ai/bold360-mobile-samples-ios/commit/19e5783f1f3f675da70b01305bf60bd30b5c7390#diff-bdfadc172ed44c581cba3dd99591944896dea03b1c303fd87a9ac1210c597cc3R61
+https://github.com/genesys/bold360-mobile-samples-ios/commit/19e5783f1f3f675da70b01305bf60bd30b5c7390#diff-bdfadc172ed44c581cba3dd99591944896dea03b1c303fd87a9ac1210c597cc3R61
 
 ## [BLD-41751] Support custom font on read more view controller.
 

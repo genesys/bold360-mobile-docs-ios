@@ -23,7 +23,7 @@ The SDK provides a standalone AI autocomplete component, called `SearchViewContr
 This UI component can connect to a bot AI source, for autocomplete suggestions fetching.
 {: .overview }
 
-**You can checkout an implementation example [here](https://github.com/bold360ai/bold360-mobile-samples-ios/blob/master/BasicSample/BasicSample/ChatViewControllers/AutoCompleteViewController.swift).**
+**You can checkout an implementation example [here](https://github.com/genesys/bold360-mobile-samples-ios/blob/master/BasicSample/BasicSample/ChatViewControllers/AutoCompleteViewController.swift).**
 
 ---
 

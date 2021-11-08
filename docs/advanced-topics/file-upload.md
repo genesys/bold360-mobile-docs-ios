@@ -20,7 +20,7 @@ nav_order: 9
 ## Overview
 This article will help you to support file upload.
 
-**You can checkout an implementation example [here](https://github.com/bold360ai/bold360-mobile-samples-ios/tree/master/BasicSample/BasicSample/ChatViewControllers/FileUpload).**
+**You can checkout an implementation example [here](https://github.com/genesys/bold360-mobile-samples-ios/tree/master/BasicSample/BasicSample/ChatViewControllers/FileUpload).**
 ## Enable file transfer in the admin console.
 
 1. Open [https://admin.bold360.com/](https://admin.bold360.com/) and log in.

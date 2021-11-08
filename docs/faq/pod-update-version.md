@@ -35,7 +35,7 @@ platform :ios, '10.0'
 * Validate that relevant `source` is mantioned on Podfile.
 
 ```ruby
-source 'https://github.com/nanorepsdk/NRSDK-specs.git'
+source 'https://github.com/genesys/Bold360ai-SDK-Specs'
 ```
 
 * Validate the SDK name is written properly.
@@ -59,7 +59,7 @@ use_frameworks!
 install! 'cocoapods',
          :deterministic_uuids => false
 
-source 'https://github.com/nanorepsdk/NRSDK-specs.git'
+source 'https://github.com/genesys/Bold360ai-SDK-Specs'
 source 'https://github.com/CocoaPods/Specs'
 
 target 'PROJECT_NAME' do

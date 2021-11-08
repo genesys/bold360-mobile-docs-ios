@@ -50,7 +50,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 3. Add bold360ai PodSpecs repository to your Podfile:
 
 ```ruby
-source 'https://github.com/nanorepsdk/NRSDK-specs.git'
+source 'https://github.com/genesys/Bold360ai-SDK-Specs'
 ```
 
 4. Add bold360ai iOS SDK to your Podfile:
@@ -205,4 +205,4 @@ extension ViewController: ChatControllerDelegate {
 
 ### Code Sample
 {: .no_toc .text-delta}
-[bold360ai samples](https://github.com/bold360ai/bold360-mobile-samples-ios)
+[bold360ai samples](https://github.com/genesys/bold360-mobile-samples-ios)

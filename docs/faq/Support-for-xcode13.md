@@ -16,5 +16,5 @@ Please make sure your Podfile is set with the right iOS version.
 platform :ios, "10.0" // must be 10 and above
 ```
 
-Compatible [sample](https://github.com/bold360ai/bold360-mobile-samples-ios/tree/master/m1Sample).
+Compatible [sample](https://github.com/genesys/bold360-mobile-samples-ios/tree/master/m1Sample).
 

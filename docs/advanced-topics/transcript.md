@@ -30,7 +30,7 @@ The delegate mentioned above is only an enabler for app developers to use to imp
 
 In the example provided below, the chat messages are collected and then the application can take the file and download it.
 
-**You can checkout an implementation example [here](https://github.com/bold360ai/bold360-mobile-samples-ios/tree/master/TranscriptFetchSample).**
+**You can checkout an implementation example [here](https://github.com/genesys/bold360-mobile-samples-ios/tree/master/TranscriptFetchSample).**
 
 {: .overview}
 
