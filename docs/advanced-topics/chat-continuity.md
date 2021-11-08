@@ -24,6 +24,6 @@ The ability to relate chats to user previous chats or "continue" chat sessions.
 Each chat, bot, live, has its meaning for continuity. Messaging chat can actually be continued while live chat can be related to previous user chats history.
 {: .overview}
 
-**You can checkout an implementation example [here](https://github.com/bold360ai/bold360-mobile-samples-ios/blob/master/BasicSample/BasicSample/ChatViewControllers/ContinuityDemoViewController.swift).**
+**You can checkout an implementation example [here](https://github.com/genesys/bold360-mobile-samples-ios/blob/master/BasicSample/BasicSample/ChatViewControllers/ContinuityDemoViewController.swift).**
 
 

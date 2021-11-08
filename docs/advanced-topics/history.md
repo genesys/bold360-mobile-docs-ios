@@ -22,7 +22,7 @@ nav_order: 1
 
 The SDK enables the Host app to provide its own implementation, and maintain an updated chat history, by listening to triggered events whenever chat elements changes.
 
-**You can checkout an implementation example [here](https://github.com/bold360ai/bold360-mobile-samples-ios/blob/master/BasicSample/BasicSample/ChatViewControllers/HistoryDemoViewController.swift).**
+**You can checkout an implementation example [here](https://github.com/genesys/bold360-mobile-samples-ios/blob/master/BasicSample/BasicSample/ChatViewControllers/HistoryDemoViewController.swift).**
 
 {: .overview}
 

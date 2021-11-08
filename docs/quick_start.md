@@ -205,4 +205,4 @@ extension ViewController: ChatControllerDelegate {
 
 ### Code Sample
 {: .no_toc .text-delta}
-[bold360ai samples](https://github.com/bold360ai/bold360-mobile-samples-ios)
+[bold360ai samples](https://github.com/genesys/bold360-mobile-samples-ios)
