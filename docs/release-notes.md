@@ -10,9 +10,30 @@ toc_float: true
 {: .no_toc }
 
 ---
-
 {: .det}
 <details open markdown="block">
+
+<summary> Version 3.14.1 </summary>
+
+# Version 3.14.1
+Release date: November 17, 2021
+{: .overview}
+
+### Fixes
+
+- Minor Forms appearence.
+  
+---
+
+To get latest version run:
+
+```ruby
+pod update 
+```
+</details>
+
+{: .det}
+<details close markdown="block">
 
 <summary> Version 3.14.0 </summary>
 
