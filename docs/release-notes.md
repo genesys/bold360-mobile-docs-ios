@@ -21,12 +21,17 @@ Release date: November 17, 2021
 
 ### Fixes
 
-- Minor Forms appearence.
+- Minor changes to the appearance of Forms.
   
 ---
 
-To get latest version run:
+To get latest version:
 
+1. Update Podfile:
+From: source 'https://github.com/nanorepsdk/NRSDK-specs.git'
+To: source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
+
+2. run:
 ```ruby
 pod update 
 ```
