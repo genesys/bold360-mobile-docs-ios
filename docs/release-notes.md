@@ -28,10 +28,16 @@ Release date: November 17, 2021
 To get latest version:
 
 1. Update Podfile:
-From: source 'https://github.com/nanorepsdk/NRSDK-specs.git'
-To: source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
+From: 
+```
+source 'https://github.com/nanorepsdk/NRSDK-specs.git'
+```
+To: 
+```
+source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
+```
 
-2. run:
+2. Run:
 ```ruby
 pod update 
 ```
