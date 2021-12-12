@@ -23,6 +23,7 @@ Release date: December 8, 2021
 
 - Changing "Keyboard Dismiss Mode" for Forms to "Dismiss on drag".
 - Fixing arm64 support.
+- Making Dislike responses more accessible.
   
 ---
 
