@@ -13,6 +13,39 @@ toc_float: true
 {: .det}
 <details open markdown="block">
 
+<summary> Version 3.14.3 </summary>
+
+# Version 3.14.3
+Release date: December 19, 2021
+{: .overview}
+
+### Fixes
+
+- Fix email nullability issue under live account extra data object.
+  
+---
+
+To get latest version:
+
+1. Update Podfile:
+From: 
+```
+source 'https://github.com/nanorepsdk/NRSDK-specs.git'
+```
+To: 
+```
+source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
+```
+
+2. Run:
+```ruby
+pod update 
+```
+</details>
+
+{: .det}
+<details close markdown="block">
+
 <summary> Version 3.14.2 </summary>
 
 # Version 3.14.2
