@@ -51,15 +51,19 @@ chatController.viewConfiguration.formConfiguration.titleConfig.textColor = UICol
 ### Set BoldForm text fields configuration
 
 ```swift
-chatController.viewConfiguration.formConfiguration.textElementConfig.font = UIFont(name: "Times New Roman", size: 14.0)!
 chatController.viewConfiguration.formConfiguration.textElementConfig.textColor = UIColor.blue
+chatController.viewConfiguration.formConfiguration.textElementConfig.font = UIFont.systemFont(ofSize: 12)
+chatController.viewConfiguration.formConfiguration.textElementConfig.labelConfiguration.textColor = UIColor.green
+chatController.viewConfiguration.formConfiguration.textElementConfig.labelConfiguration.font = UIFont.systemFont(ofSize: 14)
 ```
 
 ### Set BoldForm text multi selection configuration
 
 ```swift
-chatController.viewConfiguration.formConfiguration.multiSelectElementConfig.font = UIFont(name: "Times New Roman", size: 14.0)!
 chatController.viewConfiguration.formConfiguration.multiSelectElementConfig.textColor = UIColor.brown
+chatController.viewConfiguration.formConfiguration.multiSelectElementConfig.font = UIFont.systemFont(ofSize: 18)
+chatController.viewConfiguration.formConfiguration.multiSelectElementConfig.labelConfiguration.textColor = UIColor.purple
+chatController.viewConfiguration.formConfiguration.multiSelectElementConfig.labelConfiguration.font = UIFont.systemFont(ofSize: 16)
 ```
 
 ### Set BoldForm text rating configuration
@@ -68,6 +72,14 @@ chatController.viewConfiguration.formConfiguration.multiSelectElementConfig.text
 chatController.viewConfiguration.formConfiguration.ratingTitleConfig.font = UIFont(name: "Times New Roman", size: 14.0)!
 chatController.viewConfiguration.formConfiguration.ratingTitleConfig.textColor = UIColor.brown
 ```
+
+---
+
+### Before & After
+
+| Before                                                                                         | After                                                                                         |
+| ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| <img src="../../../../assets/images/prechat_before.png"  alt="1" width = 200px height = 350px> | <img src="../../../../assets/images/prechat_after.png"  alt="1" width = 200px height = 350px> |
 
 ## How to override
 The SDK provides a way for the hosting App to use self customed form implementations, and display them when needed.
