@@ -13,6 +13,39 @@ toc_float: true
 {: .det}
 <details open markdown="block">
 
+<summary> Version 3.14.4 </summary>
+
+# Version 3.14.4
+Release date: February 8, 2022
+{: .overview}
+
+### Features
+
+- Added floating label to live form fields. [How To Customize]({{ ' /docs/chat-configuration/tracking-events/forms/#how-to-customize' | relative_url }})
+  
+---
+
+To get latest version:
+
+1. Update Podfile:
+From: 
+```
+source 'https://github.com/nanorepsdk/NRSDK-specs.git'
+```
+To: 
+```
+source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
+```
+
+2. Run:
+```ruby
+pod update 
+```
+</details>
+
+{: .det}
+<details close markdown="block">
+
 <summary> Version 3.14.3 </summary>
 
 # Version 3.14.3
