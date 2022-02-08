@@ -21,7 +21,7 @@ Release date: February 8, 2022
 
 ### Features
 
-- Added floating label to live form fields. [How To Customize]({{ ' /docs/chat-configuration/tracking-events/forms/#how-to-customize' | relative_url }})
+- Added floating label to live form fields. [How To Customize]({{ '/docs/chat-configuration/tracking-events/forms/#how-to-customize' | relative_url }})
   
 ---
 
