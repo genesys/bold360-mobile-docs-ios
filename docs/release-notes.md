@@ -13,6 +13,39 @@ toc_float: true
 {: .det}
 <details open markdown="block">
 
+<summary> Version 3.14.5 </summary>
+
+# Version 3.14.5
+Release date: February 21, 2022
+{: .overview}
+
+### Features
+
+- Fixed Autocomplete dynamic enablement
+  
+---
+
+To get latest version:
+
+1. Update Podfile:
+From: 
+```
+source 'https://github.com/nanorepsdk/NRSDK-specs.git'
+```
+To: 
+```
+source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
+```
+
+2. Run:
+```ruby
+pod update 
+```
+</details>
+
+{: .det}
+<details close markdown="block">
+
 <summary> Version 3.14.4 </summary>
 
 # Version 3.14.4
