@@ -18,14 +18,9 @@ toc_float: true
 # Version 3.14.6 
 Release date: March 19, 2022
 {: .overview}
-
----
-**NOTE**
-
- ```diff
- - This Version is Pre-Release
-  ```
----
+  
+{: .notice}
+- This Version is Pre-Release.
   
 ### Features
 
@@ -33,7 +28,7 @@ Release date: March 19, 2022
   
 ---
 
-To get latest version:
+👉 To get latest version:
 
 1. Update Podfile:
 From: 
