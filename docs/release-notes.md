@@ -10,37 +10,36 @@ toc_float: true
 {: .no_toc }
 
 ---
+
 {: .det}
 <details open markdown="block">
-
 <summary> Version 3.14.6 </summary>
 
 # Version 3.14.6 
 Release date: March 19, 2022
 {: .overview}
-  
-{: .notice}
-- This Version is Pre-Release.
-  
-### Features
 
-- Fixed custom URL schemes issue for iOS 15.4 and above. 
-  
+### Note
+{: .knownissue}
+- This Version is Pre-Release.
+
+### Fixes
+{: .notice}
+- Fixed custom URL schemes issue for iOS 15.4 and above.
+
 ---
 
+{: .mt-5}
 👉 To get latest version:
 
-1. Update Podfile:
-From: 
-```
-source 'https://github.com/nanorepsdk/NRSDK-specs.git'
-```
-To: 
+- Update Podfile with:
+
 ```
 source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
 ```
 
-2. Run:
+- Run:
+  
 ```ruby
 pod update 
 ```
