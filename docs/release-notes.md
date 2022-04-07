@@ -13,9 +13,45 @@ toc_float: true
 
 {: .det}
 <details open markdown="block">
+
+<summary> Version 3.14.7 </summary>
+
+# Version 3.14.7
+Release date: April 7, 2022
+{: .overview}
+
+### Note
+{: .knownissue}
+- This Version is Pre-Release.
+
+### Fixes
+{: .notice}
+- Fixed high value push chat issue
+
+---
+
+{: .mt-5}
+👉 To get latest version:
+
+- Update Podfile with:
+
+```
+source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
+```
+
+- Run:
+  
+```ruby
+pod update 
+```
+</details>
+
+
+{: .det}
+<details close markdown="block">
 <summary> Version 3.14.6 </summary>
 
-# Version 3.14.6 
+# Version 3.14.6
 Release date: March 19, 2022
 {: .overview}
 
@@ -40,72 +76,6 @@ source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
 
 - Run:
   
-```ruby
-pod update 
-```
-</details>
-
-{: .det}
-<details close markdown="block">
-
-<summary> Version 3.14.7 </summary>
-
-# Version 3.14.7
-Release date: April 7, 2022
-{: .overview}
-
-### Fixes
-
-- Fixed high value push chat issue
-  
----
-
-To get latest version:
-
-1. Update Podfile:
-From: 
-```
-source 'https://github.com/nanorepsdk/NRSDK-specs.git'
-```
-To: 
-```
-source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
-```
-
-2. Run:
-```ruby
-pod update 
-```
-</details>
-
-{: .det}
-<details close markdown="block">
-
-<summary> Version 3.14.6 </summary>
-
-# Version 3.14.6
-Release date: March 19, 2022
-{: .overview}
-
-### Features
-
-- Fixed custom scheme issue for iOS 15.4 
-  
----
-
-To get latest version:
-
-1. Update Podfile:
-From: 
-```
-source 'https://github.com/nanorepsdk/NRSDK-specs.git'
-```
-To: 
-```
-source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
-```
-
-2. Run:
 ```ruby
 pod update 
 ```
