@@ -14,6 +14,37 @@ toc_float: true
 {: .det}
 <details open markdown="block">
 
+<summary> Version 3.15.0 </summary>
+
+# Version 3.15.0
+Release date: April 13, 2022
+{: .overview}
+
+### Fixes
+{: .notice}
+- Fixed issues for hebrew articles on iOS <= 12.4
+
+---
+
+{: .mt-5}
+👉 To get latest version:
+
+- Update Podfile with:
+
+```
+source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
+```
+
+- Run:
+  
+```ruby
+pod update 
+```
+</details>
+
+{: .det}
+<details close markdown="block">
+
 <summary> Version 3.14.7 </summary>
 
 # Version 3.14.7
