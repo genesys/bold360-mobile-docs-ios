@@ -13,6 +13,37 @@ toc_float: true
 
 {: .det}
 <details open markdown="block">
+<summary> Version 3.15.2 </summary>
+
+# Version 3.15.2
+Release date: June 2, 2022
+{: .overview}
+
+### Fixes
+{: .notice}
+- Fixed missing entities in read more articles
+
+---
+
+{: .mt-5}
+👉 To get latest version:
+
+- Update Podfile with:
+
+```
+source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
+```
+
+- Run:
+  
+```ruby
+pod update 
+```
+</details>
+
+{: .det}
+
+<details close markdown="block">
 <summary> Version 3.15.1 </summary>
 
 # Version 3.15.1
