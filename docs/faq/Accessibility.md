@@ -10,16 +10,18 @@ nav_order: 5
 
 The Bold360 iOS SDK offers support of [native accessibility offered by Apple](https://developer.apple.com/accessibility/)
 
-In addition, the SDK supports VoiceOver customization on **Messages sent** & **Message received** events.
-
-```swift
-chatController.viewConfiguration.voiceOverConfiguration.messageReceivedText = "custom voiceOver message"
-chatController.viewConfiguration.voiceOverConfiguration.messageSentText = "custom voiceOver message"
-```
-
-Bold360 iOS SDK 
+Additional accessibility capabilities added under the SDK:
+### VoiceOver support
+-   Message sent event customization
+    ```swift
+    chatController.viewConfiguration.voiceOverConfiguration.messageSentText = "custom voiceOver message"
+    ```
+-   Message received event customization
+    ```swift
+    chatController.viewConfiguration.voiceOverConfiguration.messageReceivedText = "custom voiceOver message"
+    ```
 
 ------
-⚜️ The SDK’s accessibility support and behavior varies according to device iOS version and the accessibility configurations set by the user.
+⚜️ The SDK’s accessibility support and behavior varies according to the device's iOS version, and accessibility configurations.
 
 -----
