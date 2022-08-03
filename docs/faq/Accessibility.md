@@ -20,6 +20,6 @@ chatController.viewConfiguration.voiceOverConfiguration.messageSentText = "custo
 Bold360 iOS SDK 
 
 ------
-⚜️ The SDK’s accessibility support and behavior varies according to device API level and the accessibility configurations set by the user.
+⚜️ The SDK’s accessibility support and behavior varies according to device iOS version and the accessibility configurations set by the user.
 
 -----
