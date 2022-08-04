@@ -23,5 +23,3 @@ Additional accessibility capabilities added under the SDK:
 
 ------
 ⚜️ The SDK’s accessibility support and behavior varies according to the device's iOS version, and accessibility configurations.
-
------
