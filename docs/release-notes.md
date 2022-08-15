@@ -16,7 +16,7 @@ toc_float: true
 <summary> Version 3.15.4 </summary>
 
 # Version 3.15.4
-Release date: August 14, 2022
+Release date: August 15, 2022
 {: .overview}
 
 ### Features
