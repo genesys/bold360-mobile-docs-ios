@@ -13,6 +13,40 @@ toc_float: true
 
 {: .det}
 <details open markdown="block">
+<summary> Version 3.15.4 </summary>
+
+# Version 3.15.4
+Release date: August 15, 2022
+{: .overview}
+
+### Features
+- Improved VoiceOver support on 'Message sent' & 'Message received' events, more details on [Accessibility section](https://genesys.github.io/bold360-mobile-docs-ios/docs/faq/Accessibility/)
+
+### Fixes
+{: .notice}
+- Fixed carousel items selection.
+- Fixed repeated call of persistent button in conversational flow.
+
+---
+
+{: .mt-5}
+👉 To get latest version:
+
+- Update Podfile with:
+
+```
+source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
+```
+
+- Run:
+  
+```ruby
+pod update 
+```
+</details>
+
+{: .det}
+<details close markdown="block">
 <summary> Version 3.15.3 </summary>
 
 # Version 3.15.3
