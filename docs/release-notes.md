@@ -10,9 +10,12 @@ toc_float: true
 {: .no_toc }
 
 ---
+
 {: .det}
+
 <details open markdown="block">
-<summary> Version 3.15.5 </summary>
+
+<summary> Version 3.15.5</summary>
 
 # Version 3.15.5
 Release date: August 23, 2022
