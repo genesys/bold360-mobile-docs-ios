@@ -20,7 +20,7 @@ Release date: August 23, 2022
 
 ### Fixes
 {: .notice}
-- Fixed having sticky message re-appearing after reconnection.
+- Fixed having "Waiting for agent" sticky message re-appearing after reconnection.
 
 ---
 
