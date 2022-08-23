@@ -10,9 +10,38 @@ toc_float: true
 {: .no_toc }
 
 ---
-
 {: .det}
 <details open markdown="block">
+<summary> Version 3.15.5 </summary>
+
+# Version 3.15.5
+Release date: August 23, 2022
+{: .overview}
+
+### Fixes
+{: .notice}
+- Fixed having "Waiting for agent" sticky message re-appearing after reconnection.
+
+---
+
+{: .mt-5}
+👉 To get latest version:
+
+- Update Podfile with:
+
+```
+source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
+```
+
+- Run:
+  
+```ruby
+pod update 
+```
+</details>
+
+{: .det}
+<details close markdown="block">
 <summary> Version 3.15.4 </summary>
 
 # Version 3.15.4
