@@ -24,11 +24,13 @@ Release date: Oct 20, 2022
 ### New
 {: .notice}
 - Bitcode is disabled since Apple deprecated bitcode from Xcode14 and above.
+  
 ---
 
 ### Fixes
 {: .notice}
 - Fixed negative feedback sent incorrectly to BI reports.
+  
 ---
 
 {: .mt-5}
