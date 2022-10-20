@@ -15,6 +15,42 @@ toc_float: true
 
 <details open markdown="block">
 
+<summary> Version 3.16.0</summary>
+
+# Version 3.16.0
+Release date: Oct 20, 2022
+{: .overview}
+  
+### New
+{: .notice}
+- Bitcode is disabled since Apple deprecated bitcode from Xcode14 and above.
+---
+
+### Fixes
+{: .notice}
+- Fixed negative feedback sent incorrectly to BI reports.
+---
+
+{: .mt-5}
+👉 To get latest version:
+
+- Update Podfile with:
+
+```
+source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
+```
+
+- Run:
+  
+```ruby
+pod update 
+```
+</details>
+
+{: .det}
+
+<details close markdown="block">
+
 <summary> Version 3.15.5</summary>
 
 # Version 3.15.5
