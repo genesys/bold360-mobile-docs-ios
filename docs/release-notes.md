@@ -47,7 +47,7 @@ pod update
 ```
 </details>
 
-{: .det}
+{: .det .mt-2}
 
 <details close markdown="block">
 
