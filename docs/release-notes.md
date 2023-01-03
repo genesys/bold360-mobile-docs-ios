@@ -15,6 +15,38 @@ toc_float: true
 
 <details open markdown="block">
 
+<summary> Version 3.16.1</summary>
+
+# Version 3.16.1
+Release date: Jan 3, 2023
+{: .overview}
+
+### Fixes
+{: .notice}
+- Fixed UI layout changes handling from background thread.
+  
+---
+
+{: .mt-5}
+👉 To get latest version:
+
+- Update Podfile with:
+
+```
+source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
+```
+
+- Run:
+  
+```ruby
+pod update 
+```
+</details>
+
+{: .det .mt-2}
+
+<details close markdown="block">
+  
 <summary> Version 3.16.0</summary>
 
 # Version 3.16.0
@@ -45,7 +77,7 @@ source 'https://github.com/genesys/Bold360ai-SDK-Specs.git'
 ```ruby
 pod update 
 ```
-</details>
+</details>  
 
 {: .det .mt-2}
 
